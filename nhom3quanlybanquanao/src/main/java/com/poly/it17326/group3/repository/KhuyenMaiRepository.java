@@ -64,7 +64,7 @@ public class KhuyenMaiRepository {
     }
 
     public static void main(String[] args) {
-        new KhuyenMaiRepository().save(new KhuyenMai(4, "Giam gia ngay 8-3", 30, null, null));
+        new KhuyenMaiRepository().save(new KhuyenMai(4, "Giam gia ngay 9-3", 30, null, null));
         System.out.println(new KhuyenMaiRepository().getAll().toString());
     }
 }
