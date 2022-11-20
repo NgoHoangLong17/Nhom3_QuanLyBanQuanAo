@@ -11,9 +11,12 @@ package application;
 public class Application {
     public static void main(String[] args) {
         System.out.println("thien dep trai vl");
+        System.out.println("abc");
     }
   // hello bro
     
     //abc
+    
+    
     
 }
