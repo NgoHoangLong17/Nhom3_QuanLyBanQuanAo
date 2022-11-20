@@ -9,6 +9,9 @@ package application;
  * @author longnh203
  */
 public class Application {
-   // hello bro
+    public static void main(String[] args) {
+        System.out.println("thien dep trai vl");
+    }
+  // hello bro
     
 }
