@@ -9,7 +9,5 @@ package application;
  * @author longnh203
  */
 public class Application {
-    public static void main(String[] args) {
-        System.out.println("long mat lon");
-    }
+   
 }
