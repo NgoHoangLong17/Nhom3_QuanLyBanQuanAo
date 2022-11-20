@@ -4,13 +4,12 @@
  */
 package domainmodel;
 
-import javax.persistence.Entity;
 
 /**
  *
  * @author doand
  */
-@Entity
+
 public class SanPham {
  private int id ;
  private String ten;
