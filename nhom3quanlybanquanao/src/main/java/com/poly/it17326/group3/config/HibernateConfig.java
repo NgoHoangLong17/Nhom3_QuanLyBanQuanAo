@@ -6,6 +6,7 @@ package com.poly.it17326.group3.config;
 
 
 import com.poly.it17326.group3.domainmodels.KhuyenMai;
+import domainmodel.SanPham;
 import java.util.Properties;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -32,7 +33,7 @@ public class HibernateConfig {
         properties.put(Environment.SHOW_SQL, "true");
 
         conf.setProperties(properties);
-        conf.addAnnotatedClass(KhuyenMai.class);
+   conf.addAnnotatedClass(SanPham.class);
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
         FACTORY = conf.buildSessionFactory(registry);
