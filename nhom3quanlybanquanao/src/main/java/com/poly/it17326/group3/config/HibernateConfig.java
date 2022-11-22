@@ -5,7 +5,9 @@
 package com.poly.it17326.group3.config;
 
 
-import com.poly.it17326.group3.domainmodels.KhuyenMai;
+
+import com.poly.it17326.group3.domainmodels.NSX;
+import com.poly.it17326.group3.domainmodels.Size;
 import java.util.Properties;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -28,11 +30,13 @@ public class HibernateConfig {
         properties.put(Environment.DRIVER, "com.microsoft.sqlserver.jdbc.SQLServerDriver");
         properties.put(Environment.URL, "jdbc:sqlserver://localhost:1433;databaseName=QUANLYBANQUANAO");
         properties.put(Environment.USER, "sa");
-        properties.put(Environment.PASS, "Passwd2@");
+        properties.put(Environment.PASS, "123456");
         properties.put(Environment.SHOW_SQL, "true");
 
         conf.setProperties(properties);
-        conf.addAnnotatedClass(KhuyenMai.class);
+       
+        conf.addAnnotatedClass(NSX.class);
+        conf.addAnnotatedClass(Size.class);
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
         FACTORY = conf.buildSessionFactory(registry);
