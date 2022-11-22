@@ -25,9 +25,9 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-public class Anh {
+public class NSX {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "ten")

@@ -25,11 +25,12 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-public class Anh {
+public class DongSp {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name = "ten")
     private String ten;
+
 }

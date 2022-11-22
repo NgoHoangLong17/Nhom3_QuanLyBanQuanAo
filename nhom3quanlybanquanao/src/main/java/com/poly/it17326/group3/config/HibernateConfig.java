@@ -4,10 +4,18 @@
  */
 package com.poly.it17326.group3.config;
 
-
+import com.poly.it17326.group3.domainmodels.Anh;
+import com.poly.it17326.group3.domainmodels.ChatLieu;
+import com.poly.it17326.group3.domainmodels.ChiTietSp;
+import com.poly.it17326.group3.domainmodels.DongSp;
 import com.poly.it17326.group3.domainmodels.KhuyenMai;
+import com.poly.it17326.group3.domainmodels.MauSac;
+import com.poly.it17326.group3.domainmodels.NSX;
 import com.poly.it17326.group3.domainmodels.SanPham;
+import com.poly.it17326.group3.domainmodels.Size;
+import com.poly.it17326.group3.service.ChiTietService;
 import java.util.Properties;
+import javax.crypto.Mac;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -19,6 +27,7 @@ import org.hibernate.service.ServiceRegistry;
  * @author longnh203
  */
 public class HibernateConfig {
+
     private static final SessionFactory FACTORY;
 
     static {
@@ -33,7 +42,15 @@ public class HibernateConfig {
         properties.put(Environment.SHOW_SQL, "true");
 
         conf.setProperties(properties);
-   conf.addAnnotatedClass(SanPham.class);
+        conf.addAnnotatedClass(SanPham.class);
+//        conf.addAnnotatedClass(ChatLieu.class);
+        conf.addAnnotatedClass(Anh.class);
+        conf.addAnnotatedClass(MauSac.class);
+        conf.addAnnotatedClass(NSX.class);
+        conf.addAnnotatedClass(Size.class);
+        conf.addAnnotatedClass(ChatLieu.class);
+        conf.addAnnotatedClass(DongSp.class);
+        conf.addAnnotatedClass(ChiTietSp.class);
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
         FACTORY = conf.buildSessionFactory(registry);
