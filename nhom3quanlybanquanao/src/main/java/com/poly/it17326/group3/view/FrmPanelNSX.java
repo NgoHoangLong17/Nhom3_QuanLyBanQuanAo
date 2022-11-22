@@ -197,7 +197,7 @@ public class FrmPanelNSX extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Xóa thành công");
             loaddata(nSXService.getNSX());
         }else{
-            JOptionPane.showMessageDialog(this, "Xóa thất bại");
+            JOptionPane.showMessageDialog(this, "Xóa thất bại.");
         }
     }//GEN-LAST:event_BtnxoaActionPerformed
 
