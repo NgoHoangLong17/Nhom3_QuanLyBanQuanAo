@@ -4,7 +4,6 @@
  */
 package com.poly.it17326.group3.domainmodels;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,34 +15,23 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.GeneratorType;
 
-/**
- *
- * @author longnh203
- */
 @Entity
-@Table(name = "KHUYENMAI")
+@Table(name = "ChucVu")
 @Setter
 @Getter
-@ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class KhuyenMai {
+@ToString
+
+public class ChucVu {
 
     @Id
-    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    @Column(name = "TEN")
-    private String ten;
-
-    @Column(name = "MUCGIAMGIA")
-    private int mucGiamGia;
-
-    @Column(name = "NGAYBATDAU")
-    private Date ngayBatDau;
-
-    @Column(name = "NGAYKETTHUC")
-    private Date ngayKetThuc;
+    @Column(name = "id")
+    private Integer id;
+    
+    @Column(name = "ten")
+    private String tenChucVu;
 }

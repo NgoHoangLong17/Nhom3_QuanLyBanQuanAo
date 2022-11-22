@@ -5,7 +5,8 @@
 package com.poly.it17326.group3.config;
 
 
-import com.poly.it17326.group3.domainmodels.KhuyenMai;
+import com.poly.it17326.group3.domainmodels.ChucVu;
+import com.poly.it17326.group3.domainmodels.NhanVien;
 import java.util.Properties;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -18,6 +19,7 @@ import org.hibernate.service.ServiceRegistry;
  * @author longnh203
  */
 public class HibernateConfig {
+    
     private static final SessionFactory FACTORY;
 
     static {
@@ -32,7 +34,9 @@ public class HibernateConfig {
         properties.put(Environment.SHOW_SQL, "true");
 
         conf.setProperties(properties);
-        conf.addAnnotatedClass(KhuyenMai.class);
+        conf.addAnnotatedClass(ChucVu.class);
+        conf.addAnnotatedClass(NhanVien.class);
+        
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
         FACTORY = conf.buildSessionFactory(registry);
