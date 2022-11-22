@@ -15,6 +15,14 @@ public class FrmLogin extends javax.swing.JFrame {
      */
     public FrmLogin() {
         initComponents();
+        
+    }
+
+    public Boolean checkLogin(String taiKhoan, String matKhau) {
+        if (txtTaiKhoan.getText().equals("admin") && txtMatKhau.getText().equals("admin")) {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -26,156 +34,224 @@ public class FrmLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        txtMatKhau = new javax.swing.JPasswordField();
+        txtTaiKhoan = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        invisible = new javax.swing.JLabel();
+        btnDangNhap = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        show = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(700, 429));
         setResizable(false);
-
-        jPanel1.setBackground(new java.awt.Color(102, 255, 102));
-        jPanel1.setPreferredSize(new java.awt.Dimension(300, 0));
-
-        jPanel3.setBackground(new java.awt.Color(102, 255, 102));
-        jPanel3.setPreferredSize(new java.awt.Dimension(300, 100));
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel1.setText("Wellcome");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(68, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(66, 66, 66))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(24, 24, 24))
-        );
-
-        jPanel1.add(jPanel3);
-
-        jPanel4.setBackground(new java.awt.Color(102, 255, 102));
-        jPanel4.setPreferredSize(new java.awt.Dimension(300, 150));
-
-        jPanel5.setBackground(new java.awt.Color(102, 255, 102));
-        jPanel5.setLayout(new java.awt.BorderLayout());
-
-        jPasswordField1.setPreferredSize(new java.awt.Dimension(70, 25));
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
             }
         });
-        jPanel5.add(jPasswordField1, java.awt.BorderLayout.CENTER);
 
-        jLabel2.setText("Mật khẩu");
-        jPanel5.add(jLabel2, java.awt.BorderLayout.PAGE_START);
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel7.setBackground(new java.awt.Color(102, 255, 102));
-        jPanel7.setPreferredSize(new java.awt.Dimension(100, 56));
-        jPanel7.setLayout(new java.awt.BorderLayout());
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/poly/it17326/group3/icon/logo.png"))); // NOI18N
 
-        jLabel3.setText("SDT");
-        jPanel7.add(jLabel3, java.awt.BorderLayout.PAGE_START);
-
-        jTextField2.setPreferredSize(new java.awt.Dimension(70, 25));
-        jPanel7.add(jTextField2, java.awt.BorderLayout.CENTER);
-
-        jLabel4.setText("Quên mật khẩu?");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(160, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(53, 53, 53))
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(46, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(36, 36, 36))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addContainerGap(14, Short.MAX_VALUE))
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(jLabel1)
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel4);
+        getContentPane().add(jPanel8, java.awt.BorderLayout.WEST);
 
-        jPanel6.setBackground(new java.awt.Color(102, 255, 102));
-        jPanel6.setPreferredSize(new java.awt.Dimension(300, 50));
+        jPanel1.setBackground(new java.awt.Color(51, 153, 255));
+        jPanel1.setLayout(null);
 
-        jButton1.setBackground(new java.awt.Color(51, 255, 204));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jButton1.setText("Đăng nhập");
-        jButton1.setPreferredSize(new java.awt.Dimension(250, 23));
-        jPanel6.add(jButton1);
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Đăng nhập");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(6, 30, 388, 48);
 
-        jPanel1.add(jPanel6);
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Tài khoản");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(44, 109, 59, 20);
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.LINE_START);
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Mât khẩu");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(44, 195, 59, 20);
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setPreferredSize(new java.awt.Dimension(300, 429));
+        txtMatKhau.setBackground(new java.awt.Color(51, 153, 255));
+        txtMatKhau.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtMatKhau.setForeground(new java.awt.Color(255, 255, 255));
+        txtMatKhau.setBorder(null);
+        jPanel1.add(txtMatKhau);
+        txtMatKhau.setBounds(50, 222, 260, 30);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/poly/it17326/group3/icon/Login-icon.png"))); // NOI18N
+        txtTaiKhoan.setBackground(new java.awt.Color(51, 153, 255));
+        txtTaiKhoan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtTaiKhoan.setForeground(new java.awt.Color(255, 255, 255));
+        txtTaiKhoan.setBorder(null);
+        jPanel1.add(txtTaiKhoan);
+        txtTaiKhoan.setBounds(50, 142, 260, 30);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(138, 138, 138)
-                .addComponent(jLabel6)
-                .addContainerGap(455, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(82, 82, 82)
-                .addComponent(jLabel6)
-                .addContainerGap(219, Short.MAX_VALUE))
-        );
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("_____________________________________________________");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(44, 221, 265, 50);
 
-        getContentPane().add(jPanel2, java.awt.BorderLayout.CENTER);
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("_____________________________________________________");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(44, 141, 265, 50);
+
+        jCheckBox1.setBackground(new java.awt.Color(51, 153, 255));
+        jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox1.setText("Nhớ Mật Khẩu");
+        jCheckBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jCheckBox1);
+        jCheckBox1.setBounds(44, 268, 113, 24);
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Quên mật khẩu?");
+        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(241, 270, 102, 20);
+
+        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\longnh203\\OneDrive\\Máy tính\\DA1\\Nhom3_QuanLyBanQuanAo\\Nhom3_QuanLyBanQuanAo\\nhom3quanlybanquanao\\src\\main\\resources\\com\\poly\\it17326\\group3\\icon\\icons8-user-24 (2).png")); // NOI18N
+        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(320, 150, 24, 24);
+
+        invisible.setIcon(new javax.swing.ImageIcon("C:\\Users\\longnh203\\OneDrive\\Máy tính\\DA1\\Nhom3_QuanLyBanQuanAo\\Nhom3_QuanLyBanQuanAo\\nhom3quanlybanquanao\\src\\main\\resources\\com\\poly\\it17326\\group3\\icon\\icons8-invisible-24.png")); // NOI18N
+        invisible.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        invisible.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                invisibleMouseClicked(evt);
+            }
+        });
+        jPanel1.add(invisible);
+        invisible.setBounds(320, 230, 24, 24);
+
+        btnDangNhap.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnDangNhap.setForeground(new java.awt.Color(51, 153, 255));
+        btnDangNhap.setText("Đăng nhập");
+        btnDangNhap.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDangNhap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDangNhapActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnDangNhap);
+        btnDangNhap.setBounds(44, 310, 299, 47);
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("x");
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(360, 0, 20, 32);
+
+        show.setIcon(new javax.swing.ImageIcon("C:\\Users\\longnh203\\OneDrive\\Máy tính\\DA1\\Nhom3_QuanLyBanQuanAo\\Nhom3_QuanLyBanQuanAo\\nhom3quanlybanquanao\\src\\main\\resources\\com\\poly\\it17326\\group3\\icon\\icons8-eye-24 (1).png")); // NOI18N
+        show.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        show.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                showMouseClicked(evt);
+            }
+        });
+        jPanel1.add(show);
+        show.setBounds(320, 230, 24, 24);
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
-    
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        for (double i = 0.0; i < 1.0; i = i + 0.1) {
+            String val = i + "";
+            float f = Float.valueOf(val);
+            this.setOpacity(f);
+            try {
+                Thread.sleep(50);
+            } catch (Exception e) {
+            }
+        }
+    }//GEN-LAST:event_formWindowOpened
+
+    private void showMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showMouseClicked
+        // TODO add your handling code here:
+        txtMatKhau.setEchoChar((char) 8226);
+        invisible.setVisible(true);
+        show.setVisible(false);
+
+    }//GEN-LAST:event_showMouseClicked
+
+    private void invisibleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_invisibleMouseClicked
+        // TODO add your handling code here:
+        txtMatKhau.setEchoChar((char) 0);
+        show.setVisible(true);
+        invisible.setVisible(false);
+    }//GEN-LAST:event_invisibleMouseClicked
+
+    private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
+        // TODO add your handling code here:
+        if(checkLogin(null, null)){
+            FrmHome frmHome = new FrmHome();
+            frmHome.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_btnDangNhapActionPerformed
+
 //    private Boolean checkUser(){
 //        if()
 //    }
@@ -184,20 +260,22 @@ public class FrmLogin extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnDangNhap;
+    private javax.swing.JLabel invisible;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JLabel show;
+    private javax.swing.JPasswordField txtMatKhau;
+    private javax.swing.JTextField txtTaiKhoan;
     // End of variables declaration//GEN-END:variables
 }
