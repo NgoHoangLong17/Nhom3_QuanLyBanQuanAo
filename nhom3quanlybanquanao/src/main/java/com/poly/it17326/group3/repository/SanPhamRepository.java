@@ -5,7 +5,7 @@
 package com.poly.it17326.group3.repository;
 
 import com.poly.it17326.group3.config.HibernateConfig;
-import domainmodel.SanPham;
+import com.poly.it17326.group3.domainmodels.SanPham;
 import java.util.List;
 import javax.persistence.Query;
 import org.hibernate.Session;
