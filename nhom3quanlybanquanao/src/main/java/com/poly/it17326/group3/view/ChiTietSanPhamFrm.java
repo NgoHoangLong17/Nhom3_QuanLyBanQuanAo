@@ -509,8 +509,8 @@ public class ChiTietSanPhamFrm extends javax.swing.JPanel {
         // TODO add your handling code here:
         int index = tblChiTietSp.getSelectedRow();
         ChiTietSp chiTietSp = chiTietSpRepository.getAll().get(index);
-        if(chiTietSpRepository.delete(chiTietSp)==true){
-              JOptionPane.showMessageDialog(this, " xoa thanh cong");
+        if (chiTietSpRepository.delete(chiTietSp) == true) {
+            JOptionPane.showMessageDialog(this, " xoa thanh cong");
             loadTable(chiTietSpRepository.getAll());
         }
     }//GEN-LAST:event_jButton3ActionPerformed
