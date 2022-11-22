@@ -28,7 +28,8 @@ import lombok.ToString;
 public class SanPham {
     @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+        @Column(name="id")
+    private Integer id;
     
     @Column(name="ten")
     private String ten;

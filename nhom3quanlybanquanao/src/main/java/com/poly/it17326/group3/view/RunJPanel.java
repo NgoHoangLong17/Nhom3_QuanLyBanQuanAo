@@ -16,10 +16,7 @@ public class RunJPanel extends javax.swing.JFrame {
     AnhView anh;
     public RunJPanel() {
         initComponents();
-        anh = new AnhView();
-        jpTest.removeAll();
-        jpTest.add(anh);
-        jpTest.validate();
+        
     }
 
     /**
@@ -32,35 +29,71 @@ public class RunJPanel extends javax.swing.JFrame {
     private void initComponents() {
 
         lb = new javax.swing.JLabel();
-        jpTest = new javax.swing.JTextField();
+        jpTest = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lb.setText("jLabel1");
+        lb.setText("Ảnh");
+        lb.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbMouseClicked(evt);
+            }
+        });
+
+        jpTest.setLayout(new java.awt.CardLayout(80, 80));
+
+        jLabel1.setText("Sp");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(lb)
-                .addGap(52, 52, 52)
-                .addComponent(jpTest, javax.swing.GroupLayout.DEFAULT_SIZE, 387, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(lb)
+                        .addGap(28, 28, 28))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)))
+                .addComponent(jpTest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(96, 96, 96)
                 .addComponent(lb)
-                .addContainerGap(188, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jpTest))
+                .addGap(83, 83, 83)
+                .addComponent(jLabel1)
+                .addContainerGap(89, Short.MAX_VALUE))
+            .addComponent(jpTest, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lbMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbMouseClicked
+        AnhView anh = new AnhView();
+        jpTest.removeAll();
+        jpTest.add(anh);
+        jpTest.validate();
+    }//GEN-LAST:event_lbMouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+         SanPhamView sp = new SanPhamView();
+        jpTest.removeAll();
+        jpTest.add(sp);
+        jpTest.validate();
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -98,7 +131,8 @@ public class RunJPanel extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField jpTest;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jpTest;
     private javax.swing.JLabel lb;
     // End of variables declaration//GEN-END:variables
 }

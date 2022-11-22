@@ -4,15 +4,14 @@
  */
 package com.poly.it17326.group3.Application;
 
-
-
 /**
  *
  * @author doand
  */
 public class Application {
-      public static void main(String[] args) {
-            
+
+    public static void main(String[] args) {
+
     }
-            
+
 }

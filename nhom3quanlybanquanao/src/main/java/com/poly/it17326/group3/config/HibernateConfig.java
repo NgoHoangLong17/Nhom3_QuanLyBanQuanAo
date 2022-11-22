@@ -35,7 +35,7 @@ public class HibernateConfig {
         conf.setProperties(properties);
         conf.addAnnotatedClass(SanPham.class);
         conf.addAnnotatedClass(Anh.class);
-      
+
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
         FACTORY = conf.buildSessionFactory(registry);

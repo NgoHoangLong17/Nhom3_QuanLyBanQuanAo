@@ -24,6 +24,7 @@ public class AnhView extends javax.swing.JPanel {
      */
     public AnhView() {
         initComponents();
+        loadDataSp(AnhRepository.getAll());
     }
     
       public void loadDataSp(List<Anh> list) {
@@ -57,7 +58,6 @@ public class AnhView extends javax.swing.JPanel {
         btnThem = new javax.swing.JButton();
         btnSua = new javax.swing.JButton();
         btnXoa = new javax.swing.JButton();
-        btnTimKiem = new javax.swing.JButton();
 
         jLabel2.setText("ID");
 
@@ -104,13 +104,6 @@ public class AnhView extends javax.swing.JPanel {
             }
         });
 
-        btnTimKiem.setText("Tìm Kiếm");
-        btnTimKiem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTimKiemActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -126,9 +119,7 @@ public class AnhView extends javax.swing.JPanel {
                                 .addGap(45, 45, 45)
                                 .addComponent(btnSua)
                                 .addGap(31, 31, 31)
-                                .addComponent(btnXoa)
-                                .addGap(32, 32, 32)
-                                .addComponent(btnTimKiem))
+                                .addComponent(btnXoa))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
@@ -140,7 +131,7 @@ public class AnhView extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(195, 195, 195)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,8 +150,7 @@ public class AnhView extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnThem)
                     .addComponent(btnSua)
-                    .addComponent(btnXoa)
-                    .addComponent(btnTimKiem))
+                    .addComponent(btnXoa))
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -209,16 +199,10 @@ public class AnhView extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnXoaActionPerformed
 
-    private void btnTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimKiemActionPerformed
-        // TODO add your handling code here:
-        loadDataSp(AnhServiceImpl.getAll());
-    }//GEN-LAST:event_btnTimKiemActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSua;
     private javax.swing.JButton btnThem;
-    private javax.swing.JButton btnTimKiem;
     private javax.swing.JButton btnXoa;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
