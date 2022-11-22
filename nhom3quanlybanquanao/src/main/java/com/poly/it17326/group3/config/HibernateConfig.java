@@ -6,7 +6,7 @@ package com.poly.it17326.group3.config;
 
 
 import com.poly.it17326.group3.domainmodels.KhuyenMai;
-import domainmodel.SanPham;
+import com.poly.it17326.group3.domainmodels.SanPham;
 import java.util.Properties;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
