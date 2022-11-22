@@ -2,12 +2,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.poly.it17326.group3.view;
+package com.poly.it17326.group3.Application;
+
+
 
 /**
  *
- * @author longnh203
+ * @author doand
  */
-public class NewClass {
-    
+public class Application {
+      public static void main(String[] args) {
+            
+    }
+            
 }
