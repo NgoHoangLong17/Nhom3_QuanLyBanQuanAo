@@ -151,6 +151,11 @@ public class NhanVienPanel extends javax.swing.JPanel {
         });
 
         btnSua.setText("Sửa");
+        btnSua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuaActionPerformed(evt);
+            }
+        });
 
         btnXoa.setText("Xóa");
         btnXoa.addActionListener(new java.awt.event.ActionListener() {
@@ -376,6 +381,34 @@ public class NhanVienPanel extends javax.swing.JPanel {
     private void chekNghiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chekNghiActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chekNghiActionPerformed
+
+    private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
+        // TODO add your handling code here:
+        int index = tbNhanVien.getSelectedRow();
+        NhanVien nhanVien = viewNhanVienService.getNhanVien().get(index);
+        nhanVien.setTenNhanVien(txtTenNhanVien.getText());
+        ChucVu chucVu = viewChucVuService.getChucVu().get(cboChucVu.getSelectedIndex());
+        nhanVien.setChucVu(chucVu);
+        Boolean gioiTinh = false;
+        if (rbnNam.isSelected()) {
+            gioiTinh = true;
+        }
+        nhanVien.setGioiTinh(gioiTinh);
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+        String strDate = formatter.format(date);
+        nhanVien.setNgaySinh(date);
+        nhanVien.setSDT(txtSDT.getText());
+        nhanVien.setDiaChi(txtDiaChi.getText());
+        nhanVien.setMatKhau(txtMatKhau.getText());
+        nhanVien.setDeleted(chekNghi.isSelected());
+        if(viewNhanVienService.sua(nhanVien)){
+            JOptionPane.showMessageDialog(this, "Sửa thành công");
+            LoadTable((ArrayList<NhanVien>) viewNhanVienService.getNhanVien());
+        }else{
+            JOptionPane.showMessageDialog(this, "Sửa thất bại");
+        }
+    }//GEN-LAST:event_btnSuaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
