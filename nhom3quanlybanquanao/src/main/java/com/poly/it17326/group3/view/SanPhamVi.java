@@ -16,11 +16,6 @@ public class SanPhamVi extends javax.swing.JFrame {
     public SanPhamVi() {
         initComponents();
         ChiTietSanPhamFrm ctspf = new ChiTietSanPhamFrm();
-//               FrmAnh fa = new FrmAnh();
-//               FrmChatLieu chatLieu = new FrmChatLieu();
-//               JplChiTietSanPam.removeAll();
-//               JplChiTietSanPam.add(fa);
-//               JplChiTietSanPam.validate();
                
                JplChiTietSanPam.removeAll();
                JplChiTietSanPam.add(ctspf);

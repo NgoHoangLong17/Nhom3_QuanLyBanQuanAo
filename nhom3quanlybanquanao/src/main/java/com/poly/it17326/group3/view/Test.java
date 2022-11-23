@@ -4,6 +4,8 @@
  */
 package com.poly.it17326.group3.view;
 
+import com.poly.it17326.group3.domainmodels.DongSp;
+
 /**
  *
  * @author doand
@@ -25,11 +27,9 @@ public class Test extends javax.swing.JFrame {
 //        FrmNhanVien fnv = new FrmNhanVien();
 //        FrmDongSp dongSp = new FrmDongSp();
         
-        ChiTietSanPhamFrm ctspf = new ChiTietSanPhamFrm();
-//FrmChucVu chucVu = new FrmChucVu();
-        FrmPanelSize fps = new FrmPanelSize();
+        FrmLogin frm = new FrmLogin();
         tesst.removeAll();
-        tesst.add(ctspf);
+        tesst.add(frm);
         tesst.validate();
     }
 

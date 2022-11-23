@@ -30,8 +30,6 @@ import lombok.ToString;
 public class Size {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-  
-
     private Integer id;
 
     @Column(name = "ten")
