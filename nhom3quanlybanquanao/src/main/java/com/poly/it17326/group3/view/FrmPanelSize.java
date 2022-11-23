@@ -171,7 +171,7 @@ public class FrmPanelSize extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Thêm thành công");
             loaddata(sizeService.getAll());
         }else{
-            JOptionPane.showMessageDialog(this, "Thêm thất bại");
+            JOptionPane.showMessageDialog(this, "Thêm thất bại.");
         }
     }//GEN-LAST:event_BtnthemActionPerformed
 
