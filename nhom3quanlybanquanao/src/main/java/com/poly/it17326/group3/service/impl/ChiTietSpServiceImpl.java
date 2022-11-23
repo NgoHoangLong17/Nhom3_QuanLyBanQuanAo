@@ -5,7 +5,7 @@
 //<<<<<<<< HEAD:nhom3quanlybanquanao/src/main/java/com/poly/it17326/group3/service/impl/ChiTietSpServiceImpl.java
 //package com.poly.it17326.group3.service.impl;
 //========
-package com.poly.it17326.group3.domainmodels;
+//package com.poly.it17326.group3.domainmodels;
 
 import javax.persistence.Entity;
 //>>>>>>>> origin/Dev:nhom3quanlybanquanao/src/main/java/com/poly/it17326/group3/domainmodels/User.java

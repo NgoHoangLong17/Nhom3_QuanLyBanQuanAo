@@ -24,7 +24,7 @@ import org.hibernate.annotations.GeneratorType;
  */
 
 @Entity
-@Table(name="DONGSP")
+//@Table(name="DONGSP")
 @Getter
 @Setter
 @AllArgsConstructor

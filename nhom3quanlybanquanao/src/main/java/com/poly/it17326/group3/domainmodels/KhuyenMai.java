@@ -18,7 +18,7 @@ import lombok.ToString;
  * @author longnh203
  */
 @Entity
-@Table(name = "KHUYENMAI")
+//@Table(name = "KHUYENMAI")
 @Setter
 @Getter
 @ToString
