@@ -8,23 +8,29 @@ package com.poly.it17326.group3.view;
  *
  * @author doand
  */
-public class SanPhamVi extends javax.swing.JFrame {
+public class Test extends javax.swing.JFrame {
 
     /**
-     * Creates new form SanPham
+     * Creates new form Test
      */
-    public SanPhamVi() {
+    public Test() {
         initComponents();
+//        FrmChatLieu fcl = new FrmChatLieu();
+//        FrmAnh fa = new FrmAnh();
+//        FrmChatLieu fcl1 = new FrmChatLieu();
+//        FrmNhanVien fnv = new FrmNhanVien();
+//        FrmKhuyenMai fkm = new FrmKhuyenMai();
+//        FrmHome frmHome = new FrmHome();
+//        FrmMauSac mauSac = new FrmMauSac();
+//        FrmNhanVien fnv = new FrmNhanVien();
+//        FrmDongSp dongSp = new FrmDongSp();
+        
         ChiTietSanPhamFrm ctspf = new ChiTietSanPhamFrm();
-//               FrmAnh fa = new FrmAnh();
-//               FrmChatLieu chatLieu = new FrmChatLieu();
-//               JplChiTietSanPam.removeAll();
-//               JplChiTietSanPam.add(fa);
-//               JplChiTietSanPam.validate();
-               
-               JplChiTietSanPam.removeAll();
-               JplChiTietSanPam.add(ctspf);
-               JplChiTietSanPam.validate();
+//FrmChucVu chucVu = new FrmChucVu();
+        FrmPanelSize fps = new FrmPanelSize();
+        tesst.removeAll();
+        tesst.add(ctspf);
+        tesst.validate();
     }
 
     /**
@@ -36,24 +42,24 @@ public class SanPhamVi extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        JplChiTietSanPam = new javax.swing.JPanel();
+        tesst = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        JplChiTietSanPam.setLayout(new java.awt.CardLayout());
+        tesst.setLayout(new java.awt.CardLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(JplChiTietSanPam, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tesst, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(JplChiTietSanPam, javax.swing.GroupLayout.PREFERRED_SIZE, 559, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tesst, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -77,26 +83,25 @@ public class SanPhamVi extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SanPhamVi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SanPhamVi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SanPhamVi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SanPhamVi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SanPhamVi().setVisible(true);
+                new Test().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel JplChiTietSanPam;
+    private javax.swing.JPanel tesst;
     // End of variables declaration//GEN-END:variables
 }
