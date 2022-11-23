@@ -4,8 +4,13 @@
  */
 package com.poly.it17326.group3.config;
 
-
+import com.poly.it17326.group3.domainmodels.Anh;
+import com.poly.it17326.group3.domainmodels.ChatLieu;
+import com.poly.it17326.group3.domainmodels.ChucVu;
+import com.poly.it17326.group3.domainmodels.DongSp;
 import com.poly.it17326.group3.domainmodels.KhuyenMai;
+import com.poly.it17326.group3.domainmodels.NhanVien;
+import com.poly.it17326.group3.domainmodels.SanPham;
 import java.util.Properties;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -18,6 +23,7 @@ import org.hibernate.service.ServiceRegistry;
  * @author longnh203
  */
 public class HibernateConfig {
+
     private static final SessionFactory FACTORY;
 
     static {
@@ -30,9 +36,17 @@ public class HibernateConfig {
         properties.put(Environment.USER, "sa");
         properties.put(Environment.PASS, "Passwd2@");
         properties.put(Environment.SHOW_SQL, "true");
-
         conf.setProperties(properties);
+        conf.addAnnotatedClass(SanPham.class);
+        conf.addAnnotatedClass(Anh.class);
+
+        conf.addAnnotatedClass(DongSp.class);
         conf.addAnnotatedClass(KhuyenMai.class);
+        conf.addAnnotatedClass(ChatLieu.class);
+
+        conf.addAnnotatedClass(ChucVu.class);
+        conf.addAnnotatedClass(NhanVien.class);
+
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
         FACTORY = conf.buildSessionFactory(registry);

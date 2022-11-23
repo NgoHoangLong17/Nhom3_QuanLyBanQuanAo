@@ -1,6 +1,6 @@
+
 package com.poly.it17326.group3.domainmodels;
 
-import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,33 +13,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-/**
- *
- * @author longnh203
- */
 @Entity
-@Table(name = "KHUYENMAI")
-@Setter
 @Getter
-@ToString
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class KhuyenMai {
-
+@ToString
+public class ChatLieu {
+    
     @Id
-    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
+    @Column(name = "ID")
+    private Integer id;
+    
     @Column(name = "TEN")
     private String ten;
+    
 
-    @Column(name = "MUCGIAMGIA")
-    private int mucGiamGia;
-
-    @Column(name = "NGAYBATDAU")
-    private Date ngayBatDau;
-
-    @Column(name = "NGAYKETTHUC")
-    private Date ngayKetThuc;
 }
