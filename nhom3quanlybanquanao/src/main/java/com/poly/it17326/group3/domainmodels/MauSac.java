@@ -5,11 +5,11 @@
 package com.poly.it17326.group3.domainmodels;
 
 import javax.persistence.Column;
-    
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,24 +18,23 @@ import lombok.ToString;
 
 /**
  *
-
  * @author doand
  */
-@NoArgsConstructor
-@AllArgsConstructor
+
+@Entity
+@Table(name ="MAUSAC")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @ToString
-@Entity
-public class Size {
+
+
+public class MauSac {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    @Column(name = "id")
-
-    private Integer id;
-
-    @Column(name = "ten")
+    private int id;
+    
+    @Column(name="ten")
     private String ten;
-
 }

@@ -5,7 +5,6 @@
 package com.poly.it17326.group3.domainmodels;
 
 import javax.persistence.Column;
-    
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +17,6 @@ import lombok.ToString;
 
 /**
  *
-
  * @author doand
  */
 @NoArgsConstructor
@@ -27,15 +25,13 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-public class Size {
+public class SanPham {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    @Column(name = "id")
-
+        @Column(name="id")
     private Integer id;
-
-    @Column(name = "ten")
+    
+    @Column(name="ten")
     private String ten;
-
 }
