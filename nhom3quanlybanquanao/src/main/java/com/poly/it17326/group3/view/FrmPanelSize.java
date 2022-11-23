@@ -38,6 +38,7 @@ public class FrmPanelSize extends javax.swing.JPanel {
     defaultTableModel.addRow(new Object[]{s.getId(),s.getTen()});
     }
     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -163,9 +164,10 @@ public class FrmPanelSize extends javax.swing.JPanel {
 
     private void BtnthemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnthemActionPerformed
         // TODO add your handling code here:
-        Size chatLieu = new Size();
-        chatLieu.setTen(txtTen.getText());
-        if(sizeService.save(chatLieu)){
+        Size size = new Size();
+        size.setTen(txtTen.getText());
+        
+        if(sizeService.save(size)){
             JOptionPane.showMessageDialog(this, "Thêm thành công");
             loaddata(sizeService.getAll());
         }else{
@@ -183,10 +185,11 @@ public class FrmPanelSize extends javax.swing.JPanel {
     private void BtnsuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnsuaActionPerformed
         // TODO add your handling code here:
         int index = Tblnsx.getSelectedRow();
-        Size chatLieu = sizeService.getAll().get(index);
-        chatLieu.setTen(txtTen.getText());
-        chatLieu.setId(Integer.parseInt(txtID.getText()));
-        if(sizeService.update(chatLieu)){
+        Size size = sizeService.getAll().get(index);
+        size.setTen(txtTen.getText());
+        size.setId(Integer.parseInt(txtID.getText()));
+        
+        if(sizeService.update(size)){
             JOptionPane.showMessageDialog(this, "Sửa thành công");
             loaddata(sizeService.getAll());
         }else{
@@ -197,10 +200,10 @@ public class FrmPanelSize extends javax.swing.JPanel {
     private void BtnxoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnxoaActionPerformed
         // TODO add your handling code here:
         int index = Tblnsx.getSelectedRow();
-        Size chatLieu = sizeService.getAll().get(index);
+        Size size = sizeService.getAll().get(index);
         if(index == -1){
             JOptionPane.showMessageDialog(this, "Xóa thất bại");
-        }else if(sizeService.delete(chatLieu)){
+        }else if(sizeService.delete(size)){
             JOptionPane.showMessageDialog(this, "Xóa thành công");
             loaddata(sizeService.getAll());
         }else{

@@ -176,10 +176,10 @@ public class FrmPanelNSX extends javax.swing.JPanel {
     private void BtnsuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnsuaActionPerformed
         // TODO add your handling code here:
         int index = TblNsx.getSelectedRow();
-        NSX chatLieu = nSXService.getNSX().get(index);
-        chatLieu.setTen(txtTen.getText());
-        chatLieu.setId(Integer.parseInt(txtID.getText()));
-        if(nSXService.update(chatLieu)){
+        NSX nsx = nSXService.getNSX().get(index);
+        nsx.setTen(txtTen.getText());
+        nsx.setId(Integer.parseInt(txtID.getText()));
+        if(nSXService.update(nsx)){
             JOptionPane.showMessageDialog(this, "Sửa thành công");
             loaddata(nSXService.getNSX());
         }else{
@@ -190,10 +190,10 @@ public class FrmPanelNSX extends javax.swing.JPanel {
     private void BtnxoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnxoaActionPerformed
         // TODO add your handling code here:
          int index = TblNsx.getSelectedRow();
-        NSX chatLieu = nSXService.getNSX().get(index);
+        NSX nsx = nSXService.getNSX().get(index);
         if(index == -1){
             JOptionPane.showMessageDialog(this, "Xóa thất bại");
-        }else if(nSXService.delete(chatLieu)){
+        }else if(nSXService.delete(nsx)){
             JOptionPane.showMessageDialog(this, "Xóa thành công");
             loaddata(nSXService.getNSX());
         }else{
