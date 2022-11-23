@@ -28,26 +28,6 @@ public class HoaDonReposity {
         return (ArrayList<HoaDon>) query.getResultList();
     }
 
-//    public Boolean add(HoaDon hoaDon) {
-//        Transaction transaction = null;
-//        try ( Session session = HibernateConfig.getFACTORY().openSession();) {
-//
-//            transaction = session.beginTransaction();
-//            javax.persistence.Query query = session.createQuery("INSERT INTO HOADON\n"
-//                    + "( NGAYTAO, IDNHANVIEN, TENKHACHHANG)\n"
-//                    + "VALUES    (NGAYTAO :nt ,IDNHANVIEN: idnv,TENKHACHHANG: ten)");
-//            query.setParameter("nt", new java.util.Date().getTime());
-//            query.setParameter("idnv", hoaDon.getNhanVien().getId());
-//            query.setParameter("ten", hoaDon.getTenKhachHang());
-//            
-//            transaction.commit();
-//            return true;
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
      public Boolean add(HoaDon hoaDon){
         Transaction transaction = null;
         try (Session session = HibernateConfig.getFACTORY().openSession()){
@@ -60,26 +40,31 @@ public class HoaDonReposity {
         }
         return null;
     }
-//    public Boolean add(HoaDon hoaDon) {
-//        Transaction transaction = null;
-//        try ( Session session = HibernateConfig.getFACTORY().openSession()) {
-//            // start a transaction
-//            transaction = session.beginTransaction();
-//            String hql = "INSERT INTO Student (firstName, lastName, email) "
-//                    + "SELECT firstName, lastName, email FROM Student";
-//            Query query = session.createQuery(hql);
-//            int result = query.executeUpdate();
-//            System.out.println("Rows affected: " + result);
-//
-//            // commit transaction
-//            transaction.commit();
-//        } catch (Exception e) {
-//            if (transaction != null) {
-//                transaction.rollback();
-//            }
-//            e.printStackTrace();
-//        }
-//        return true;
-//    }
+       public Boolean update(HoaDon hoaDon){
+        Transaction transaction = null;
+        try ( Session session = HibernateConfig.getFACTORY().openSession()) {
+            transaction = session.beginTransaction();
+            session.saveOrUpdate(hoaDon);
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        }
+        return null;
+    }
+        public Boolean delete(HoaDon hoaDon){
+        Transaction transaction = null;
+        try ( Session session = HibernateConfig.getFACTORY().openSession()) {
+            transaction = session.beginTransaction();
+            session.delete(hoaDon);
+            transaction.commit();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace(System.out);
+        }
+        return null;
+    }
+       
+
 
 }
