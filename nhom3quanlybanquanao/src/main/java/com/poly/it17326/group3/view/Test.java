@@ -27,9 +27,9 @@ public class Test extends javax.swing.JFrame {
 //        FrmNhanVien fnv = new FrmNhanVien();
 //        FrmDongSp dongSp = new FrmDongSp();
         
-      FrmHoaDon don = new FrmHoaDon();
+    FrmHoaDonChiTiet fnv = new FrmHoaDonChiTiet();
         tesst.removeAll();
-        tesst.add(don);
+        tesst.add(fnv);
         tesst.validate();
     }
 

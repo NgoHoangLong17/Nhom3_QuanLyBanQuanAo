@@ -23,10 +23,10 @@ public class ChatLieu {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "id")
     private Integer id;
     
-    @Column(name = "TEN")
+    @Column(name = "ten")
     private String ten;
     
 
