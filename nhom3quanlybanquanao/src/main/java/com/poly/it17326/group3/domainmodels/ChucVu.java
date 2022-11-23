@@ -18,28 +18,22 @@ import lombok.ToString;
 import org.hibernate.annotations.GeneratorType;
 
 
-/**
- *
- * @author doand
- */
-
 @Entity
-@Table(name="DONGSP")
-@Getter
+@Table(name = "ChucVu")
 @Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 
 
-public class DongSp {
+public class ChucVu {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
+    @Column(name = "id")
+    private Integer id;
+    
     @Column(name = "ten")
-    private String ten;
-
-
+    private String tenChucVu;
 }

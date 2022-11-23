@@ -10,7 +10,7 @@ import javax.persistence.Entity;
  *
  * @author longnh203
  */
-@Entity
+
 
 public class User {
     
