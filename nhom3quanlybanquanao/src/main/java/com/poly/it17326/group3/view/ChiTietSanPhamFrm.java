@@ -28,7 +28,7 @@ import javax.swing.table.DefaultTableModel;
 public class ChiTietSanPhamFrm extends javax.swing.JPanel {
 
     private ChiTietSpRepository chiTietSpRepository = new ChiTietSpRepository();
-    private  ChiTietSpServiceImpl chiTietSpServiceImpl = new ChiTietSpServiceImpl();
+    private ChiTietSpServiceImpl chiTietSpServiceImpl = new ChiTietSpServiceImpl();
 
     /**
      * Creates new form ChiTietSanPhamFrm
@@ -119,6 +119,14 @@ public class ChiTietSanPhamFrm extends javax.swing.JPanel {
                 chiTietSanPham.getGia(), chiTietSanPham.getMoTa()};
             model.addRow(row);
         }
+    }
+
+    public void validate() {
+        if (Integer.parseInt(txtSoLuong.getText()) > 0 || Integer.parseInt(txtSoLuong.getText()) == 0) {
+            JOptionPane.showMessageDialog(this, "phai là so hoac va lon hon 0");
+            return;
+        }
+
     }
 
     public ChiTietSanPhamFrm() {
@@ -409,48 +417,58 @@ public class ChiTietSanPhamFrm extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ChiTietSp chiTietSp = new ChiTietSp();
+        try {
+            ChiTietSp chiTietSp = new ChiTietSp();
 
-        int index1 = cboAnh.getSelectedIndex();
-        Anh anh = chiTietSpServiceImpl.getAnh().get(index1);
-        chiTietSp.setAnh(anh);
+            int index1 = cboAnh.getSelectedIndex();
+            Anh anh = chiTietSpServiceImpl.getAnh().get(index1);
+            chiTietSp.setAnh(anh);
 
-        int index2 = cboChatLieu.getSelectedIndex();
-        ChatLieu chatLieu = chiTietSpServiceImpl.getChatLieu().get(index2);
-        chiTietSp.setChatLieu(chatLieu);
+            int index2 = cboChatLieu.getSelectedIndex();
+            ChatLieu chatLieu = chiTietSpServiceImpl.getChatLieu().get(index2);
+            chiTietSp.setChatLieu(chatLieu);
 
-        int index3 = cboDongSp.getSelectedIndex();
-        DongSp sp = chiTietSpServiceImpl.getDongSp().get(index3);
-        chiTietSp.setDongSp(sp);
+            int index3 = cboDongSp.getSelectedIndex();
+            DongSp sp = chiTietSpServiceImpl.getDongSp().get(index3);
+            chiTietSp.setDongSp(sp);
 
-        int index4 = cboSize.getSelectedIndex();
-        Size size = chiTietSpServiceImpl.getSize().get(index4);
-        chiTietSp.setSize(size);
+            int index4 = cboSize.getSelectedIndex();
+            Size size = chiTietSpServiceImpl.getSize().get(index4);
+            chiTietSp.setSize(size);
 
-        int index5 = cboNsx.getSelectedIndex();
-        NSX nsx = chiTietSpServiceImpl.getNsx().get(index5);
-        chiTietSp.setNsx(nsx);
+            int index5 = cboNsx.getSelectedIndex();
+            NSX nsx = chiTietSpServiceImpl.getNsx().get(index5);
+            chiTietSp.setNsx(nsx);
 
-        int index6 = cboMauSac.getSelectedIndex();
-        MauSac ms = chiTietSpServiceImpl.getMauSac().get(index6);
-        chiTietSp.setMauSac(ms);
+            int index6 = cboMauSac.getSelectedIndex();
+            MauSac ms = chiTietSpServiceImpl.getMauSac().get(index6);
+            chiTietSp.setMauSac(ms);
 
 //        int index7 = cboSanPham.getSelectedIndex();
 //        SanPham sp = chiTietSpRepository.getSanPham().get(index7);
 //        chiTietSp.setSanPham(sp);
-        int index7 = cboSanPham.getSelectedIndex();
-        SanPham sanPham = chiTietSpServiceImpl.getSanPham().get(index7);
-        chiTietSp.setSanPham(sanPham);
+            int index7 = cboSanPham.getSelectedIndex();
+            SanPham sanPham = chiTietSpServiceImpl.getSanPham().get(index7);
+            chiTietSp.setSanPham(sanPham);
 
-        chiTietSp.setSoLuongTon(Integer.parseInt(txtSoLuong.getText()));
-        chiTietSp.setGia(Integer.parseInt(txtGia.getText()));
-        chiTietSp.setMoTa(txtMoTa.getText());
+            chiTietSp.setSoLuongTon(Integer.parseInt(txtSoLuong.getText()));
+            chiTietSp.setGia(Integer.parseInt(txtGia.getText()));
+            chiTietSp.setMoTa(txtMoTa.getText());
 
-        if (chiTietSpServiceImpl.add(chiTietSp) == true) {
-            JOptionPane.showMessageDialog(this, "thanh cong");
-            loadTable(chiTietSpRepository.getAll());
-        } else {
-            JOptionPane.showMessageDialog(this, "that cong");
+            if (Integer.parseInt(txtSoLuong.getText()) < 0 || Integer.parseInt(txtSoLuong.getText()) == 0 ) {
+                JOptionPane.showMessageDialog(this, "phai là so hoac va lon hon 0 k dk de trong");
+                return;
+            }
+
+            if (chiTietSpServiceImpl.add(chiTietSp) == true) {
+                JOptionPane.showMessageDialog(this, "thanh cong");
+                loadTable(chiTietSpRepository.getAll());
+            } else {
+                JOptionPane.showMessageDialog(this, "that cong");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
 //        int index1 = cboTenSanPham.getSelectedIndex();

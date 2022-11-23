@@ -14,12 +14,14 @@ import com.poly.it17326.group3.service.ChiTietService;
 
 import com.poly.it17326.group3.domainmodels.ChucVu;
 import com.poly.it17326.group3.domainmodels.DongSp;
+import com.poly.it17326.group3.domainmodels.HoaDon;
 import com.poly.it17326.group3.domainmodels.KhuyenMai;
 import com.poly.it17326.group3.domainmodels.MauSac;
 import com.poly.it17326.group3.domainmodels.NSX;
 import com.poly.it17326.group3.domainmodels.NhanVien;
 import com.poly.it17326.group3.domainmodels.SanPham;
 import com.poly.it17326.group3.domainmodels.Size;
+import com.poly.it17326.group3.domainmodels.TinhTrang;
 //>>>>>>> origin/Dev
 import java.util.Properties;
 import javax.crypto.Mac;
@@ -65,6 +67,10 @@ public class HibernateConfig {
         conf.addAnnotatedClass(MauSac.class);
         conf.addAnnotatedClass(SanPham.class);
         conf.addAnnotatedClass(ChiTietSp.class);
+        conf.addAnnotatedClass(HoaDon.class);
+        conf.addAnnotatedClass(TinhTrang.class);
+//          conf.addAnnotatedClass(.class);
+        
 //>>>>>>> origin/Dev
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
