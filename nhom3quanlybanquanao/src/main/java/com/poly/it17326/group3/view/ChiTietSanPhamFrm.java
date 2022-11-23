@@ -13,6 +13,7 @@ import com.poly.it17326.group3.domainmodels.NSX;
 import com.poly.it17326.group3.domainmodels.SanPham;
 import com.poly.it17326.group3.domainmodels.Size;
 import com.poly.it17326.group3.repository.ChiTietSpRepository;
+import com.poly.it17326.group3.service.impl.ChiTietSpServiceImpl;
 import java.util.ArrayList;
 
 import java.util.List;
@@ -27,6 +28,7 @@ import javax.swing.table.DefaultTableModel;
 public class ChiTietSanPhamFrm extends javax.swing.JPanel {
 
     private ChiTietSpRepository chiTietSpRepository = new ChiTietSpRepository();
+    private  ChiTietSpServiceImpl chiTietSpServiceImpl = new ChiTietSpServiceImpl();
 
     /**
      * Creates new form ChiTietSanPhamFrm
@@ -121,14 +123,14 @@ public class ChiTietSanPhamFrm extends javax.swing.JPanel {
 
     public ChiTietSanPhamFrm() {
         initComponents();
-        loadCboSp(chiTietSpRepository.getSanPham());
-        loadCboAnh(chiTietSpRepository.getAnh());
-        loadChatLieu(chiTietSpRepository.getChatLieu());
-        loadDongSp(chiTietSpRepository.getDongSp());
-        loadSize(chiTietSpRepository.getSize());
-        loadNsx(chiTietSpRepository.getNsx());
-        loadMauSac(chiTietSpRepository.getMauSac());
-        loadTable(chiTietSpRepository.getAll());
+        loadCboSp(chiTietSpServiceImpl.getSanPham());
+        loadCboAnh(chiTietSpServiceImpl.getAnh());
+        loadChatLieu(chiTietSpServiceImpl.getChatLieu());
+        loadDongSp(chiTietSpServiceImpl.getDongSp());
+        loadSize(chiTietSpServiceImpl.getSize());
+        loadNsx(chiTietSpServiceImpl.getNsx());
+        loadMauSac(chiTietSpServiceImpl.getMauSac());
+        loadTable(chiTietSpServiceImpl.getAll());
     }
 
     /**
@@ -410,41 +412,41 @@ public class ChiTietSanPhamFrm extends javax.swing.JPanel {
         ChiTietSp chiTietSp = new ChiTietSp();
 
         int index1 = cboAnh.getSelectedIndex();
-        Anh anh = chiTietSpRepository.getAnh().get(index1);
+        Anh anh = chiTietSpServiceImpl.getAnh().get(index1);
         chiTietSp.setAnh(anh);
 
         int index2 = cboChatLieu.getSelectedIndex();
-        ChatLieu chatLieu = chiTietSpRepository.getChatLieu().get(index2);
+        ChatLieu chatLieu = chiTietSpServiceImpl.getChatLieu().get(index2);
         chiTietSp.setChatLieu(chatLieu);
 
         int index3 = cboDongSp.getSelectedIndex();
-        DongSp sp = chiTietSpRepository.getDongSp().get(index3);
+        DongSp sp = chiTietSpServiceImpl.getDongSp().get(index3);
         chiTietSp.setDongSp(sp);
 
         int index4 = cboSize.getSelectedIndex();
-        Size size = chiTietSpRepository.getSize().get(index4);
+        Size size = chiTietSpServiceImpl.getSize().get(index4);
         chiTietSp.setSize(size);
 
         int index5 = cboNsx.getSelectedIndex();
-        NSX nsx = chiTietSpRepository.getNsx().get(index5);
+        NSX nsx = chiTietSpServiceImpl.getNsx().get(index5);
         chiTietSp.setNsx(nsx);
 
         int index6 = cboMauSac.getSelectedIndex();
-        MauSac ms = chiTietSpRepository.getMauSac().get(index6);
+        MauSac ms = chiTietSpServiceImpl.getMauSac().get(index6);
         chiTietSp.setMauSac(ms);
 
 //        int index7 = cboSanPham.getSelectedIndex();
 //        SanPham sp = chiTietSpRepository.getSanPham().get(index7);
 //        chiTietSp.setSanPham(sp);
         int index7 = cboSanPham.getSelectedIndex();
-        SanPham sanPham = chiTietSpRepository.getSanPham().get(index7);
+        SanPham sanPham = chiTietSpServiceImpl.getSanPham().get(index7);
         chiTietSp.setSanPham(sanPham);
 
         chiTietSp.setSoLuongTon(Integer.parseInt(txtSoLuong.getText()));
         chiTietSp.setGia(Integer.parseInt(txtGia.getText()));
         chiTietSp.setMoTa(txtMoTa.getText());
 
-        if (chiTietSpRepository.add(chiTietSp) == true) {
+        if (chiTietSpServiceImpl.add(chiTietSp) == true) {
             JOptionPane.showMessageDialog(this, "thanh cong");
             loadTable(chiTietSpRepository.getAll());
         } else {
@@ -460,46 +462,46 @@ public class ChiTietSanPhamFrm extends javax.swing.JPanel {
         // TODO add your handling code here:
         int index = tblChiTietSp.getSelectedRow();
 
-        ChiTietSp chiTietSp = chiTietSpRepository.getAll().get(index);
+        ChiTietSp chiTietSp = chiTietSpServiceImpl.getAll().get(index);
 
         int index1 = cboAnh.getSelectedIndex();
-        Anh anh = chiTietSpRepository.getAnh().get(index1);
+        Anh anh = chiTietSpServiceImpl.getAnh().get(index1);
         chiTietSp.setAnh(anh);
 
         int index2 = cboChatLieu.getSelectedIndex();
-        ChatLieu chatLieu = chiTietSpRepository.getChatLieu().get(index2);
+        ChatLieu chatLieu = chiTietSpServiceImpl.getChatLieu().get(index2);
         chiTietSp.setChatLieu(chatLieu);
 
         int index3 = cboDongSp.getSelectedIndex();
-        DongSp sp = chiTietSpRepository.getDongSp().get(index3);
+        DongSp sp = chiTietSpServiceImpl.getDongSp().get(index3);
         chiTietSp.setDongSp(sp);
 
         int index4 = cboSize.getSelectedIndex();
-        Size size = chiTietSpRepository.getSize().get(index4);
+        Size size = chiTietSpServiceImpl.getSize().get(index4);
         chiTietSp.setSize(size);
 
         int index5 = cboNsx.getSelectedIndex();
-        NSX nsx = chiTietSpRepository.getNsx().get(index5);
+        NSX nsx = chiTietSpServiceImpl.getNsx().get(index5);
         chiTietSp.setNsx(nsx);
 
         int index6 = cboMauSac.getSelectedIndex();
-        MauSac ms = chiTietSpRepository.getMauSac().get(index6);
+        MauSac ms = chiTietSpServiceImpl.getMauSac().get(index6);
         chiTietSp.setMauSac(ms);
 
 //        int index7 = cboSanPham.getSelectedIndex();
 //        SanPham sp = chiTietSpRepository.getSanPham().get(index7);
 //        chiTietSp.setSanPham(sp);
         int index7 = cboSanPham.getSelectedIndex();
-        SanPham sanPham = chiTietSpRepository.getSanPham().get(index7);
+        SanPham sanPham = chiTietSpServiceImpl.getSanPham().get(index7);
         chiTietSp.setSanPham(sanPham);
 
         chiTietSp.setSoLuongTon(Integer.parseInt(txtSoLuong.getText()));
         chiTietSp.setGia(Integer.parseInt(txtGia.getText()));
         chiTietSp.setMoTa(txtMoTa.getText());
 
-        if (chiTietSpRepository.update(chiTietSp) == true) {
+        if (chiTietSpServiceImpl.update(chiTietSp) == true) {
             JOptionPane.showMessageDialog(this, "thanh cong");
-            loadTable(chiTietSpRepository.getAll());
+            loadTable(chiTietSpServiceImpl.getAll());
         } else {
             JOptionPane.showMessageDialog(this, "that cong");
         }
@@ -508,10 +510,10 @@ public class ChiTietSanPhamFrm extends javax.swing.JPanel {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         int index = tblChiTietSp.getSelectedRow();
-        ChiTietSp chiTietSp = chiTietSpRepository.getAll().get(index);
-        if (chiTietSpRepository.delete(chiTietSp) == true) {
+        ChiTietSp chiTietSp = chiTietSpServiceImpl.getAll().get(index);
+        if (chiTietSpServiceImpl.delete(chiTietSp) == true) {
             JOptionPane.showMessageDialog(this, " xoa thanh cong");
-            loadTable(chiTietSpRepository.getAll());
+            loadTable(chiTietSpServiceImpl.getAll());
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
