@@ -10,7 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,23 +18,24 @@ import lombok.ToString;
 
 /**
  *
- * @author ADMIN
- */
-@Entity
-@Table
-@Setter
-@Getter
-@ToString
-@AllArgsConstructor
-@NoArgsConstructor
-public class Size {
 
+ * @author doand
+ */
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
+@Entity
+public class Size {
     @Id
-    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Column(name = "id")
+
     private Integer id;
 
-    @Column(name = "TEN")
+    @Column(name = "ten")
     private String ten;
 
 }

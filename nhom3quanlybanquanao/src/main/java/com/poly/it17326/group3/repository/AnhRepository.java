@@ -5,47 +5,40 @@
 package com.poly.it17326.group3.repository;
 
 import com.poly.it17326.group3.config.HibernateConfig;
-
-import com.poly.it17326.group3.response.SanPhamReponse;
-
-import com.poly.it17326.group3.domainmodels.SanPham;
+import com.poly.it17326.group3.response.AnhReponse;
+import com.poly.it17326.group3.domainmodels.Anh;
 import java.util.List;
 import javax.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-
-
-
-
 /**
  *
  * @author doand
  */
-public class SanPhamRepository {
-
+public class AnhRepository {
 
     private Session session = HibernateConfig.getFACTORY().openSession();
-    private String fromTable = "From SanPham";
+    private String fromTable = "From Anh";
 
-    public List<SanPham> getAll() {
+    public List<Anh> getAll() {
         Query query = session.createQuery(fromTable);
         return query.getResultList();
     }
 
-    public SanPham getOne(int id) {
+    public Anh getOne(int id) {
         String sql = fromTable + "Where id = :id";
-        Query query = session.createQuery(sql, SanPham.class);
+        Query query = session.createQuery(sql, Anh.class);
         query.setParameter("id", id);
-        return (SanPham) query.getSingleResult();
+        return (Anh) query.getSingleResult();
     }
 
-    public Boolean add(SanPham sanPham) {
+    public Boolean add(Anh Anh) {
         Transaction transaction = null;
         try ( Session session = HibernateConfig.getFACTORY().openSession();) {
 
             transaction = session.beginTransaction();
-            session.save(sanPham);
+            session.save(Anh);
             transaction.commit();
             return true;
 
@@ -55,14 +48,14 @@ public class SanPhamRepository {
         return null;
     }
 
-    public Boolean update(SanPham sanPham) {
+    public Boolean update(Anh Anh) {
         Transaction transaction = null;
         try ( Session session = HibernateConfig.getFACTORY().openSession();) {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("UPDATE  SanPham\n"
+            Query query = session.createQuery("UPDATE  Anh\n"
                     + "SET   Ten = :ten" + " Where id = :id");
-            query.setParameter("ten",sanPham.getTen());
-            query.setParameter("id",sanPham.getId());
+            query.setParameter("ten",Anh.getTen());
+            query.setParameter("id",Anh.getId());
             query.executeUpdate();
             transaction.commit();
 
@@ -75,14 +68,13 @@ public class SanPhamRepository {
      
     }
 
-    public Boolean Delete(SanPham sanPham) {
+    public Boolean Delete(Anh Anh) {
         Transaction transaction = null;
         try ( Session session = HibernateConfig.getFACTORY().openSession();) {
             transaction = session.beginTransaction();
-            session.delete(sanPham);
+            session.delete(Anh);
             transaction.commit();
             return true;
-
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -91,9 +83,9 @@ public class SanPhamRepository {
     }
 
     public static void main(String[] args) {
-        List<SanPham> list = new SanPhamRepository().getAll();
-        for (SanPham sanPham : list) {
-            System.out.println(sanPham.toString());
+        List<Anh> list = new AnhRepository().getAll();
+        for (Anh Anh : list) {
+            System.out.println(Anh.toString());
         }
     }
 }
