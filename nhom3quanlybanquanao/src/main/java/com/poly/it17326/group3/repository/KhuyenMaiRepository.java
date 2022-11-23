@@ -37,17 +37,17 @@ public class KhuyenMaiRepository {
         return false;
     }
     
-    public Boolean update(KhuyenMai km) {
+     public Boolean update(KhuyenMai khuyenMai){
         Transaction transaction = null;
-        try ( Session ss = HibernateConfig.getFACTORY().openSession()) {
-            transaction.begin();
-            ss.saveOrUpdate(km);
+        try (Session session = HibernateConfig.getFACTORY().openSession()){
+            transaction = session.beginTransaction();
+            session.saveOrUpdate(khuyenMai);
             transaction.commit();
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }
-        return false;
+        return null;
     }
     
     public Boolean delete(KhuyenMai km) {
@@ -63,8 +63,10 @@ public class KhuyenMaiRepository {
         return false;
     }
 
+
     public static void main(String[] args) {
         new KhuyenMaiRepository().save(new KhuyenMai(4, "Giam gia ngay 9-3", 30, null, null));
         System.out.println(new KhuyenMaiRepository().getAll().toString());
     }
+
 }
