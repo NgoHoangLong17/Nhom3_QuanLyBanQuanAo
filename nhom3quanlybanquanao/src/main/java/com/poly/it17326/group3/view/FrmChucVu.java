@@ -15,13 +15,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author user
  */
-public class ChucVuPanel extends javax.swing.JPanel {
+public class FrmChucVu extends javax.swing.JPanel {
     
     private DefaultTableModel defaultTableModel;
     private ViewChucVuService viewChucVuService = new ViewChucVuServiceImpl();
     
     
-    public ChucVuPanel() {
+    public FrmChucVu() {
         initComponents();
         loadTable((ArrayList<ChucVu>) viewChucVuService.getChucVu());
     }

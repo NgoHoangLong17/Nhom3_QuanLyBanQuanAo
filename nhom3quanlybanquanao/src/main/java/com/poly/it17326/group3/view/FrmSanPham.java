@@ -15,14 +15,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ADMIN
  */
-public class SanPhamView extends javax.swing.JPanel {
+public class FrmSanPham extends javax.swing.JPanel {
     
     private SanPhamServiceImpl SanPhamServiceImpl = new SanPhamServiceImpl();
     private SanPhamRepository SanPhamRepository = new SanPhamRepository();
     /**
      * Creates new form SanPhamView
      */
-    public SanPhamView() {
+    public FrmSanPham() {
         initComponents();
         loadDataSp(SanPhamRepository.getAll());
     }

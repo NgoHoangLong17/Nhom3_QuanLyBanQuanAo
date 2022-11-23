@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author user
  */
-public class NhanVienPanel extends javax.swing.JPanel {
+public class FrmNhanVien extends javax.swing.JPanel {
 
     private DefaultTableModel defaultTableModel;
     private ViewNhanVienService viewNhanVienService = new ViewNhanVienServiceImpl();
@@ -30,7 +30,7 @@ public class NhanVienPanel extends javax.swing.JPanel {
     /**
      * Creates new form NhanVienPanel
      */
-    public NhanVienPanel() {
+    public FrmNhanVien() {
         initComponents();
         LoadTable((ArrayList<NhanVien>) viewNhanVienService.getNhanVien());
         loadCbo();
