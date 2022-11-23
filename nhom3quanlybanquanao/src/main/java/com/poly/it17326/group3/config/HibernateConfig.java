@@ -8,7 +8,7 @@ import com.poly.it17326.group3.domainmodels.Anh;
 import com.poly.it17326.group3.domainmodels.ChatLieu;
 import com.poly.it17326.group3.domainmodels.ChiTietSp;
 import com.poly.it17326.group3.domainmodels.DongSp;
-import com.poly.it17326.group3.domainmodels.KhuyenMai;
+;
 import com.poly.it17326.group3.domainmodels.MauSac;
 import com.poly.it17326.group3.domainmodels.NSX;
 import com.poly.it17326.group3.domainmodels.SanPham;
