@@ -15,7 +15,7 @@ public class FrmLogin extends javax.swing.JFrame {
      */
     public FrmLogin() {
         initComponents();
-        
+
     }
 
     public Boolean checkLogin(String taiKhoan, String matKhau) {
@@ -24,9 +24,11 @@ public class FrmLogin extends javax.swing.JFrame {
         }
         return false;
     }
+
     public static void main(String[] args) {
-        new  FrmLogin().setVisible(true);
+        new FrmLogin().setVisible(true);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -247,9 +249,10 @@ public class FrmLogin extends javax.swing.JFrame {
 
     private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
         // TODO add your handling code here:
-        if(checkLogin(null, null)){
-            FrmHome frmHome = new FrmHome();
-            frmHome.setVisible(true);
+        if (checkLogin(null, null)) {
+            mainJFrame mainFrame = new mainJFrame();
+            mainFrame.setExtendedState(mainFrame.MAXIMIZED_BOTH);
+            mainFrame.setVisible(true);
             this.dispose();
         }
     }//GEN-LAST:event_btnDangNhapActionPerformed
