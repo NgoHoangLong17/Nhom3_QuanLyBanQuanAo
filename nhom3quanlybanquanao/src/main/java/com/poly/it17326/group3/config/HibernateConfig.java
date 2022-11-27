@@ -52,11 +52,7 @@ public class HibernateConfig {
         properties.put(Environment.SHOW_SQL, "true");
         conf.setProperties(properties);
         conf.addAnnotatedClass(SanPham.class);
-//<<<<<<< HEAD
-//        conf.addAnnotatedClass(ChatLieu.class);
 
-//        conf.addAnnotatedClass(ChiTietSp.class);
-//=======
         conf.addAnnotatedClass(Anh.class);
         conf.addAnnotatedClass(DongSp.class);
         conf.addAnnotatedClass(KhuyenMai.class);
@@ -73,11 +69,10 @@ public class HibernateConfig {
         conf.addAnnotatedClass(HoaDon.class);
         conf.addAnnotatedClass(HoaDonChiTiet.class);
 
-//>>>>>>> origin/Dev
+
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
         FACTORY = conf.buildSessionFactory(registry);
-
     }
 
     public static SessionFactory getFACTORY() {

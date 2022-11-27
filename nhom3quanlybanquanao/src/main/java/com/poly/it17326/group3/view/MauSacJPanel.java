@@ -15,14 +15,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ADMIN
  */
-public class FrmMauSac extends javax.swing.JPanel {
+public class MauSacJPanel extends javax.swing.JPanel {
     private MauSacService mauSacService = new MauSacServiceImpl();
     private DefaultTableModel defaultTableModel;
     
     /**
      * Creates new form FrmMauSac
      */
-    public FrmMauSac() {
+    public MauSacJPanel() {
         initComponents();
         loadData(mauSacService.getAll());
     }

@@ -18,7 +18,7 @@ import org.springframework.data.jpa.provider.HibernateUtils;
  *
  * @author ADMIN
  */
-public class FrmPanelSize extends javax.swing.JPanel {
+public class SizeJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelSize
@@ -26,7 +26,7 @@ public class FrmPanelSize extends javax.swing.JPanel {
     private  ViewSizeService sizeService = new SizeServiceImpl();
     
     private  DefaultTableModel defaultTableModel;
-    public FrmPanelSize() {
+    public SizeJPanel() {
         initComponents();
         loaddata(sizeService.getAll());
         

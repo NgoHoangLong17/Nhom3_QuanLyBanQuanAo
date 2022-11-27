@@ -10,13 +10,13 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
-public class FrmKhuyenMai extends javax.swing.JPanel {
+public class KhuyenMaiJPanel extends javax.swing.JPanel {
 
     private DefaultTableModel model;
     private ViewKhuyenMaiService khuyenMaiService = new KhuyenMaiServiceImpl();
     private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     
-    public FrmKhuyenMai() {
+    public KhuyenMaiJPanel() {
         initComponents();
         loadData(khuyenMaiService.getAll());
         txtId.disable();

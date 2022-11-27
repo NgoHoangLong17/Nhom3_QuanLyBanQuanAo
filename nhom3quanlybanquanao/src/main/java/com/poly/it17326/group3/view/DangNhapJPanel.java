@@ -8,12 +8,12 @@ package com.poly.it17326.group3.view;
  *
  * @author longnh203
  */
-public class FrmLogin extends javax.swing.JFrame {
+public class DangNhapJPanel extends javax.swing.JFrame {
 
     /**
      * Creates new form FrmLogin
      */
-    public FrmLogin() {
+    public DangNhapJPanel() {
         initComponents();
         
     }
@@ -23,6 +23,10 @@ public class FrmLogin extends javax.swing.JFrame {
             return true;
         }
         return false;
+    }
+
+    public static void main(String[] args) {
+        new DangNhapJPanel().setVisible(true);
     }
 
     /**
@@ -245,9 +249,27 @@ public class FrmLogin extends javax.swing.JFrame {
 
     private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
         // TODO add your handling code here:
-        if(checkLogin(null, null)){
-            FrmHome frmHome = new FrmHome();
-            frmHome.setVisible(true);
+        if (checkLogin(null, null)) {
+            MainJFrame mainFrame = new MainJFrame();
+            try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+            
+            mainFrame.setExtendedState(mainFrame.MAXIMIZED_BOTH);
+            mainFrame.setVisible(true);
             this.dispose();
         }
     }//GEN-LAST:event_btnDangNhapActionPerformed
