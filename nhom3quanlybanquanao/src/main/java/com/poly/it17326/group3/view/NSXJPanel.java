@@ -19,14 +19,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ADMIN
  */
-public class FrmPanelNSX extends javax.swing.JPanel {
+public class NSXJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelNSX
      */
     private DefaultTableModel defaultTableModel;
     private ViewNSXService nSXService = new NSXSeviceImpl();
-    public FrmPanelNSX() {
+    public NSXJPanel() {
         initComponents();
         loaddata(nSXService.getNSX());
     }

@@ -4,21 +4,23 @@
  */
 package com.poly.it17326.group3.view;
 
+import com.poly.it17326.group3.domainmodels.KhuyenMai;
 import java.util.Calendar;
+import javax.swing.JFileChooser;
 import javax.swing.JPanel;
 
 /**
  *
  * @author longnh203
  */
-public class mainJFrame extends javax.swing.JFrame {
+public class MainJFrame extends javax.swing.JFrame {
 
     private JPanel jpanel;
 
     /**
      * Creates new form mainJFrame
      */
-    public mainJFrame() {
+    public MainJFrame() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         dongHo();
@@ -114,7 +116,7 @@ public class mainJFrame extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setText("Giao ca");
 
-        lblThoat.setText("thoát");
+        lblThoat.setIcon(new javax.swing.ImageIcon("C:\\Data\\Nhom3_QuanLyBanQuanAo\\nhom3quanlybanquanao\\src\\main\\resources\\com\\poly\\it17326\\group3\\icon\\icons8-macos-close-30.png")); // NOI18N
         lblThoat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblThoat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -122,7 +124,13 @@ public class mainJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("ẩn");
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Data\\Nhom3_QuanLyBanQuanAo\\nhom3quanlybanquanao\\src\\main\\resources\\com\\poly\\it17326\\group3\\icon\\icons8-macos-minimize-30.png")); // NOI18N
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 0));
@@ -142,10 +150,10 @@ public class mainJFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                .addGap(12, 12, 12)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblThoat)
                 .addContainerGap())
         );
@@ -155,15 +163,15 @@ public class mainJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblDongHo, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                        .addComponent(lblDongHo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1)
                         .addComponent(jButton2)
                         .addComponent(jLabel5))
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblThoat)
-                            .addComponent(jLabel4))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(lblThoat))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -178,6 +186,11 @@ public class mainJFrame extends javax.swing.JFrame {
         jLabel6.setText("Quản lý giao ca");
 
         jLabel7.setText("Quản lý khuyến mại");
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
 
         jLabel8.setText("Thống kê");
 
@@ -266,13 +279,23 @@ public class mainJFrame extends javax.swing.JFrame {
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
-        showPanel(new FrmChatLieu());
+        showPanel(new ChatLieuJPanel());
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         showPanel(new BanHangJPanel());
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+        setState(this.ICONIFIED);
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        // TODO add your handling code here:
+        showPanel(new KhuyenMaiJPanel());
+    }//GEN-LAST:event_jLabel7MouseClicked
     
     /**
      * @param args the command line arguments
@@ -291,20 +314,21 @@ public class mainJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new mainJFrame().setVisible(true);
+                new MainJFrame().setVisible(true);
             }
         });
     }

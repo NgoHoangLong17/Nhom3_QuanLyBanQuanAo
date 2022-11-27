@@ -4,7 +4,7 @@
  */
 package com.poly.it17326.group3.application;
 
-import com.poly.it17326.group3.view.FrmLogin;
+import com.poly.it17326.group3.view.DangNhapJPanel;
 
 /**
  *
@@ -12,7 +12,7 @@ import com.poly.it17326.group3.view.FrmLogin;
  */
 public class Application {
     public static void main(String[] args) {
-        FrmLogin lg  =new FrmLogin();
+        DangNhapJPanel lg  =new DangNhapJPanel();
         lg.setVisible(true);
     }
 }
