@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author ADMIN
+ * @author ADMINn
  */
 public class SanPhamJPanel extends javax.swing.JPanel {
     
