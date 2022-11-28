@@ -28,10 +28,10 @@ public class Test extends javax.swing.JFrame {
 //        FrmDongSp dongSp = new FrmDongSp();
 
 //    FrmHoaDonChiTiet fnv = new FrmHoaDonChiTiet();
-        FrmKhuyenMai fkm = new FrmKhuyenMai();
-        tesst.removeAll();
-        tesst.add(fkm);
-        tesst.validate();
+//        FrmKhuyenMai fkm = new FrmKhuyenMai();
+//        tesst.removeAll();
+//        tesst.add(fkm);
+//        tesst.validate();
     }
 
     /**

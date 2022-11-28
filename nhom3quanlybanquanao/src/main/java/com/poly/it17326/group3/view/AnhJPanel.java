@@ -15,14 +15,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ADMIN
  */
-public class FrmAnh extends javax.swing.JPanel {
+public class AnhJPanel extends javax.swing.JPanel {
     
     private AnhServiceImpl AnhServiceImpl = new AnhServiceImpl();
     private AnhRepository AnhRepository = new AnhRepository();
     /**
      * Creates new form AnhView
      */
-    public FrmAnh() {
+    public AnhJPanel() {
         initComponents();
         loadDataSp(AnhRepository.getAll());
     }

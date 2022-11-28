@@ -4,23 +4,27 @@
  */
 package com.poly.it17326.group3.Application;
 
-import com.poly.it17326.group3.view.FrmLogin;
+//import com.poly.it17326.group3.view.FrmLogin;
 
-import com.poly.it17326.group3.view.FrmLogin;
+import com.poly.it17326.group3.view.DangNhapJPanel;
 
 /**
  *
  * @author longnh203
  */
-public class application {
 //<<<<<<< HEAD
-//
-//    public static void main(String[] args) {
-//        FrmLogin f = new FrmLogin();
-//        f.setVisible(true);
+//public class application {
+////<<<<<<< HEAD
+////
+////    public static void main(String[] args) {
+////        FrmLogin f = new FrmLogin();
+////        f.setVisible(true);
+////=======
 //=======
+public class Application {
+//>>>>>>> origin/Dev
     public static void main(String[] args) {
-        FrmLogin lg  =new FrmLogin();
+        DangNhapJPanel lg  =new DangNhapJPanel();
         lg.setVisible(true);
 //>>>>>>> origin/Dev
     }

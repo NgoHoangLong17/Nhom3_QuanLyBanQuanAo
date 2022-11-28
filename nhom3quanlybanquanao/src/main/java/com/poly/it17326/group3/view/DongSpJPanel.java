@@ -15,13 +15,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ADMIN
  */
-public class FrmDongSp extends javax.swing.JPanel {
+public class DongSpJPanel extends javax.swing.JPanel {
    private  DongSpService dongSpService = new DongSpServiceImpl();
    private DefaultTableModel defaultTableModel;
     /**
      * Creates new form FrmDongSp
      */
-    public FrmDongSp() {
+    public DongSpJPanel() {
         initComponents();
         loadData(dongSpService.getAll());
     }
