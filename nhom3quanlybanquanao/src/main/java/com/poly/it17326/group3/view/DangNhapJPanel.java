@@ -6,7 +6,7 @@ package com.poly.it17326.group3.view;
 
 /**
  *
- * @author longnh203
+ * @author longnh203 Khánh
  */
 public class DangNhapJPanel extends javax.swing.JFrame {
 
