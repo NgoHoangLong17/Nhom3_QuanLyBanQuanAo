@@ -9,10 +9,7 @@ import java.util.Calendar;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
 
-/**
- *
- * @author longnh203 khanh
- */
+
 public class MainJFrame extends javax.swing.JFrame {
 
     private JPanel jpanel;
