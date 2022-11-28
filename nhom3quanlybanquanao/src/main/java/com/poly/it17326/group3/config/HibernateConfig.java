@@ -6,12 +6,26 @@ package com.poly.it17326.group3.config;
 
 import com.poly.it17326.group3.domainmodels.Anh;
 import com.poly.it17326.group3.domainmodels.ChatLieu;
+import com.poly.it17326.group3.domainmodels.ChiTietSanPham;
+
+import com.poly.it17326.group3.domainmodels.ChiTietSp;
+
+import com.poly.it17326.group3.service.ChiTietService;
+
 import com.poly.it17326.group3.domainmodels.ChucVu;
 import com.poly.it17326.group3.domainmodels.DongSp;
+import com.poly.it17326.group3.domainmodels.HoaDon;
+import com.poly.it17326.group3.domainmodels.HoaDonChiTiet;
 import com.poly.it17326.group3.domainmodels.KhuyenMai;
+import com.poly.it17326.group3.domainmodels.MauSac;
+import com.poly.it17326.group3.domainmodels.NSX;
 import com.poly.it17326.group3.domainmodels.NhanVien;
 import com.poly.it17326.group3.domainmodels.SanPham;
+import com.poly.it17326.group3.domainmodels.Size;
+import com.poly.it17326.group3.domainmodels.TinhTrang;
+//>>>>>>> origin/Dev
 import java.util.Properties;
+import javax.crypto.Mac;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -38,12 +52,24 @@ public class HibernateConfig {
         properties.put(Environment.SHOW_SQL, "true");
         conf.setProperties(properties);
         conf.addAnnotatedClass(SanPham.class);
+
         conf.addAnnotatedClass(Anh.class);
         conf.addAnnotatedClass(DongSp.class);
         conf.addAnnotatedClass(KhuyenMai.class);
         conf.addAnnotatedClass(ChatLieu.class);
         conf.addAnnotatedClass(ChucVu.class);
         conf.addAnnotatedClass(NhanVien.class);
+        conf.addAnnotatedClass(Size.class);
+        conf.addAnnotatedClass(NSX.class);
+        conf.addAnnotatedClass(MauSac.class);
+        conf.addAnnotatedClass(SanPham.class);
+        conf.addAnnotatedClass(ChiTietSp.class);
+        conf.addAnnotatedClass(HoaDon.class);
+        conf.addAnnotatedClass(TinhTrang.class);
+        conf.addAnnotatedClass(HoaDon.class);
+        conf.addAnnotatedClass(HoaDonChiTiet.class);
+
+
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
         FACTORY = conf.buildSessionFactory(registry);

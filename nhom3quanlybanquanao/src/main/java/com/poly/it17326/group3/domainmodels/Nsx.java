@@ -20,13 +20,14 @@ import lombok.ToString;
  *
  * @author ADMIN
  */
-@Entity
+
 @Table
 @Setter
 @Getter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class NSX {
     
     @Id
