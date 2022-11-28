@@ -13,14 +13,14 @@ import javax.swing.JPanel;
  *
  * @author longnh203
  */
-public class mainJFrame extends javax.swing.JFrame {
+public class MainJFrame extends javax.swing.JFrame {
 
     private JPanel jpanel;
 
     /**
      * Creates new form mainJFrame
      */
-    public mainJFrame() {
+    public MainJFrame() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         dongHo();
@@ -116,7 +116,6 @@ public class mainJFrame extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setText("Giao ca");
 
-        lblThoat.setIcon(new javax.swing.ImageIcon("C:\\Data\\Nhom3_QuanLyBanQuanAo\\nhom3quanlybanquanao\\src\\main\\resources\\com\\poly\\it17326\\group3\\icon\\icons8-macos-close-30.png")); // NOI18N
         lblThoat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblThoat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -124,7 +123,6 @@ public class mainJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Data\\Nhom3_QuanLyBanQuanAo\\nhom3quanlybanquanao\\src\\main\\resources\\com\\poly\\it17326\\group3\\icon\\icons8-macos-minimize-30.png")); // NOI18N
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -314,14 +312,16 @@ public class mainJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
@@ -329,7 +329,7 @@ public class mainJFrame extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new mainJFrame().setVisible(true);
+                new MainJFrame().setVisible(true);
             }
         });
     }
