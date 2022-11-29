@@ -4,7 +4,7 @@
  */
 package com.poly.it17326.group3.response;
 
-import com.poly.it17326.group3.domainmodels.NSX;
+import com.poly.it17326.group3.domainmodels.Nsx;
 
 /**
  *
@@ -17,7 +17,7 @@ public class ViewNSXReponse {
     public ViewNSXReponse() {
     }
 
-    public ViewNSXReponse(NSX nsx) {
+    public ViewNSXReponse(Nsx nsx) {
         this.ID = nsx.getId();
         this.TEN = nsx.getTen();
     }

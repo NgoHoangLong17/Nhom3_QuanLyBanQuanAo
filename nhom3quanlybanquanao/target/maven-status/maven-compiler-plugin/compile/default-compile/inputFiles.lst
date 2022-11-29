@@ -7,7 +7,7 @@ C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it1732
 C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it17326\group3\domainmodels\ChiTietSanPham.java
 C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it17326\group3\repository\SizeRepository.java
 C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it17326\group3\domainmodels\MauSac.java
-C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it17326\group3\domainmodels\Nsx.java
+C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it17326\group3\domainmodels\NSX.java
 C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it17326\group3\service\ViewNSXService.java
 C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it17326\group3\view\ChucVuJPanel.java
 C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it17326\group3\repository\ChatLieuRepository.java
@@ -29,8 +29,8 @@ C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it1732
 C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it17326\group3\view\SanPhamJPanel.java
 C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it17326\group3\view\AnhJPanel.java
 C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it17326\group3\domainmodels\ChucVu.java
-C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it17326\group3\view\mainJFrame.java
-C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it17326\group3\application\application.java
+C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it17326\group3\view\MainJFrame.java
+C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it17326\group3\application\Application.java
 C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it17326\group3\response\ViewChucVuResponse.java
 C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it17326\group3\domainmodels\SanPham.java
 C:\Data\Nhom3_QuanLyBanQuanAo\nhom3quanlybanquanao\src\main\java\com\poly\it17326\group3\service\impl\MauSacServiceImpl.java
