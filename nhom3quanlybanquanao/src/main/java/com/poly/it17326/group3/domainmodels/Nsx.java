@@ -4,6 +4,7 @@
  */
 package com.poly.it17326.group3.domainmodels;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,13 +22,13 @@ import lombok.ToString;
  * @author ADMIN
  */
 @Entity
-@Table
+@Table(name = "NSX")
 @Setter
 @Getter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class NSX {
+public class NSX implements Serializable{
     
     @Id
     @Column(name = "ID")
