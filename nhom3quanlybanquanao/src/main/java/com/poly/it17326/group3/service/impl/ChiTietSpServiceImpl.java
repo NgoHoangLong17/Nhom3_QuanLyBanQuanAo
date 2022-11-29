@@ -9,7 +9,7 @@ import com.poly.it17326.group3.domainmodels.ChatLieu;
 import com.poly.it17326.group3.domainmodels.ChiTietSp;
 import com.poly.it17326.group3.domainmodels.DongSp;
 import com.poly.it17326.group3.domainmodels.MauSac;
-import com.poly.it17326.group3.domainmodels.NSX;
+import com.poly.it17326.group3.domainmodels.Nsx;
 import com.poly.it17326.group3.domainmodels.SanPham;
 import com.poly.it17326.group3.domainmodels.Size;
 import com.poly.it17326.group3.repository.ChiTietSpRepository;
@@ -61,7 +61,7 @@ private  ChiTietSpRepository chiTietSpRepository = new ChiTietSpRepository();
     }
 
     @Override
-    public List<NSX> getNsx() {
+    public List<Nsx> getNsx() {
        // throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
    return chiTietSpRepository.getNsx();
            

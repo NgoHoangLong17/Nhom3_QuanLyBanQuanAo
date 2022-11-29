@@ -9,7 +9,7 @@ import com.poly.it17326.group3.domainmodels.ChatLieu;
 import com.poly.it17326.group3.domainmodels.ChiTietSp;
 import com.poly.it17326.group3.domainmodels.DongSp;
 import com.poly.it17326.group3.domainmodels.MauSac;
-import com.poly.it17326.group3.domainmodels.NSX;
+import com.poly.it17326.group3.domainmodels.Nsx;
 import com.poly.it17326.group3.domainmodels.SanPham;
 import com.poly.it17326.group3.domainmodels.Size;
 import com.poly.it17326.group3.repository.ChiTietSpRepository;
@@ -75,9 +75,9 @@ public class ChiTietSanPhamFrm extends javax.swing.JPanel {
         cboSize.setModel(row);
     }
 
-    public void loadNsx(List<NSX> list) {
+    public void loadNsx(List<Nsx> list) {
         DefaultComboBoxModel row = new DefaultComboBoxModel();
-        for (NSX nsx : list) {
+        for (Nsx nsx : list) {
             row.addElement(nsx.getTen());
         }
         cboNsx.setModel(row);
@@ -442,7 +442,7 @@ public class ChiTietSanPhamFrm extends javax.swing.JPanel {
             chiTietSp.setSize(size);
 
             int index5 = cboNsx.getSelectedIndex();
-            NSX nsx = chiTietSpServiceImpl.getNsx().get(index5);
+            Nsx nsx = chiTietSpServiceImpl.getNsx().get(index5);
             chiTietSp.setNsx(nsx);
 
             int index6 = cboMauSac.getSelectedIndex();
@@ -504,7 +504,7 @@ public class ChiTietSanPhamFrm extends javax.swing.JPanel {
         chiTietSp.setSize(size);
 
         int index5 = cboNsx.getSelectedIndex();
-        NSX nsx = chiTietSpServiceImpl.getNsx().get(index5);
+        Nsx nsx = (Nsx) chiTietSpServiceImpl.getNsx().get(index5);
         chiTietSp.setNsx(nsx);
 
         int index6 = cboMauSac.getSelectedIndex();

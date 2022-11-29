@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.poly.it17326.group3.domainmodels;
 
 import javax.persistence.Column;
@@ -60,7 +57,7 @@ public class ChiTietSp {
 //    int idSize;
     @ManyToOne
     @JoinColumn(name = "idNsx", referencedColumnName = "id")
-    private NSX nsx;
+    private Nsx nsx;
 //    int nsx;
 
     @OneToOne
