@@ -53,6 +53,7 @@ public class HibernateConfig {
         conf.setProperties(properties);
         conf.addAnnotatedClass(SanPham.class);
 //<<<<<<< HEAD
+//<<<<<<< HEAD
 ////<<<<<<< HEAD
         conf.addAnnotatedClass(ChatLieu.class);
 
@@ -60,6 +61,9 @@ public class HibernateConfig {
 ////=======
 //=======
 //>>>>>>> origin/Dev
+//=======
+//
+//>>>>>>> 99e51649fd00ae13bd9bbbe45bca1b1c92d444a1
         conf.addAnnotatedClass(Anh.class);
         conf.addAnnotatedClass(DongSp.class);
         conf.addAnnotatedClass(KhuyenMai.class);
@@ -67,6 +71,9 @@ public class HibernateConfig {
         conf.addAnnotatedClass(ChucVu.class);
         conf.addAnnotatedClass(NhanVien.class);
 //<<<<<<< HEAD
+////<<<<<<< HEAD
+//=======
+//>>>>>>> 99e51649fd00ae13bd9bbbe45bca1b1c92d444a1
         conf.addAnnotatedClass(Size.class);
         conf.addAnnotatedClass(NSX.class);
         conf.addAnnotatedClass(MauSac.class);
@@ -77,9 +84,13 @@ public class HibernateConfig {
         conf.addAnnotatedClass(HoaDon.class);
         conf.addAnnotatedClass(HoaDonChiTiet.class);
 
-//>>>>>>> origin/Dev
+//<<<<<<< HEAD
+////>>>>>>> origin/Dev
+////=======
+////>>>>>>> origin/Dev
 //=======
-//>>>>>>> origin/Dev
+//
+//>>>>>>> 99e51649fd00ae13bd9bbbe45bca1b1c92d444a1
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
         FACTORY = conf.buildSessionFactory(registry);
