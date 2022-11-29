@@ -156,12 +156,10 @@ public class DangNhapJPanel extends javax.swing.JFrame {
         jPanel1.add(jLabel7);
         jLabel7.setBounds(241, 270, 102, 20);
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\longnh203\\OneDrive\\Máy tính\\DA1\\Nhom3_QuanLyBanQuanAo\\Nhom3_QuanLyBanQuanAo\\nhom3quanlybanquanao\\src\\main\\resources\\com\\poly\\it17326\\group3\\icon\\icons8-user-24 (2).png")); // NOI18N
         jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(320, 150, 24, 24);
+        jLabel9.setBounds(320, 150, 0, 0);
 
-        invisible.setIcon(new javax.swing.ImageIcon("C:\\Users\\longnh203\\OneDrive\\Máy tính\\DA1\\Nhom3_QuanLyBanQuanAo\\Nhom3_QuanLyBanQuanAo\\nhom3quanlybanquanao\\src\\main\\resources\\com\\poly\\it17326\\group3\\icon\\icons8-invisible-24.png")); // NOI18N
         invisible.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         invisible.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -169,7 +167,7 @@ public class DangNhapJPanel extends javax.swing.JFrame {
             }
         });
         jPanel1.add(invisible);
-        invisible.setBounds(320, 230, 24, 24);
+        invisible.setBounds(320, 230, 0, 0);
 
         btnDangNhap.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnDangNhap.setForeground(new java.awt.Color(51, 153, 255));
@@ -195,7 +193,6 @@ public class DangNhapJPanel extends javax.swing.JFrame {
         jPanel1.add(jLabel8);
         jLabel8.setBounds(360, 0, 20, 32);
 
-        show.setIcon(new javax.swing.ImageIcon("C:\\Users\\longnh203\\OneDrive\\Máy tính\\DA1\\Nhom3_QuanLyBanQuanAo\\Nhom3_QuanLyBanQuanAo\\nhom3quanlybanquanao\\src\\main\\resources\\com\\poly\\it17326\\group3\\icon\\icons8-eye-24 (1).png")); // NOI18N
         show.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         show.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -203,7 +200,7 @@ public class DangNhapJPanel extends javax.swing.JFrame {
             }
         });
         jPanel1.add(show);
-        show.setBounds(320, 230, 24, 24);
+        show.setBounds(320, 230, 0, 0);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -250,7 +247,7 @@ public class DangNhapJPanel extends javax.swing.JFrame {
     private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
         // TODO add your handling code here:
         if (checkLogin(null, null)) {
-            MainJFrame mainFrame = new MainJFrame();
+            mainJFrame mainFrame = new mainJFrame();
             try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -259,13 +256,13 @@ public class DangNhapJPanel extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
             
             mainFrame.setExtendedState(mainFrame.MAXIMIZED_BOTH);
