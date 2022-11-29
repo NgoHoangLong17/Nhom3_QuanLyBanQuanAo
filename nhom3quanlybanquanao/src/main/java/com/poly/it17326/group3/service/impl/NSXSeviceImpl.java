@@ -4,7 +4,7 @@
  */
 package com.poly.it17326.group3.service.impl;
 
-import com.poly.it17326.group3.domainmodels.NSX;
+import com.poly.it17326.group3.domainmodels.Nsx;
 import com.poly.it17326.group3.repository.NSXRepositpry;
 import com.poly.it17326.group3.response.ViewNSXReponse;
 import com.poly.it17326.group3.service.ViewNSXService;
@@ -25,17 +25,17 @@ public class NSXSeviceImpl implements ViewNSXService{
     }
 
     @Override
-    public Boolean save(NSX nsx) {
+    public Boolean save(Nsx nsx) {
         return nSXRepositpry.add(nsx);
     }
 
     @Override
-    public Boolean update(NSX nsx) {
+    public Boolean update(Nsx nsx) {
         return nSXRepositpry.update(nsx);
     }
 
     @Override
-    public Boolean delete(NSX nsx) {
+    public Boolean delete(Nsx nsx) {
         return nSXRepositpry.delete(nsx);
     }
 

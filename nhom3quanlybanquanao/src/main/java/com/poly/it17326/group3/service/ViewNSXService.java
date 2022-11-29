@@ -4,7 +4,7 @@
  */
 package com.poly.it17326.group3.service;
 
-import com.poly.it17326.group3.domainmodels.NSX;
+import com.poly.it17326.group3.domainmodels.Nsx;
 
 import java.util.List;
 
@@ -14,12 +14,12 @@ import java.util.List;
  */
 public interface ViewNSXService {
 
-    List<NSX> getNSX();
+    List<Nsx> getNSX();
 
-    Boolean save(NSX nsx);
+    Boolean save(Nsx nsx);
 
-    Boolean update(NSX nsx);
+    Boolean update(Nsx nsx);
 
-    Boolean delete(NSX nsx);
+    Boolean delete(Nsx nsx);
 
 }
