@@ -81,6 +81,7 @@ public class SanPhamJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblSanPham);
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Sản Phẩm");
 
         btnThem.setText("Thêm");
@@ -129,8 +130,8 @@ public class SanPhamJPanel extends javax.swing.JPanel {
                                     .addComponent(txtId)
                                     .addComponent(txtTen, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(195, 195, 195)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(163, 163, 163)
+                        .addComponent(jLabel1)))
                 .addContainerGap(86, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

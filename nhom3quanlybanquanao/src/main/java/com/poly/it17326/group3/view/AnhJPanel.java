@@ -81,6 +81,7 @@ public class AnhJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblAnh);
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setText("Ảnh");
 
         btnThem.setText("Thêm");
