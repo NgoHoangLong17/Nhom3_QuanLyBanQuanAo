@@ -11,6 +11,7 @@ import com.poly.it17326.group3.domainmodels.ChiTietSp;
 import com.poly.it17326.group3.domainmodels.DongSp;
 import com.poly.it17326.group3.domainmodels.MauSac;
 import com.poly.it17326.group3.domainmodels.NSX;
+import com.poly.it17326.group3.domainmodels.Nsx;
 import com.poly.it17326.group3.domainmodels.SanPham;
 import com.poly.it17326.group3.domainmodels.Size;
 import java.util.ArrayList;
@@ -66,7 +67,7 @@ public class ChiTietSpRepository {
         return query.getResultList();
     }
 
-    public List<NSX> getNsx() {
+    public List<Nsx> getNsx() {
         Query query = session.createQuery(fromNsx);
         return query.getResultList();
     }

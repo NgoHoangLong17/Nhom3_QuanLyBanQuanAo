@@ -4,6 +4,7 @@
  */
 package com.poly.it17326.group3.domainmodels;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,14 +22,18 @@ import lombok.ToString;
  * @author ADMIN
  */
 
-@Table
+@Entity
+@Table(name = "NSX")
+
 @Setter
 @Getter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class NSX {
+
+
+public class Nsx {
+
     
     @Id
     @Column(name = "ID")
