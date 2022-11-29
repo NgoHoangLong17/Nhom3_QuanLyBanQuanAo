@@ -27,7 +27,7 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class NSX {
+public class Nsx {
     
     @Id
     @Column(name = "ID")

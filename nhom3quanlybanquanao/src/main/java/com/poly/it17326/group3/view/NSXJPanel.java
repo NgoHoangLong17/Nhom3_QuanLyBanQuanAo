@@ -4,7 +4,7 @@
  */
 package com.poly.it17326.group3.view;
 
-import com.poly.it17326.group3.domainmodels.NSX;
+import com.poly.it17326.group3.domainmodels.Nsx;
 import com.poly.it17326.group3.repository.NSXRepositpry;
 import com.poly.it17326.group3.response.ViewNSXReponse;
 
@@ -30,10 +30,10 @@ public class NSXJPanel extends javax.swing.JPanel {
         initComponents();
         loaddata(nSXService.getNSX());
     }
- public void loaddata(List<NSX> list){
+ public void loaddata(List<Nsx> list){
     defaultTableModel = (DefaultTableModel) TblNsx.getModel();
     defaultTableModel.setRowCount(0);
-    for(NSX s:list){
+    for(Nsx s:list){
     defaultTableModel.addRow(new Object[]{s.getId(),s.getTen()});
     }
     }
@@ -164,7 +164,7 @@ public class NSXJPanel extends javax.swing.JPanel {
 
     private void BtnthemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnthemActionPerformed
         // TODO add your handling code here:
-         NSX chatLieu = new NSX();
+         Nsx chatLieu = new Nsx();
         chatLieu.setTen(txtTen.getText());
         if(nSXService.save(chatLieu)){
             JOptionPane.showMessageDialog(this, "Thêm thành công");
@@ -177,7 +177,7 @@ public class NSXJPanel extends javax.swing.JPanel {
     private void BtnsuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnsuaActionPerformed
         // TODO add your handling code here:
         int index = TblNsx.getSelectedRow();
-        NSX chatLieu = nSXService.getNSX().get(index);
+        Nsx chatLieu = nSXService.getNSX().get(index);
         chatLieu.setTen(txtTen.getText());
         chatLieu.setId(Integer.parseInt(txtID.getText()));
         if(nSXService.update(chatLieu)){
@@ -191,7 +191,7 @@ public class NSXJPanel extends javax.swing.JPanel {
     private void BtnxoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnxoaActionPerformed
         // TODO add your handling code here:
          int index = TblNsx.getSelectedRow();
-        NSX chatLieu = nSXService.getNSX().get(index);
+        Nsx chatLieu = nSXService.getNSX().get(index);
         if(index == -1){
             JOptionPane.showMessageDialog(this, "Xóa thất bại");
         }else if(nSXService.delete(chatLieu)){

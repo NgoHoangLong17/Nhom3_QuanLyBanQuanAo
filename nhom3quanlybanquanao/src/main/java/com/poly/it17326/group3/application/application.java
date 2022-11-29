@@ -10,7 +10,7 @@ import com.poly.it17326.group3.view.DangNhapJPanel;
  *
  * @author longnh203
  */
-public class Application {
+public class application {
     public static void main(String[] args) {
         DangNhapJPanel lg  =new DangNhapJPanel();
         lg.setVisible(true);
