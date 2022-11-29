@@ -5,7 +5,7 @@
 package com.poly.it17326.group3.repository;
 
 import com.poly.it17326.group3.config.HibernateConfig;
-import com.poly.it17326.group3.domainmodels.NSX;
+import com.poly.it17326.group3.domainmodels.Nsx;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -21,18 +21,18 @@ public class NSXRepositpry {
     
     private String fromTable = "FROM NSX"; // HQL
     
-    public List<NSX>getAll(){
-        javax.persistence.Query query = session.createQuery(fromTable, NSX.class);
+    public List<Nsx>getAll(){
+        javax.persistence.Query query = session.createQuery(fromTable, Nsx.class);
         return query.getResultList();
     }
-    public NSX getOne(Integer  ID){
+    public Nsx getOne(Integer  ID){
         String sql = fromTable + " WHERE ID =:ID ";
-        javax.persistence.Query query = session.createQuery(sql, NSX.class);
+        javax.persistence.Query query = session.createQuery(sql, Nsx.class);
         query.setParameter("ID", ID);
-        return (NSX) query.getSingleResult();
+        return (Nsx) query.getSingleResult();
     }
     
-    public Boolean add(NSX nsx){
+    public Boolean add(Nsx nsx){
         Transaction transaction = null;
         try(Session session = HibernateConfig.getFACTORY().openSession()){
         transaction = session.beginTransaction();
@@ -44,7 +44,7 @@ public class NSXRepositpry {
         }
         return null;
     }
-    public Boolean update(NSX nsx){
+    public Boolean update(Nsx nsx){
         Transaction transaction = null;
         try(Session session = HibernateConfig.getFACTORY().openSession()){
         transaction = session.beginTransaction();
@@ -56,7 +56,7 @@ public class NSXRepositpry {
         }
         return null;
     }
-    public Boolean delete(NSX nsx){
+    public Boolean delete(Nsx nsx){
         Transaction transaction = null;
         try(Session session = HibernateConfig.getFACTORY().openSession()){
         transaction = session.beginTransaction();
@@ -70,8 +70,8 @@ public class NSXRepositpry {
     }
     
     public static void main(String[] args) {
-        List<NSX> nsxs = new NSXRepositpry().getAll();
-        for (NSX nsx :nsxs){
+        List<Nsx> nsxs = new NSXRepositpry().getAll();
+        for (Nsx nsx :nsxs){
             System.out.println(nsx.toString());
         }
     }

@@ -28,7 +28,8 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class NSX implements Serializable{
+
+public class Nsx {
     
     @Id
     @Column(name = "ID")
