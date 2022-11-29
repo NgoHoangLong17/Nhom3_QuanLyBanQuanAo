@@ -6,6 +6,7 @@ package com.poly.it17326.group3.service.impl;
 
 import com.poly.it17326.group3.domainmodels.MauSac;
 import com.poly.it17326.group3.repository.MauSacRepository;
+import com.poly.it17326.group3.response.MauSacReponse;
 import com.poly.it17326.group3.service.MauSacService;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ public class MauSacServiceImpl implements MauSacService {
     @Override
     public Boolean delete(MauSac mauSac) {
         return mauSacRepository.delete(mauSac);
-        
+
     }
 
     @Override
@@ -39,8 +40,16 @@ public class MauSacServiceImpl implements MauSacService {
         return mauSacRepository.getAll();
     }
 
-    
-
+    @Override
+    public List<MauSacReponse> getAll1() {
+        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        List<MauSacReponse> reponses = new ArrayList<>();
+        List<MauSac> lists = mauSacRepository.getAll();
+        for (MauSac list : lists) {
+            MauSacReponse mauSacReponse = new MauSacReponse(list);
+            reponses.add(mauSacReponse);
+        }
+        return reponses;
+    }
    
-
 }
