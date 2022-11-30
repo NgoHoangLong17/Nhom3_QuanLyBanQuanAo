@@ -7,15 +7,15 @@ package com.poly.it17326.group3.service.impl;
 import com.poly.it17326.group3.domainmodels.MauSac;
 import com.poly.it17326.group3.repository.MauSacRepository;
 import com.poly.it17326.group3.response.MauSacReponse;
-import com.poly.it17326.group3.service.MauSacService;
 import java.util.ArrayList;
 import java.util.List;
+import com.poly.it17326.group3.service.ViewMauSacService;
 
 /**
  *
  * @author ADMIN
  */
-public class MauSacServiceImpl implements MauSacService {
+public class MauSacServiceImpl implements ViewMauSacService {
 
     private MauSacRepository mauSacRepository = new MauSacRepository();
 

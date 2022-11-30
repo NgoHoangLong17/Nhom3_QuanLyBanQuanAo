@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author ADMIN
  */
-public interface MauSacService {
+public interface ViewMauSacService {
 
     List<MauSac> getAll();
 

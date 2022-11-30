@@ -6,14 +6,14 @@ package com.poly.it17326.group3.service.impl;
 
 import com.poly.it17326.group3.domainmodels.DongSp;
 import com.poly.it17326.group3.repository.DongSpRepository;
-import com.poly.it17326.group3.service.DongSpService;
 import java.util.List;
+import com.poly.it17326.group3.service.ViewDongSpService;
 
 /**
  *
  * @author ADMIN
  */
-public class DongSpServiceImpl implements DongSpService {
+public class DongSpServiceImpl implements ViewDongSpService {
 
     public DongSpRepository dongSpRepository = new DongSpRepository();
 

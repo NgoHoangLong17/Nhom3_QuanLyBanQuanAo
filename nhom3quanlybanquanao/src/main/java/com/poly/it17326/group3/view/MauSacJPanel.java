@@ -6,18 +6,18 @@ package com.poly.it17326.group3.view;
 
 import com.poly.it17326.group3.domainmodels.MauSac;
 import com.poly.it17326.group3.response.MauSacReponse;
-import com.poly.it17326.group3.service.MauSacService;
 import com.poly.it17326.group3.service.impl.MauSacServiceImpl;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import com.poly.it17326.group3.service.ViewMauSacService;
 
 /**
  *
  * @author ADMIN
  */
 public class MauSacJPanel extends javax.swing.JPanel {
-    private MauSacService mauSacService = new MauSacServiceImpl();
+    private ViewMauSacService mauSacService = new MauSacServiceImpl();
     private DefaultTableModel defaultTableModel;
     
     /**

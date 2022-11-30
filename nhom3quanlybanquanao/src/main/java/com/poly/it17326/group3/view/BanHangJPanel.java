@@ -4,15 +4,16 @@
  */
 package com.poly.it17326.group3.view;
 
+import com.poly.it17326.group3.service.ViewChiTietSPService;
+
 /**
  *
  * @author longnh203
  */
 public class BanHangJPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form BanHangJPanel
-     */
+    private ViewChiTietSPService chiTietSPService;
+//    private View
     public BanHangJPanel() {
         initComponents();
     }

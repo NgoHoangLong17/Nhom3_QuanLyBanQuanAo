@@ -4,14 +4,23 @@
  */
 package com.poly.it17326.group3.service;
 
-import com.poly.it17326.group3.repository.ChiTietSpRepository;
-
+import com.poly.it17326.group3.domainmodels.Anh;
+import java.util.List;
 
 /**
  *
  * @author doand
  */
-public interface ChiTietSpService {
-  
+public interface ViewAnhService {
 
+    public List<Anh> getAll();
+    
+    
+
+    public Boolean update(Anh Anh);
+
+    public Boolean add(Anh Anh);
+    
+    public Boolean Delete(Anh Anh);
+     
 }

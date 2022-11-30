@@ -5,18 +5,18 @@
 package com.poly.it17326.group3.view;
 
 import com.poly.it17326.group3.domainmodels.DongSp;
-import com.poly.it17326.group3.service.DongSpService;
 import com.poly.it17326.group3.service.impl.DongSpServiceImpl;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import com.poly.it17326.group3.service.ViewDongSpService;
 
 /**
  *
  * @author ADMIN
  */
 public class DongSpJPanel extends javax.swing.JPanel {
-   private  DongSpService dongSpService = new DongSpServiceImpl();
+   private  ViewDongSpService dongSpService = new DongSpServiceImpl();
    private DefaultTableModel defaultTableModel;
     /**
      * Creates new form FrmDongSp

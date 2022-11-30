@@ -19,7 +19,7 @@ import java.util.List;
  *
  * @author doand
  */
-public interface ChiTietService {
+public interface ViewChiTietSPService {
 
     public ArrayList<ChiTietSp> getAll();
 

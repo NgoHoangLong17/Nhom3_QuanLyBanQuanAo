@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author doand
  */
-public interface SanPhamSerice {
+public interface ViewSanPhamService {
 
     public List<SanPham> getAll();
 
