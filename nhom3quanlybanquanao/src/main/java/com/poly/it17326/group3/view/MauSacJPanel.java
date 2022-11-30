@@ -5,6 +5,7 @@
 package com.poly.it17326.group3.view;
 
 import com.poly.it17326.group3.domainmodels.MauSac;
+import com.poly.it17326.group3.response.MauSacReponse;
 import com.poly.it17326.group3.service.MauSacService;
 import com.poly.it17326.group3.service.impl.MauSacServiceImpl;
 import java.util.List;
@@ -24,7 +25,7 @@ public class MauSacJPanel extends javax.swing.JPanel {
      */
     public MauSacJPanel() {
         initComponents();
-        loadData(mauSacService.getAll());
+        loadData(mauSacService.getAll1());
     }
 
     /**
@@ -149,11 +150,11 @@ public class MauSacJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
         
-        public void loadData(List<MauSac> list){
+        public void loadData(List<MauSacReponse> list){
         defaultTableModel = (DefaultTableModel) tblMauSac.getModel();
         defaultTableModel.setColumnIdentifiers(new String[]{"ID","Tên"});
         defaultTableModel.setRowCount(0);
-        for(MauSac mauSac: list){
+        for(MauSacReponse mauSac: list){
             defaultTableModel.addRow(new Object[]{mauSac.getId(),mauSac.getTen()});
         }
     }
@@ -164,7 +165,7 @@ public class MauSacJPanel extends javax.swing.JPanel {
         mauSac.setTen(txtTenMauSac.getText());
         if(mauSacService.add(mauSac)){
             JOptionPane.showMessageDialog(this, "Thêm thành công");
-            loadData(mauSacService.getAll());
+            loadData(mauSacService.getAll1());
         }else{
             JOptionPane.showMessageDialog(this, "Thêm thất bại");
         }
@@ -185,7 +186,7 @@ public class MauSacJPanel extends javax.swing.JPanel {
         mauSac.setId(Integer.parseInt(txtId.getText()));
         if(mauSacService.update(mauSac)){
             JOptionPane.showMessageDialog(this, "Sửa thành công");
-            loadData(mauSacService.getAll());
+            loadData(mauSacService.getAll1());
         }else{
             JOptionPane.showMessageDialog(this, "Sửa thất bại");
         }
@@ -199,7 +200,7 @@ public class MauSacJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Xóa thất bại");
         }else if(mauSacService.delete(chatLieu)){
             JOptionPane.showMessageDialog(this, "Xóa thành công");
-            loadData(mauSacService.getAll());
+            loadData(mauSacService.getAll1());
         }else{
             JOptionPane.showMessageDialog(this, "Xóa thất bại");
         }

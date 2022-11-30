@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.poly.it17326.group3.domainmodels;
 
 import javax.persistence.Column;
@@ -12,21 +16,22 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Entity
-@Table(name = "CHATLIEU")
+/**
+ *
+ * @author doand
+ */
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @ToString
-public class ChatLieu {
-
-    @Id
+@Entity
+@Table(name = "TINHTRANG")
+public class TinhTrang {
+      @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Integer id;
 
     @Column(name = "ten")
     private String ten;
-
 }
