@@ -55,6 +55,36 @@ public class NhanVienJPanel extends javax.swing.JPanel {
         }
     }
 
+    
+    public void loadTextFile(int row) {
+        txtId.setText(tbNhanVien.getValueAt(row, 0).toString());
+        txtTenNhanVien.setText(tbNhanVien.getValueAt(row, 1).toString());
+        if (tbNhanVien.getValueAt(row, 2).toString().equals("Quản lý")) {
+            cboChucVu.setSelectedItem("Quản lý");
+        } else if (tbNhanVien.getValueAt(row, 2).toString().equals("Lao công")) {
+            cboChucVu.setSelectedItem("Lao Công");
+        } else if (tbNhanVien.getValueAt(row, 2).toString().equals("Kế toán")) {
+            cboChucVu.setSelectedItem("Kế toán");
+        } else if (tbNhanVien.getValueAt(row, 2).toString().equals("Thu ngân")) {
+            cboChucVu.setSelectedItem("Thu ngân");
+        } else if (tbNhanVien.getValueAt(row, 2).toString().equals("Bảo vệ")) {
+            cboChucVu.setSelectedItem("Bảo vệ");
+        }
+        if (tbNhanVien.getValueAt(row, 3).toString().equalsIgnoreCase("Nam")) {
+            rbnNam.setSelected(true);
+        } else {
+            rbnNu.setSelected(true);
+        }
+        txtNgaySinh.setText(tbNhanVien.getValueAt(row, 4).toString());
+        txtSDT.setText(tbNhanVien.getValueAt(row, 5).toString());
+        txtDiaChi.setText(tbNhanVien.getValueAt(row, 6).toString());
+        txtMatKhau.setText(tbNhanVien.getValueAt(row, 7).toString());
+        if (tbNhanVien.getValueAt(row, 8).toString().equalsIgnoreCase("Nghỉ làm")) {
+            chekNghi.setSelected(true);
+        } else {
+            chekNghi.setSelected(false);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -167,10 +197,20 @@ public class NhanVienJPanel extends javax.swing.JPanel {
         });
 
         btnLui.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnLui.setText("|<");
+        btnLui.setText("<<");
+        btnLui.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLuiActionPerformed(evt);
+            }
+        });
 
         btntien.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btntien.setText(">|");
+        btntien.setText(">>");
+        btntien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btntienActionPerformed(evt);
+            }
+        });
 
         jLabel11.setText("Tìm Kiếm :");
 
@@ -185,7 +225,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
                 .addComponent(btnDau, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(70, 70, 70)
                 .addComponent(btnLui, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 352, Short.MAX_VALUE)
                 .addComponent(btntien, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(70, 70, 70)
                 .addComponent(btnCuoi, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -385,7 +425,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 204, Short.MAX_VALUE)
+            .addGap(0, 348, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -543,11 +583,39 @@ public class NhanVienJPanel extends javax.swing.JPanel {
 
     private void btnDauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDauActionPerformed
         // TODO add your handling code here:
+        int row = 0;
+        tbNhanVien.setRowSelectionInterval(row, row);
+        loadTextFile(row);
     }//GEN-LAST:event_btnDauActionPerformed
 
     private void btnCuoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCuoiActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_btnCuoiActionPerformed
+
+    private void btntienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntienActionPerformed
+        // TODO add your handling code here:
+        int row = tbNhanVien.getSelectedRow();
+        if (row == tbNhanVien.getRowCount() - 1) {
+            btntienActionPerformed(evt);
+        } else {
+            row++;
+        }
+        tbNhanVien.setRowSelectionInterval(row, row);
+        loadTextFile(row);
+    }//GEN-LAST:event_btntienActionPerformed
+
+    private void btnLuiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuiActionPerformed
+        // TODO add your handling code here:
+        int row = tbNhanVien.getSelectedRow();
+        if (row == 0) {
+            btntienActionPerformed(evt);
+        } else {
+            row--;
+        }
+        tbNhanVien.setRowSelectionInterval(row, row);
+        loadTextFile(row);
+    }//GEN-LAST:event_btnLuiActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
