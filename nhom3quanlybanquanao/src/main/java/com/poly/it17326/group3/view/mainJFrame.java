@@ -287,7 +287,7 @@ public class mainJFrame extends javax.swing.JFrame {
 
     private void txtSpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSpMouseClicked
         // TODO add your handling code here:
-        showPanel(new ChatLieuJPanel());
+        showPanel(new AnhJPanel());
     }//GEN-LAST:event_txtSpMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -313,7 +313,7 @@ public class mainJFrame extends javax.swing.JFrame {
 
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
         // TODO add your handling code here:
-           showPanel(new ChiTietSanPhamFrm());
+           showPanel(new ChiTietSanPhamFrm1());
     }//GEN-LAST:event_jPanel2MouseClicked
     
     /**

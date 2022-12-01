@@ -6,7 +6,7 @@ package com.poly.it17326.group3.config;
 
 import com.poly.it17326.group3.domainmodels.Anh;
 import com.poly.it17326.group3.domainmodels.ChatLieu;
-import com.poly.it17326.group3.domainmodels.ChiTietSanPham;
+
 
 import com.poly.it17326.group3.domainmodels.ChiTietSp;
 
@@ -86,7 +86,7 @@ public class HibernateConfig {
 
 //<<<<<<< HEAD
 ////>>>>>>> origin/Dev
-////=======
+////=======git
 ////>>>>>>> origin/Dev
 //=======
 //

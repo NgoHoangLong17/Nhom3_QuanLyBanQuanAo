@@ -4,8 +4,6 @@
  */
 package com.poly.it17326.group3.view;
 
-import com.poly.it17326.group3.domainmodels.DongSp;
-
 /**
  *
  * @author doand
@@ -17,23 +15,12 @@ public class Test extends javax.swing.JFrame {
      */
     public Test() {
         initComponents();
-//        FrmChatLieu fcl = new FrmChatLieu();
-//        FrmAnh fa = new FrmAnh();
-//        FrmChatLieu fcl1 = new FrmChatLieu();
-//        FrmNhanVien fnv = new FrmNhanVien();
-//        FrmKhuyenMai fkm = new FrmKhuyenMai();
-//        FrmHome frmHome = new FrmHome();
-//        FrmMauSac mauSac = new FrmMauSac();
-//        FrmNhanVien fnv = new FrmNhanVien();
-//        FrmDongSp dongSp = new FrmDongSp();
-
-//    FrmHoaDonChiTiet fnv = new FrmHoaDonChiTiet();
-        AnhJPanel jPanel  = new AnhJPanel();
-//      FrmKhuyenMai fkm = new FrmKhuyenMai();
-        tesst.removeAll();
-        tesst.add(jPanel);
-        tesst.validate();
-    }
+//        AnhJPanel ajp = new AnhJPanel();
+    ChiTietSanPhamFrm1 ajp = new ChiTietSanPhamFrm1();
+    jPanel1.removeAll();
+    jPanel1.add(ajp);
+    jPanel1.validate();
+  }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -44,24 +31,39 @@ public class Test extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        tesst = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        tesst.setLayout(new java.awt.CardLayout());
+        jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.LINE_AXIS));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 476, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 668, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(tesst, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(tesst, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -104,6 +106,7 @@ public class Test extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel tesst;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

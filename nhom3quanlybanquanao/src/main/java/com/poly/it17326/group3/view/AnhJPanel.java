@@ -13,6 +13,7 @@ import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
@@ -64,7 +65,7 @@ public class AnhJPanel extends javax.swing.JPanel {
         btnThem = new javax.swing.JButton();
         btnSua = new javax.swing.JButton();
         btnXoa = new javax.swing.JButton();
-        lblAnh = new javax.swing.JLabel();
+        jplANh = new javax.swing.JLabel();
 
         jLabel2.setText("ID");
 
@@ -115,7 +116,6 @@ public class AnhJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
             .addGroup(layout.createSequentialGroup()
                 .addGap(195, 195, 195)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -135,8 +135,11 @@ public class AnhJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
-                .addComponent(lblAnh, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jplANh, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,7 +161,7 @@ public class AnhJPanel extends javax.swing.JPanel {
                             .addComponent(btnXoa)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(11, 11, 11)
-                        .addComponent(lblAnh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jplANh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -169,45 +172,48 @@ public class AnhJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int index = tblAnh.getSelectedRow();
         txtId.setText(tblAnh.getValueAt(index, 0).toString());
-        lblAnh.setText((String) tblAnh.getValueAt(index, 1));
+        String imgURL = tblAnh.getValueAt(index, 1).toString();
+        ImageIcon i = new ImageIcon(imgURL);
+        jplANh.setIcon(i);
+//        upImage(AnhRepository.getAll().get(index).getTen());
     }//GEN-LAST:event_tblAnhMouseClicked
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
-//        Anh sp = new Anh();
-//        sp.setTen(txtTen.getText());
-//        if (AnhRepository.add(sp) == true) {
-//            JOptionPane.showMessageDialog(this, "Thêm Thành công");
-//            loadDataSp(AnhServiceImpl.getAll());
-//            return;
-//        }
         JFileChooser chooser = new JFileChooser();
         chooser.showOpenDialog(null);
         File f = chooser.getSelectedFile();
         String filename = f.getAbsolutePath();
-        lblAnh.setText(filename);
+        jplANh.setText(filename);
         Image getAbsolutePath = null;
         ImageIcon icon = new ImageIcon(filename);
-        Image image = icon.getImage().getScaledInstance(lblAnh.getWidth(), lblAnh.getHeight(), Image.SCALE_SMOOTH);
-        lblAnh.setIcon(icon);
+        Image image = icon.getImage().getScaledInstance(jplANh.getWidth(), jplANh.getHeight(), Image.SCALE_SMOOTH);
+        jplANh.setIcon(icon);
         Anh anh = new Anh();
-        anh.setTen(lblAnh.getText().replace("\\", "\\\\"));
+        anh.setTen(jplANh.getText().replace("\\", "\\\\"));
         if (AnhRepository.add(anh)) {
             JOptionPane.showMessageDialog(this, "Thêm Thành công");
             loadDataSp(AnhServiceImpl.getAll());
         }
-
-
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
         // TODO add your handling code here:
-        int index = tblAnh.getSelectedRow();
-
-        Anh sp = AnhServiceImpl.getAll().get(index);
-        sp.setId(Integer.parseInt(txtId.getText()));
-        sp.setTen(lblAnh.getText());
-        if (AnhRepository.update(sp) == true) {
+       int index = tblAnh.getSelectedRow();
+        
+       
+        JFileChooser chooser = new JFileChooser();
+        File f = chooser.getSelectedFile();
+        String filename = f.getAbsolutePath();
+        jplANh.setText(filename);
+        chooser.showOpenDialog(null);
+        Image getAbsolutePath = null;
+        ImageIcon icon = new ImageIcon(filename);
+        Image image = icon.getImage().getScaledInstance(jplANh.getWidth(), jplANh.getHeight(), Image.SCALE_SMOOTH);
+        jplANh.setIcon(icon);
+        Anh anh = new Anh();
+        anh.setTen(jplANh.getText().replace("\\", "\\\\"));
+        if (AnhRepository.update(anh) == true) {
             JOptionPane.showMessageDialog(this, "Sửa Thành công");
             loadDataSp(AnhServiceImpl.getAll());
             return;
@@ -233,8 +239,12 @@ public class AnhJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblAnh;
+    private javax.swing.JLabel jplANh;
     private javax.swing.JTable tblAnh;
     private javax.swing.JTextField txtId;
     // End of variables declaration//GEN-END:variables
+
+    private void upImage(String ten) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
