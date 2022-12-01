@@ -103,6 +103,11 @@ public class mainJFrame extends javax.swing.JFrame {
         lblDongHo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblDongHo.setForeground(new java.awt.Color(255, 204, 0));
         lblDongHo.setText("12:00:00 PM");
+        lblDongHo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblDongHoMouseClicked(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(255, 255, 0));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -203,6 +208,11 @@ public class mainJFrame extends javax.swing.JFrame {
         jLabel10.setText("Quản lý sản phẩm");
 
         jLabel11.setText("Quản lý khách hàng");
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
 
         jLabel12.setText("Lịch sử giao dịch");
 
@@ -295,6 +305,15 @@ public class mainJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         showPanel(new KhuyenMaiJPanel());
     }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void lblDongHoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDongHoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lblDongHoMouseClicked
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        // TODO add your handling code here:
+        showPanel(new KhachHangJpanel());
+    }//GEN-LAST:event_jLabel11MouseClicked
     
     /**
      * @param args the command line arguments

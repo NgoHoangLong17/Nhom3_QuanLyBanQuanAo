@@ -16,6 +16,7 @@ import com.poly.it17326.group3.domainmodels.ChucVu;
 import com.poly.it17326.group3.domainmodels.DongSp;
 import com.poly.it17326.group3.domainmodels.HoaDon;
 import com.poly.it17326.group3.domainmodels.HoaDonChiTiet;
+import com.poly.it17326.group3.domainmodels.KhachHang;
 import com.poly.it17326.group3.domainmodels.KhuyenMai;
 import com.poly.it17326.group3.domainmodels.MauSac;
 import com.poly.it17326.group3.domainmodels.Nsx;
@@ -48,7 +49,7 @@ public class HibernateConfig {
         properties.put(Environment.DRIVER, "com.microsoft.sqlserver.jdbc.SQLServerDriver");
         properties.put(Environment.URL, "jdbc:sqlserver://localhost:1433;databaseName=QUANLYBANQUANAO");
         properties.put(Environment.USER, "sa");
-        properties.put(Environment.PASS, "123");
+        properties.put(Environment.PASS, "14102003");
         properties.put(Environment.SHOW_SQL, "true");
         conf.setProperties(properties);
         conf.addAnnotatedClass(SanPham.class);
@@ -68,6 +69,8 @@ public class HibernateConfig {
         conf.addAnnotatedClass(TinhTrang.class);
         conf.addAnnotatedClass(HoaDon.class);
         conf.addAnnotatedClass(HoaDonChiTiet.class);
+        conf.addAnnotatedClass(KhachHang.class);
+
 
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
