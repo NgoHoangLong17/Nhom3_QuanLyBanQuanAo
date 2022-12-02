@@ -8,7 +8,7 @@ import com.poly.it17326.group3.domainmodels.Anh;
 import com.poly.it17326.group3.domainmodels.ChatLieu;
 import com.poly.it17326.group3.domainmodels.DongSp;
 import com.poly.it17326.group3.domainmodels.MauSac;
-import com.poly.it17326.group3.domainmodels.NSX;
+import com.poly.it17326.group3.domainmodels.Nsx;
 import com.poly.it17326.group3.domainmodels.SanPham;
 import com.poly.it17326.group3.domainmodels.Size;
 import lombok.AllArgsConstructor;
@@ -39,7 +39,7 @@ public class ChiTietSpReponse {
     private int gia;
     private String moTa;
 
-    public ChiTietSpReponse(int id,  SanPham sanPham, DongSp dongSp, MauSac mauSac, ChatLieu chatLieu, Size size, NSX nsx, Anh anh, int soLuongTon, int gia, String moTa) {
+    public ChiTietSpReponse(int id,  SanPham sanPham, DongSp dongSp, MauSac mauSac, ChatLieu chatLieu, Size size, Nsx nsx, Anh anh, int soLuongTon, int gia, String moTa) {
         this.id = id;
         this.tenSanPham = sanPham.getTen();
         this.tenDongSp =  dongSp.getTen();

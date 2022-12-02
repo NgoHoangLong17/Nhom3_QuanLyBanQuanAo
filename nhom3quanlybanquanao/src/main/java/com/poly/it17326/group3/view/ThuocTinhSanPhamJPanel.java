@@ -7,7 +7,7 @@ package com.poly.it17326.group3.view;
 import com.poly.it17326.group3.domainmodels.Anh;
 import com.poly.it17326.group3.domainmodels.DongSp;
 import com.poly.it17326.group3.domainmodels.MauSac;
-import com.poly.it17326.group3.domainmodels.NSX;
+import com.poly.it17326.group3.domainmodels.Nsx;
 import com.poly.it17326.group3.domainmodels.SanPham;
 import com.poly.it17326.group3.domainmodels.Size;
 import com.poly.it17326.group3.repository.AnhRepository;
@@ -15,6 +15,8 @@ import com.poly.it17326.group3.repository.SanPhamRepository;
 import com.poly.it17326.group3.response.MauSacReponse;
 import com.poly.it17326.group3.service.DongSpService;
 import com.poly.it17326.group3.service.MauSacService;
+import com.poly.it17326.group3.service.ViewDongSpService;
+import com.poly.it17326.group3.service.ViewMauSacService;
 import com.poly.it17326.group3.service.ViewNSXService;
 import com.poly.it17326.group3.service.ViewSizeService;
 import com.poly.it17326.group3.service.impl.AnhServiceImpl;
@@ -40,8 +42,8 @@ public class ThuocTinhSanPhamJPanel extends javax.swing.JPanel {
     private ViewSizeService sizeService = new SizeServiceImpl();
     private SanPhamServiceImpl SanPhamServiceImpl = new SanPhamServiceImpl();
     private SanPhamRepository SanPhamRepository = new SanPhamRepository();
-    private DongSpService dongSpService = new DongSpServiceImpl();
-    private MauSacService mauSacService = new MauSacServiceImpl();
+    private ViewDongSpService dongSpService = new DongSpServiceImpl();
+    private ViewMauSacService mauSacService = new MauSacServiceImpl();
     private AnhServiceImpl AnhServiceImpl = new AnhServiceImpl();
     private AnhRepository AnhRepository = new AnhRepository();
     private ViewNSXService nSXService = new NSXSeviceImpl();
@@ -99,10 +101,10 @@ public class ThuocTinhSanPhamJPanel extends javax.swing.JPanel {
 
     }
 
-    public void loaddataNSx(List<NSX> list) {
+    public void loaddataNSx(List<Nsx> list) {
         defaultTableModel = (DefaultTableModel) tblNsx.getModel();
         defaultTableModel.setRowCount(0);
-        for (NSX s : list) {
+        for (Nsx s : list) {
             defaultTableModel.addRow(new Object[]{s.getId(), s.getTen()});
         }
     }
@@ -1001,7 +1003,7 @@ public class ThuocTinhSanPhamJPanel extends javax.swing.JPanel {
 
     private void btnThemNsxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemNsxActionPerformed
         // TODO add your handling code here:
-        NSX chatLieu = new NSX();
+        Nsx chatLieu = new Nsx();
         chatLieu.setTen(txtTenNsx.getText());
         if (nSXService.save(chatLieu)) {
             JOptionPane.showMessageDialog(this, "Thêm thành công");
@@ -1014,7 +1016,7 @@ public class ThuocTinhSanPhamJPanel extends javax.swing.JPanel {
     private void btnSuaNsxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaNsxActionPerformed
         // TODO add your handling code here:
         int index = tblNsx.getSelectedRow();
-        NSX chatLieu = nSXService.getNSX().get(index);
+        Nsx chatLieu = nSXService.getNSX().get(index);
         chatLieu.setTen(txtTenNsx.getText());
         chatLieu.setId(Integer.parseInt(txtIdNsx.getText()));
         if (nSXService.update(chatLieu)) {
@@ -1028,7 +1030,7 @@ public class ThuocTinhSanPhamJPanel extends javax.swing.JPanel {
     private void btnXoaNsxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaNsxActionPerformed
         // TODO add your handling code here:
         int index = tblNsx.getSelectedRow();
-        NSX chatLieu = nSXService.getNSX().get(index);
+        Nsx chatLieu = nSXService.getNSX().get(index);
         if (index == -1) {
             JOptionPane.showMessageDialog(this, "Xóa thất bại");
         } else if (nSXService.delete(chatLieu)) {

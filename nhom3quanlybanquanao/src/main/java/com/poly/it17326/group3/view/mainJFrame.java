@@ -218,6 +218,11 @@ public class mainJFrame extends javax.swing.JFrame {
         });
 
         jLabel6.setText("Quản lý giao ca");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
 
         jLabel7.setText("Quản lý khuyến mại");
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -236,6 +241,11 @@ public class mainJFrame extends javax.swing.JFrame {
         });
 
         jLabel10.setText("Quản lý sản phẩm");
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
 
         jLabel11.setText("Quản lý khách hàng");
         jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -361,6 +371,15 @@ public class mainJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         showPanel(new KhachHangJpanel());
     }//GEN-LAST:event_jLabel11MouseClicked
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+        // TODO add your handling code here:
+        showPanel(new ThuocTinhSanPhamJPanel());
+    }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel6MouseClicked
 
 
     /**
