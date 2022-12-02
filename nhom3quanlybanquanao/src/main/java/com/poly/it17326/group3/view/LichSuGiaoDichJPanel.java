@@ -4,10 +4,13 @@
  */
 package com.poly.it17326.group3.view;
 
+import com.poly.it17326.group3.domainmodels.HoaDon;
 import com.poly.it17326.group3.domainmodels.HoaDonChiTiet;
 import com.poly.it17326.group3.repository.HoaDonChiTietReposity;
 import com.poly.it17326.group3.service.ViewHoaDonChiTietService;
+import com.poly.it17326.group3.service.ViewHoaDonService;
 import com.poly.it17326.group3.service.impl.HoaDonChiTietServiceImpl;
+import com.poly.it17326.group3.service.impl.HoaDonServiceImpl;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -20,20 +23,30 @@ public class LichSuGiaoDichJPanel extends javax.swing.JPanel {
     /**
      * Creates new form LichSuGiaoDichJPanel
      */
+    private ViewHoaDonService hoaDonService = new HoaDonServiceImpl();
     private ViewHoaDonChiTietService hoaDonChiTietService = new HoaDonChiTietServiceImpl();
     public LichSuGiaoDichJPanel() {
         initComponents();
-        loadData(hoaDonChiTietService.getAll());
+        loadDatals(hoaDonService.getAll());
+//        loadData(hoaDonChiTietService.getAll());
     }
-    
-public void loadData(List<HoaDonChiTiet> list ){
+    public void loadDatals(List<HoaDon> list ){
 
     DefaultTableModel defaultTableModel = (DefaultTableModel) Tblhoadon.getModel();
     defaultTableModel.setRowCount(0);
-    for(HoaDonChiTiet hd: list){
-    defaultTableModel.addRow(new Object[]{hd.getIdHoaDonCT(),hd.getTenSp(),hd.getDONGIA(),hd.getSoLuong(),hd.getDongSp(),hd.getSize(),hd.getMauSac()});
+    for(HoaDon hd: list){
+    defaultTableModel.addRow(new Object[]{hd.getId(),hd.getNhanVien().getTenNhanVien(),hd.getKhachHang().getId(),hd.getKhachHang().getTen(),hd.getSdt(),hd.getKhachHang().getDiaChi(),hd.getNgayTao(),hd.getNgayThanhToan(),hd.getKhuyenMai().getMucGiamGia(),hd.getTienSauGiamGia(),hd.getTinhTrang()});
     }
 }
+//    public void loadData(List<HoaDonChiTiet> list ){
+//
+//    DefaultTableModel defaultTableModel = (DefaultTableModel) Tblhoadon.getModel();
+//    defaultTableModel.setRowCount(0);
+//    for(HoaDonChiTiet hd: list){
+//    defaultTableModel.addRow(new Object[]{hd.getIdHoaDonCT(),hd.getTenSp(),hd.getDONGIA(),hd.getSoLuong(),hd.getDongSp(),hd.getSize(),hd.getMauSac()});
+//    }
+//}
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -81,7 +94,7 @@ public void loadData(List<HoaDonChiTiet> list ){
 
             },
             new String [] {
-                "Mã NV", "Tên NV", "Mã KH", "Họ Tên", "SĐT", "Địa Chỉ", "Ngày Mua", "Ngày Giao", "Khuyến Mại", "Thành Tiền", "Trạng Thái", "Ghi Chú"
+                "IDNV", "Tên NV", "Mã KH", "Họ Tên", "SĐT", "Địa Chỉ", "Ngày Tạo", "Ngày Thanh Toán", "Khuyến Mại", "Thành Tiền", "Trạng Thái", "Ghi Chú"
             }
         ));
         jScrollPane5.setViewportView(TblLichsu);
