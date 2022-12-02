@@ -6,12 +6,26 @@ package com.poly.it17326.group3.config;
 
 import com.poly.it17326.group3.domainmodels.Anh;
 import com.poly.it17326.group3.domainmodels.ChatLieu;
+
+
+import com.poly.it17326.group3.domainmodels.ChiTietSp;
+
+import com.poly.it17326.group3.service.ChiTietService;
+
 import com.poly.it17326.group3.domainmodels.ChucVu;
 import com.poly.it17326.group3.domainmodels.DongSp;
+import com.poly.it17326.group3.domainmodels.HoaDon;
+import com.poly.it17326.group3.domainmodels.HoaDonChiTiet;
 import com.poly.it17326.group3.domainmodels.KhuyenMai;
+import com.poly.it17326.group3.domainmodels.MauSac;
+import com.poly.it17326.group3.domainmodels.Nsx;
 import com.poly.it17326.group3.domainmodels.NhanVien;
 import com.poly.it17326.group3.domainmodels.SanPham;
+import com.poly.it17326.group3.domainmodels.Size;
+import com.poly.it17326.group3.domainmodels.TinhTrang;
+//>>>>>>> origin/Dev
 import java.util.Properties;
+import javax.crypto.Mac;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -34,16 +48,49 @@ public class HibernateConfig {
         properties.put(Environment.DRIVER, "com.microsoft.sqlserver.jdbc.SQLServerDriver");
         properties.put(Environment.URL, "jdbc:sqlserver://localhost:1433;databaseName=QUANLYBANQUANAO");
         properties.put(Environment.USER, "sa");
-        properties.put(Environment.PASS, "Passwd2@");
+        properties.put(Environment.PASS, "24112003");
         properties.put(Environment.SHOW_SQL, "true");
         conf.setProperties(properties);
         conf.addAnnotatedClass(SanPham.class);
+//<<<<<<< HEAD
+//<<<<<<< HEAD
+////<<<<<<< HEAD
+        conf.addAnnotatedClass(ChatLieu.class);
+
+        conf.addAnnotatedClass(ChiTietSp.class);
+////=======
+//=======
+//>>>>>>> origin/Dev
+//=======
+//
+//>>>>>>> 99e51649fd00ae13bd9bbbe45bca1b1c92d444a1
         conf.addAnnotatedClass(Anh.class);
         conf.addAnnotatedClass(DongSp.class);
         conf.addAnnotatedClass(KhuyenMai.class);
         conf.addAnnotatedClass(ChatLieu.class);
         conf.addAnnotatedClass(ChucVu.class);
         conf.addAnnotatedClass(NhanVien.class);
+//<<<<<<< HEAD
+////<<<<<<< HEAD
+//=======
+//>>>>>>> 99e51649fd00ae13bd9bbbe45bca1b1c92d444a1
+        conf.addAnnotatedClass(Size.class);
+        conf.addAnnotatedClass(Nsx.class);
+        conf.addAnnotatedClass(MauSac.class);
+//        conf.addAnnotatedClass(SanPham.class);
+        conf.addAnnotatedClass(ChiTietSp.class);
+        conf.addAnnotatedClass(HoaDon.class);
+        conf.addAnnotatedClass(TinhTrang.class);
+        conf.addAnnotatedClass(HoaDon.class);
+        conf.addAnnotatedClass(HoaDonChiTiet.class);
+
+//<<<<<<< HEAD
+////>>>>>>> origin/Dev
+////=======git
+////>>>>>>> origin/Dev
+//=======
+//
+//>>>>>>> 99e51649fd00ae13bd9bbbe45bca1b1c92d444a1
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
         FACTORY = conf.buildSessionFactory(registry);

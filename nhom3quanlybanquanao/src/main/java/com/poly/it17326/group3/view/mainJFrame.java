@@ -86,7 +86,7 @@ public class mainJFrame extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        txtSp = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -115,8 +115,12 @@ public class mainJFrame extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(255, 255, 0));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setText("Giao ca");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
-        lblThoat.setIcon(new javax.swing.ImageIcon("C:\\Data\\Nhom3_QuanLyBanQuanAo\\nhom3quanlybanquanao\\src\\main\\resources\\com\\poly\\it17326\\group3\\icon\\icons8-macos-close-30.png")); // NOI18N
         lblThoat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblThoat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -124,7 +128,6 @@ public class mainJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Data\\Nhom3_QuanLyBanQuanAo\\nhom3quanlybanquanao\\src\\main\\resources\\com\\poly\\it17326\\group3\\icon\\icons8-macos-minimize-30.png")); // NOI18N
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -180,6 +183,11 @@ public class mainJFrame extends javax.swing.JFrame {
         viewPanel.setLayout(new java.awt.BorderLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 153, 51));
+        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel2MouseClicked(evt);
+            }
+        });
 
         jLabel3.setText("Quản lý tài khoản");
 
@@ -193,11 +201,16 @@ public class mainJFrame extends javax.swing.JFrame {
         });
 
         jLabel8.setText("Thống kê");
-
-        jLabel9.setText("Quản lý chi tiết sản phẩm");
-        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel9MouseClicked(evt);
+                jLabel8MouseClicked(evt);
+            }
+        });
+
+        txtSp.setText("Quản lý chi tiết sản phẩm");
+        txtSp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtSpMouseClicked(evt);
             }
         });
 
@@ -223,7 +236,7 @@ public class mainJFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel9)
+                .addComponent(txtSp)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10)
                 .addGap(18, 18, 18)
@@ -243,7 +256,7 @@ public class mainJFrame extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8)
-                    .addComponent(jLabel9)
+                    .addComponent(txtSp)
                     .addComponent(jLabel10)
                     .addComponent(jLabel11)
                     .addComponent(jLabel12)
@@ -277,10 +290,10 @@ public class mainJFrame extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_lblThoatMouseClicked
 
-    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+    private void txtSpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSpMouseClicked
         // TODO add your handling code here:
-        showPanel(new ChatLieuJPanel());
-    }//GEN-LAST:event_jLabel9MouseClicked
+        showPanel(new AnhJPanel());
+    }//GEN-LAST:event_txtSpMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -296,6 +309,22 @@ public class mainJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         showPanel(new KhuyenMaiJPanel());
     }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+       System.exit(0);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
+        // TODO add your handling code here:
+           showPanel(new ChiTietSanPhamFrm1());
+    }//GEN-LAST:event_jPanel2MouseClicked
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+        showPanel(new ThongKeJPanel());
+    }//GEN-LAST:event_jLabel8MouseClicked
     
     /**
      * @param args the command line arguments
@@ -329,6 +358,7 @@ public class mainJFrame extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new mainJFrame().setVisible(true);
             }
@@ -349,11 +379,11 @@ public class mainJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblDongHo;
     private javax.swing.JLabel lblThoat;
+    private javax.swing.JLabel txtSp;
     private javax.swing.JPanel viewPanel;
     // End of variables declaration//GEN-END:variables
 }

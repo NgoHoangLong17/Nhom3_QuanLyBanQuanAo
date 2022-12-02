@@ -7,8 +7,14 @@ package com.poly.it17326.group3.view;
 import com.poly.it17326.group3.domainmodels.Anh;
 import com.poly.it17326.group3.repository.AnhRepository;
 import com.poly.it17326.group3.service.impl.AnhServiceImpl;
+import java.awt.Image;
+import java.io.File;
 import java.util.List;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileFilter;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -16,9 +22,10 @@ import javax.swing.table.DefaultTableModel;
  * @author ADMIN
  */
 public class AnhJPanel extends javax.swing.JPanel {
-    
+
     private AnhServiceImpl AnhServiceImpl = new AnhServiceImpl();
     private AnhRepository AnhRepository = new AnhRepository();
+
     /**
      * Creates new form AnhView
      */
@@ -26,19 +33,20 @@ public class AnhJPanel extends javax.swing.JPanel {
         initComponents();
         loadDataSp(AnhRepository.getAll());
     }
-    
-      public void loadDataSp(List<Anh> list) {
+
+    public void loadDataSp(List<Anh> list) {
         DefaultTableModel model = (DefaultTableModel) tblAnh.getModel();
         model.setRowCount(0);
         model.setColumnIdentifiers(new Object[]{"id", "ten"});
-        for (Anh Anh: list) {
+        for (Anh Anh : list) {
             Object[] row = new Object[]{
-               Anh.getId(), Anh.getTen()
+                Anh.getId(), Anh.getTen()
             };
             model.addRow(row);
         }
 
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,15 +61,15 @@ public class AnhJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblAnh = new javax.swing.JTable();
         txtId = new javax.swing.JTextField();
-        txtTen = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         btnThem = new javax.swing.JButton();
         btnSua = new javax.swing.JButton();
         btnXoa = new javax.swing.JButton();
+        jplANh = new javax.swing.JLabel();
 
         jLabel2.setText("ID");
 
-        jLabel3.setText("Tên");
+        jLabel3.setText("Anh");
 
         tblAnh.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -109,52 +117,55 @@ public class AnhJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
+                .addGap(195, 195, 195)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(59, 59, 59)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnThem)
-                                .addGap(45, 45, 45)
-                                .addComponent(btnSua)
-                                .addGap(31, 31, 31)
-                                .addComponent(btnXoa))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3))
-                                .addGap(26, 26, 26)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtId)
-                                    .addComponent(txtTen, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)))))
+                        .addComponent(btnThem)
+                        .addGap(45, 45, 45)
+                        .addComponent(btnSua)
+                        .addGap(31, 31, 31)
+                        .addComponent(btnXoa))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(195, 195, 195)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(86, Short.MAX_VALUE))
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addComponent(jplANh, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtTen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnThem)
-                    .addComponent(btnSua)
-                    .addComponent(btnXoa))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnThem)
+                            .addComponent(btnSua)
+                            .addComponent(btnXoa)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addComponent(jplANh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -162,28 +173,48 @@ public class AnhJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int index = tblAnh.getSelectedRow();
         txtId.setText(tblAnh.getValueAt(index, 0).toString());
-        txtTen.setText((String) tblAnh.getValueAt(index, 1));
+        String imgURL = tblAnh.getValueAt(index, 1).toString();
+        ImageIcon i = new ImageIcon(imgURL);
+        jplANh.setIcon(i);
+//        upImage(AnhRepository.getAll().get(index).getTen());
     }//GEN-LAST:event_tblAnhMouseClicked
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
-        Anh sp = new Anh();
-        sp.setTen(txtTen.getText());
-        if (AnhRepository.add(sp) == true) {
+        JFileChooser chooser = new JFileChooser();
+        chooser.showOpenDialog(null);
+        File f = chooser.getSelectedFile();
+        String filename = f.getAbsolutePath();
+        jplANh.setText(filename);
+        Image getAbsolutePath = null;
+        ImageIcon icon = new ImageIcon(filename);
+        Image image = icon.getImage().getScaledInstance(jplANh.getWidth(), jplANh.getHeight(), Image.SCALE_SMOOTH);
+        jplANh.setIcon(icon);
+        Anh anh = new Anh();
+        anh.setTen(jplANh.getText().replace("\\", "\\\\"));
+        if (AnhRepository.add(anh)) {
             JOptionPane.showMessageDialog(this, "Thêm Thành công");
             loadDataSp(AnhServiceImpl.getAll());
-            return;
         }
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
         // TODO add your handling code here:
-        int index = tblAnh.getSelectedRow();
-
-        Anh sp = AnhServiceImpl.getAll().get(index);
-        sp.setId(Integer.parseInt(txtId.getText()));
-        sp.setTen(txtTen.getText());
-        if (AnhRepository.update(sp) == true) {
+       int index = tblAnh.getSelectedRow();
+        
+       
+        JFileChooser chooser = new JFileChooser();
+        File f = chooser.getSelectedFile();
+        String filename = f.getAbsolutePath();
+        jplANh.setText(filename);
+        chooser.showOpenDialog(null);
+        Image getAbsolutePath = null;
+        ImageIcon icon = new ImageIcon(filename);
+        Image image = icon.getImage().getScaledInstance(jplANh.getWidth(), jplANh.getHeight(), Image.SCALE_SMOOTH);
+        jplANh.setIcon(icon);
+        Anh anh = new Anh();
+        anh.setTen(jplANh.getText().replace("\\", "\\\\"));
+        if (AnhRepository.update(anh) == true) {
             JOptionPane.showMessageDialog(this, "Sửa Thành công");
             loadDataSp(AnhServiceImpl.getAll());
             return;
@@ -209,8 +240,12 @@ public class AnhJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jplANh;
     private javax.swing.JTable tblAnh;
     private javax.swing.JTextField txtId;
-    private javax.swing.JTextField txtTen;
     // End of variables declaration//GEN-END:variables
+
+    private void upImage(String ten) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

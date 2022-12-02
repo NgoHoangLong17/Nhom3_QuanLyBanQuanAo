@@ -17,7 +17,7 @@ import org.hibernate.Transaction;
 public class SizeRepository {
     private Session session = HibernateConfig.getFACTORY().openSession();
     
-    private String fromTable = "FROM NSX"; // HQL
+    private String fromTable = "FROM Size"; // HQL
     
     public List<Size>getAll(){
         javax.persistence.Query query = session.createQuery(fromTable, Size.class);

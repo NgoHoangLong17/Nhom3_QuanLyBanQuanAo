@@ -4,7 +4,8 @@
  */
 package com.poly.it17326.group3.response;
 
-import javax.persistence.Entity;
+import com.poly.it17326.group3.domainmodels.Anh;
+import com.poly.it17326.group3.domainmodels.MauSac;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,14 +16,21 @@ import lombok.ToString;
  *
  * @author doand
  */
-@NoArgsConstructor
-@AllArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @ToString
-
-public class AnhReponse {
+public class MauSacReponse {
 
     private int id;
+
     private String ten;
+
+    public MauSacReponse(MauSac mauSac) {
+        this.id = mauSac.getId();
+        this.ten = mauSac.getTen();
+    }
+
+
 }
