@@ -16,7 +16,7 @@ public class NhanVienRepository {
         Query query = session.createQuery(fromTable, NhanVien.class);
         return query.getResultList();
     }
-
+    
 //    public static void main(String[] args) {
 //        List<NhanVien> nhanViens = new NhanVienRepository().getAll();
 //        for(NhanVien nhanVien : nhanViens){

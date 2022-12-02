@@ -54,5 +54,5 @@ public class ViewNhanVienServiceImpl implements ViewNhanVienService{
     public Boolean xoa(NhanVien nhanVien) {
         return nhanVienRepository.delete(nhanVien);
     }
-    
+ 
 }

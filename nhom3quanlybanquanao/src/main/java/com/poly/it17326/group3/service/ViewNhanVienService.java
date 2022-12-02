@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface ViewNhanVienService {
     List<NhanVien> getNhanVien();
-    
+       
     Boolean them(NhanVien nhanVien);
     
     Boolean sua(NhanVien nhanVien);
