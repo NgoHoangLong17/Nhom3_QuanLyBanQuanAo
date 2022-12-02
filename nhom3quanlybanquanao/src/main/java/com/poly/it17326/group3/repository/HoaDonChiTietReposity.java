@@ -21,7 +21,9 @@ public class HoaDonChiTietReposity implements Serializable {
 
     private Session session = HibernateConfig.getFACTORY().openSession();
 
+
     private String fromTable = " FROM HoaDonChiTiet";
+
 
     public List<HoaDonChiTiet> getAll() {
         Query query = session.createQuery(fromTable, HoaDonChiTiet.class);
@@ -68,7 +70,7 @@ public class HoaDonChiTietReposity implements Serializable {
     }
 
     public HoaDonChiTiet getOne(int id) {
-        String sql = fromTable + "where id=:id";
+        String sql = fromTable + " where id=:id";
         Query query = session.createQuery(sql, HoaDonChiTiet.class);
         query.setParameter("id", id);
         return (HoaDonChiTiet) query.getSingleResult();
@@ -89,7 +91,7 @@ public class HoaDonChiTietReposity implements Serializable {
     }
 
     public static void main(String[] args) {
-        System.out.println(new HoaDonChiTietReposity().getHdctByIdCtsp(1));
+        System.out.println(new HoaDonChiTietReposity().getOne(13));
     }
 
 }
