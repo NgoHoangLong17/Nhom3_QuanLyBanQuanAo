@@ -9,12 +9,12 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 
-public class FrmChatLieu extends javax.swing.JPanel {
+public class ChatLieuJPanel extends javax.swing.JPanel {
 
     private DefaultTableModel model;
     private ViewChatLieuService chatLieuService = new ChatLieuServiceImpl();
     
-    public FrmChatLieu() {
+    public ChatLieuJPanel() {
         initComponents();
         loadData(chatLieuService.getAll());
         txtID.disable();

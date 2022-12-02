@@ -4,38 +4,41 @@
  */
 package com.poly.it17326.group3.view;
 
-import com.poly.it17326.group3.domainmodels.NSX;
-import com.poly.it17326.group3.repository.NSXRepositpry;
-import com.poly.it17326.group3.response.ViewNSXReponse;
-
-import com.poly.it17326.group3.service.ViewNSXService;
-import com.poly.it17326.group3.service.impl.NSXSeviceImpl;
+import com.poly.it17326.group3.domainmodels.Size;
+import com.poly.it17326.group3.service.ViewSizeService;
+import com.poly.it17326.group3.service.impl.SizeServiceImpl;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import org.hibernate.Hibernate;
+import org.springframework.data.jpa.provider.HibernateUtils;
 
 /**
  *
  * @author ADMIN
  */
-public class FrmPanelNSX extends javax.swing.JPanel {
+public class SizeJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form PanelNSX
+     * Creates new form PanelSize
      */
+    private ViewSizeService sizeService = new SizeServiceImpl();
+
     private DefaultTableModel defaultTableModel;
-    private ViewNSXService nSXService = new NSXSeviceImpl();
-    public FrmPanelNSX() {
+
+    public SizeJPanel() {
         initComponents();
-        loaddata(nSXService.getNSX());
+        loaddata(sizeService.getAll());
+
     }
- public void loaddata(List<NSX> list){
-    defaultTableModel = (DefaultTableModel) TblNsx.getModel();
-    defaultTableModel.setRowCount(0);
-    for(NSX s:list){
-    defaultTableModel.addRow(new Object[]{s.getId(),s.getTen()});
-    }
+
+    public void loaddata(List<Size> list) {
+        defaultTableModel = (DefaultTableModel) Tblnsx.getModel();
+        defaultTableModel.setRowCount(0);
+        for (Size s : list) {
+            defaultTableModel.addRow(new Object[]{s.getId(), s.getTen()});
+        }
     }
 
     /**
@@ -47,25 +50,32 @@ public class FrmPanelNSX extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Btnsua = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
         txtTen = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TblNsx = new javax.swing.JTable();
+        Tblnsx = new javax.swing.JTable();
         Btnthem = new javax.swing.JButton();
         Btnxoa = new javax.swing.JButton();
-        Btnsua = new javax.swing.JButton();
+
+        Btnsua.setText("Sua");
+        Btnsua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnsuaActionPerformed(evt);
+            }
+        });
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("NSX");
+        jLabel1.setText("Size");
 
         jLabel2.setText("ID");
 
         jLabel3.setText("TEN");
 
-        TblNsx.setModel(new javax.swing.table.DefaultTableModel(
+        Tblnsx.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -76,12 +86,12 @@ public class FrmPanelNSX extends javax.swing.JPanel {
                 "ID", "Ten"
             }
         ));
-        TblNsx.addMouseListener(new java.awt.event.MouseAdapter() {
+        Tblnsx.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TblNsxMouseClicked(evt);
+                TblnsxMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(TblNsx);
+        jScrollPane1.setViewportView(Tblnsx);
 
         Btnthem.setText("Them");
         Btnthem.addActionListener(new java.awt.event.ActionListener() {
@@ -94,13 +104,6 @@ public class FrmPanelNSX extends javax.swing.JPanel {
         Btnxoa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnxoaActionPerformed(evt);
-            }
-        });
-
-        Btnsua.setText("Sua");
-        Btnsua.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnsuaActionPerformed(evt);
             }
         });
 
@@ -126,7 +129,7 @@ public class FrmPanelNSX extends javax.swing.JPanel {
                                 .addComponent(jLabel3)
                                 .addGap(28, 28, 28)
                                 .addComponent(txtTen, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(Btnthem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Btnsua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -155,7 +158,7 @@ public class FrmPanelNSX extends javax.swing.JPanel {
                         .addComponent(Btnsua)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Btnxoa)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
@@ -163,57 +166,57 @@ public class FrmPanelNSX extends javax.swing.JPanel {
 
     private void BtnthemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnthemActionPerformed
         // TODO add your handling code here:
-         NSX chatLieu = new NSX();
+        Size chatLieu = new Size();
         chatLieu.setTen(txtTen.getText());
-        if(nSXService.save(chatLieu)){
+        if (sizeService.save(chatLieu)) {
             JOptionPane.showMessageDialog(this, "Thêm thành công");
-            loaddata(nSXService.getNSX());
-        }else{
+            loaddata(sizeService.getAll());
+        } else {
             JOptionPane.showMessageDialog(this, "Thêm thất bại");
         }
     }//GEN-LAST:event_BtnthemActionPerformed
 
+    private void TblnsxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblnsxMouseClicked
+        // TODO add your handling code here:
+        int row = Tblnsx.getSelectedRow();
+        txtID.setText(Tblnsx.getValueAt(row, 0).toString());
+        txtTen.setText(Tblnsx.getValueAt(row, 1).toString());
+    }//GEN-LAST:event_TblnsxMouseClicked
+
     private void BtnsuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnsuaActionPerformed
         // TODO add your handling code here:
-        int index = TblNsx.getSelectedRow();
-        NSX chatLieu = nSXService.getNSX().get(index);
+        int index = Tblnsx.getSelectedRow();
+        Size chatLieu = sizeService.getAll().get(index);
         chatLieu.setTen(txtTen.getText());
         chatLieu.setId(Integer.parseInt(txtID.getText()));
-        if(nSXService.update(chatLieu)){
+        if (sizeService.update(chatLieu)) {
             JOptionPane.showMessageDialog(this, "Sửa thành công");
-            loaddata(nSXService.getNSX());
-        }else{
+            loaddata(sizeService.getAll());
+        } else {
             JOptionPane.showMessageDialog(this, "Sửa thất bại");
         }
     }//GEN-LAST:event_BtnsuaActionPerformed
 
     private void BtnxoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnxoaActionPerformed
         // TODO add your handling code here:
-         int index = TblNsx.getSelectedRow();
-        NSX chatLieu = nSXService.getNSX().get(index);
-        if(index == -1){
+        int index = Tblnsx.getSelectedRow();
+        Size chatLieu = sizeService.getAll().get(index);
+        if (index == -1) {
             JOptionPane.showMessageDialog(this, "Xóa thất bại");
-        }else if(nSXService.delete(chatLieu)){
+        } else if (sizeService.delete(chatLieu)) {
             JOptionPane.showMessageDialog(this, "Xóa thành công");
-            loaddata(nSXService.getNSX());
-        }else{
+            loaddata(sizeService.getAll());
+        } else {
             JOptionPane.showMessageDialog(this, "Xóa thất bại");
         }
     }//GEN-LAST:event_BtnxoaActionPerformed
-
-    private void TblNsxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblNsxMouseClicked
-        // TODO add your handling code here:
-         int row = TblNsx.getSelectedRow();
-        txtID.setText(TblNsx.getValueAt(row, 0).toString());
-        txtTen.setText(TblNsx.getValueAt(row, 1).toString());
-    }//GEN-LAST:event_TblNsxMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btnsua;
     private javax.swing.JButton Btnthem;
     private javax.swing.JButton Btnxoa;
-    private javax.swing.JTable TblNsx;
+    private javax.swing.JTable Tblnsx;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
