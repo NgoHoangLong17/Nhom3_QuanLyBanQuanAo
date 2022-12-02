@@ -55,7 +55,7 @@ public class NhanVien {
     @Column(name = "matKhau")
     private String matKhau;
     
-    @Column(name = "deleted")
+    @Column(name = "trangThai")
     private Boolean deleted;
     
     @ManyToOne

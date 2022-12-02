@@ -29,7 +29,7 @@ public class Test extends javax.swing.JFrame {
 //        FrmDongSp dongSp = new FrmDongSp();
 
 //    FrmHoaDonChiTiet fnv = new FrmHoaDonChiTiet();
-        BanHangJPanel jPanel  = new BanHangJPanel(new NhanVien());
+        SanPhamJPanel jPanel  = new SanPhamJPanel();
 //      FrmKhuyenMai fkm = new FrmKhuyenMai();
         tesst.removeAll();
         tesst.add(jPanel);
