@@ -16,12 +16,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-
 /**
  *
  * @author doand
  */
-
 @Entity
 @Table(name="DONGSP")
 @Getter
@@ -29,7 +27,6 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-
 
 public class DongSp {
 
@@ -39,6 +36,5 @@ public class DongSp {
 
     @Column(name = "ten")
     private String ten;
-
 
 }

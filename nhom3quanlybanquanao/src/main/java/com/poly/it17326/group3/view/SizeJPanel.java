@@ -23,21 +23,25 @@ public class SizeJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PanelSize
      */
+
     private  ViewSizeService sizeService = new SizeServiceImpl();
     
     private  DefaultTableModel defaultTableModel;
+
     public SizeJPanel() {
         initComponents();
         loaddata(sizeService.getAll());
-        
+
     }
-    public void loaddata(List<Size> list){
-    defaultTableModel = (DefaultTableModel) Tblnsx.getModel();
-    defaultTableModel.setRowCount(0);
-    for(Size s:list){
-    defaultTableModel.addRow(new Object[]{s.getId(),s.getTen()});
+
+    public void loaddata(List<Size> list) {
+        defaultTableModel = (DefaultTableModel) Tblnsx.getModel();
+        defaultTableModel.setRowCount(0);
+        for (Size s : list) {
+            defaultTableModel.addRow(new Object[]{s.getId(), s.getTen()});
+        }
     }
-    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -165,17 +169,17 @@ public class SizeJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         Size chatLieu = new Size();
         chatLieu.setTen(txtTen.getText());
-        if(sizeService.save(chatLieu)){
+        if (sizeService.save(chatLieu)) {
             JOptionPane.showMessageDialog(this, "Thêm thành công");
             loaddata(sizeService.getAll());
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "Thêm thất bại");
         }
     }//GEN-LAST:event_BtnthemActionPerformed
 
     private void TblnsxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TblnsxMouseClicked
         // TODO add your handling code here:
-         int row = Tblnsx.getSelectedRow();
+        int row = Tblnsx.getSelectedRow();
         txtID.setText(Tblnsx.getValueAt(row, 0).toString());
         txtTen.setText(Tblnsx.getValueAt(row, 1).toString());
     }//GEN-LAST:event_TblnsxMouseClicked
@@ -186,10 +190,10 @@ public class SizeJPanel extends javax.swing.JPanel {
         Size chatLieu = sizeService.getAll().get(index);
         chatLieu.setTen(txtTen.getText());
         chatLieu.setId(Integer.parseInt(txtID.getText()));
-        if(sizeService.update(chatLieu)){
+        if (sizeService.update(chatLieu)) {
             JOptionPane.showMessageDialog(this, "Sửa thành công");
             loaddata(sizeService.getAll());
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "Sửa thất bại");
         }
     }//GEN-LAST:event_BtnsuaActionPerformed
@@ -198,12 +202,12 @@ public class SizeJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         int index = Tblnsx.getSelectedRow();
         Size chatLieu = sizeService.getAll().get(index);
-        if(index == -1){
+        if (index == -1) {
             JOptionPane.showMessageDialog(this, "Xóa thất bại");
-        }else if(sizeService.delete(chatLieu)){
+        } else if (sizeService.delete(chatLieu)) {
             JOptionPane.showMessageDialog(this, "Xóa thành công");
             loaddata(sizeService.getAll());
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "Xóa thất bại");
         }
     }//GEN-LAST:event_BtnxoaActionPerformed

@@ -51,7 +51,7 @@ public class DongSpJPanel extends javax.swing.JPanel {
         txtTen = new javax.swing.JTextField();
         btnAdd = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
-        btnUpdate = new javax.swing.JButton();
+        btnUpdateDongSp = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDongSP = new javax.swing.JTable();
 
@@ -76,10 +76,10 @@ public class DongSpJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnUpdate.setText("Update");
-        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+        btnUpdateDongSp.setText("Update");
+        btnUpdateDongSp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateActionPerformed(evt);
+                btnUpdateDongSpActionPerformed(evt);
             }
         });
 
@@ -116,7 +116,7 @@ public class DongSpJPanel extends javax.swing.JPanel {
                     .addComponent(txtTen, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnUpdate)
+                    .addComponent(btnUpdateDongSp)
                     .addComponent(btnAdd)
                     .addComponent(btnDelete))
                 .addGap(35, 35, 35))
@@ -146,7 +146,7 @@ public class DongSpJPanel extends javax.swing.JPanel {
                     .addComponent(btnDelete)
                     .addComponent(jLabel3))
                 .addGap(32, 32, 32)
-                .addComponent(btnUpdate)
+                .addComponent(btnUpdateDongSp)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -179,7 +179,7 @@ public class DongSpJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
-    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+    private void btnUpdateDongSpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateDongSpActionPerformed
         // TODO add your handling code here:
         int index = tblDongSP.getSelectedRow();
         DongSp mauSac = dongSpService.getAll().get(index);
@@ -191,7 +191,7 @@ public class DongSpJPanel extends javax.swing.JPanel {
         }else{
             JOptionPane.showMessageDialog(this, "Sửa thất bại");
         }
-    }//GEN-LAST:event_btnUpdateActionPerformed
+    }//GEN-LAST:event_btnUpdateDongSpActionPerformed
 
     private void tblDongSPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDongSPMouseClicked
         // TODO add your handling code here:
@@ -204,7 +204,7 @@ public class DongSpJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnUpdate;
+    private javax.swing.JButton btnUpdateDongSp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

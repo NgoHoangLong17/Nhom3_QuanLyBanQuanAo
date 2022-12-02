@@ -72,4 +72,6 @@ public class ChiTietSp {
 
     @Column(name = "moTa")
     String moTa;
+    
+  
 }
