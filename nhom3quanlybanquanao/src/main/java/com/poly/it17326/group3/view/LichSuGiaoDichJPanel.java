@@ -4,6 +4,12 @@
  */
 package com.poly.it17326.group3.view;
 
+import com.poly.it17326.group3.domainmodels.HoaDonChiTiet;
+import com.poly.it17326.group3.repository.HoaDonChiTietReposity;
+import com.poly.it17326.group3.service.impl.HoaDonChiTietServiceImpl;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author ADMIN
@@ -13,10 +19,20 @@ public class LichSuGiaoDichJPanel extends javax.swing.JPanel {
     /**
      * Creates new form LichSuGiaoDichJPanel
      */
+    private HoaDonChiTietServiceImpl donChiTietServiceImpl = new HoaDonChiTietServiceImpl();
+    private HoaDonChiTietReposity donChiTietReposity = new HoaDonChiTietReposity();
     public LichSuGiaoDichJPanel() {
         initComponents();
     }
+    
+public void loadData(List<HoaDonChiTiet> list ){
 
+    DefaultTableModel defaultTableModel = (DefaultTableModel) Tblhoadon.getModel();
+    defaultTableModel.setRowCount(0);
+    for(HoaDonChiTiet hd: list){
+    defaultTableModel.addRow(new Object[]{hd.getIdHoaDonCT(),hd.getTenSp(),hd.getDONGIA(),hd.getSoLuong(),hd.getDongSp(),hd.getSize(),hd.getMauSac()});
+    }
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,7 +46,7 @@ public class LichSuGiaoDichJPanel extends javax.swing.JPanel {
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        TblLichsu = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -54,16 +70,12 @@ public class LichSuGiaoDichJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
+        Tblhoadon = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(255, 0, 255));
         setForeground(new java.awt.Color(204, 0, 204));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        TblLichsu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -71,7 +83,7 @@ public class LichSuGiaoDichJPanel extends javax.swing.JPanel {
                 "Mã NV", "Tên NV", "Mã KH", "Họ Tên", "SĐT", "Địa Chỉ", "Ngày Mua", "Ngày Giao", "Khuyến Mại", "Thành Tiền", "Trạng Thái", "Ghi Chú"
             }
         ));
-        jScrollPane5.setViewportView(jTable5);
+        jScrollPane5.setViewportView(TblLichsu);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -103,8 +115,6 @@ public class LichSuGiaoDichJPanel extends javax.swing.JPanel {
         jLabel3.setText("FROM HÓA ĐƠN");
 
         jLabel4.setText("Trạng Thái:");
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel5.setText("Mã Hóa Đơn:");
 
@@ -222,15 +232,15 @@ public class LichSuGiaoDichJPanel extends javax.swing.JPanel {
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Chi Tiết Hóa Đơn");
 
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+        Tblhoadon.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Mã SP", "Tên SP", "Giá Bán", "Số Lượng", "Tên Danh Mục", "Size", "Màu Sắc", "Chất Liệu", "Ngày Nhập"
+                "ID Hóa Đơn", "Tên SP", "Giá Bán", "Số Lượng", "Tên Danh Mục", "Size", "Màu Sắc"
             }
         ));
-        jScrollPane6.setViewportView(jTable6);
+        jScrollPane6.setViewportView(Tblhoadon);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -269,6 +279,8 @@ public class LichSuGiaoDichJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TblLichsu;
+    private javax.swing.JTable Tblhoadon;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -276,9 +288,7 @@ public class LichSuGiaoDichJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -286,22 +296,10 @@ public class LichSuGiaoDichJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable5;
-    private javax.swing.JTable jTable6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;

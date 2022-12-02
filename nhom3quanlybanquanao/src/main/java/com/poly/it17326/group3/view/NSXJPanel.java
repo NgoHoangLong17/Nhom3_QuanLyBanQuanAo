@@ -5,12 +5,8 @@
 package com.poly.it17326.group3.view;
 
 import com.poly.it17326.group3.domainmodels.Nsx;
-import com.poly.it17326.group3.repository.NSXRepositpry;
-import com.poly.it17326.group3.response.ViewNSXReponse;
-
 import com.poly.it17326.group3.service.ViewNSXService;
 import com.poly.it17326.group3.service.impl.NSXSeviceImpl;
-import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;

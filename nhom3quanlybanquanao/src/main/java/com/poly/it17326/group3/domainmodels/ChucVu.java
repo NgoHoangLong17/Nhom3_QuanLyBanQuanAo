@@ -19,7 +19,7 @@ import org.hibernate.annotations.GeneratorType;
 
 
 @Entity
-@Table(name = "ChucVu")
+@Table(name = "CHUCVU")
 @Setter
 @Getter
 @AllArgsConstructor

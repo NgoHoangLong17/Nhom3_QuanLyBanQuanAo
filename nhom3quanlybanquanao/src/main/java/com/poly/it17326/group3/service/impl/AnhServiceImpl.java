@@ -5,16 +5,16 @@
 package com.poly.it17326.group3.service.impl;
 
 import com.poly.it17326.group3.repository.AnhRepository;
-import com.poly.it17326.group3.response.AnhReponse;
-import com.poly.it17326.group3.service.AnhService;
+
 import com.poly.it17326.group3.domainmodels.Anh;
 import java.util.List;
+import com.poly.it17326.group3.service.ViewAnhService;
 
 /**
  *
  * @author doand
  */
-public class AnhServiceImpl implements AnhService {
+public class AnhServiceImpl implements ViewAnhService {
 
     private AnhRepository AnhRepository = new AnhRepository();
 

@@ -21,13 +21,15 @@ import lombok.ToString;
  * @author ADMIN
  */
 @Entity
-@Table
+@Table(name = "Nsx")
 @Setter
 @Getter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Nsx {
+
     
     @Id
     @Column(name = "ID")

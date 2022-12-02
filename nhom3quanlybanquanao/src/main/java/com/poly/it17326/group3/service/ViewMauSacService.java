@@ -6,20 +6,23 @@ package com.poly.it17326.group3.service;
 
 import com.poly.it17326.group3.domainmodels.MauSac;
 import com.poly.it17326.group3.repository.MauSacRepository;
+import com.poly.it17326.group3.response.MauSacReponse;
 import java.util.List;
 
 /**
  *
  * @author ADMIN
  */
-public interface MauSacService {
-    
-    List<MauSac>getAll();
-    
+public interface ViewMauSacService {
+
+    List<MauSac> getAll();
+
+    List<MauSacReponse> getAll1();
+
     public Boolean add(MauSac mauSac);
-    
+
     public Boolean delete(MauSac mauSac);
-    
+
     public Boolean update(MauSac mauSac);
-    
+
 }

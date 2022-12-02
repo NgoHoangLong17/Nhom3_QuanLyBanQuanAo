@@ -6,15 +6,15 @@ package com.poly.it17326.group3.service.impl;
 
 import com.poly.it17326.group3.repository.SanPhamRepository;
 import com.poly.it17326.group3.response.SanPhamReponse;
-import com.poly.it17326.group3.service.SanPhamSerice;
 import com.poly.it17326.group3.domainmodels.SanPham;
 import java.util.List;
+import com.poly.it17326.group3.service.ViewSanPhamService;
 
 /**
  *
  * @author doand
  */
-public class SanPhamServiceImpl implements SanPhamSerice {
+public class SanPhamServiceImpl implements ViewSanPhamService {
 
     private SanPhamRepository sanPhamRepository = new SanPhamRepository();
 

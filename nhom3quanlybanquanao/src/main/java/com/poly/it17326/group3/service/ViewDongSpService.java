@@ -4,21 +4,21 @@
  */
 package com.poly.it17326.group3.service;
 
-import com.poly.it17326.group3.domainmodels.Anh;
+import com.poly.it17326.group3.domainmodels.DongSp;
 import java.util.List;
 
 /**
  *
- * @author doand
+ * @author ADMIN
  */
-public interface AnhService {
-
-    public List<Anh> getAll();
-
-    public Boolean update(Anh Anh);
-
-    public Boolean add(Anh Anh);
+public interface ViewDongSpService {
     
-    public Boolean Delete(Anh Anh);
-     
+    List<DongSp> getAll();
+    
+    public Boolean add(DongSp dongSp);
+    
+    public Boolean delete(DongSp dongSp);
+    
+    public boolean update(DongSp dongSp);
+    
 }
