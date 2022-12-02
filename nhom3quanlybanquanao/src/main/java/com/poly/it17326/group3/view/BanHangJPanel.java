@@ -470,7 +470,9 @@ public class BanHangJPanel extends javax.swing.JPanel {
     private void tblHoaDonCTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHoaDonCTMouseClicked
         // TODO add your handling code here:
         int row = tblHoaDonCT.getSelectedRow();
+        System.out.println("row:"+row);
         HoaDonChiTiet hdct = hoaDonChiTietService.getOne(Integer.parseInt(tblHoaDonCT.getValueAt(row, 0).toString()));
+        System.out.println(hdct.toString());
         int soLuong = Integer.parseInt(JOptionPane.showInputDialog("Nhập số lượng:"));
         
     }//GEN-LAST:event_tblHoaDonCTMouseClicked

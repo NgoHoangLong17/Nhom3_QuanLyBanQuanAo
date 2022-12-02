@@ -223,9 +223,9 @@
                   <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                   <Component id="btnQuanLyNV" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnGiaoCa" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnKhuyenMai" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnThongKe" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -244,20 +244,22 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnQuanLyNV" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnThongKe" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnChiTietSp" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnQuanLySP" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnQuanLyKhachHang" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnLichSuGiaoDich" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnQuanLyKhachHang" alignment="0" pref="31" max="32767" attributes="0"/>
+                          <Component id="btnQuanLySP" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnChiTietSp" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnThongKe" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnKhuyenMai" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnGiaoCa" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnQuanLyNV" max="32767" attributes="0"/>
+                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="btnLichSuGiaoDich" alignment="1" min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -273,32 +275,46 @@
             <Property name="text" type="java.lang.String" value="Qu&#x1ea3;n l&#xfd; nh&#xe2;n vi&#xea;n"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnQuanLyNVMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnQuanLyNVMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnQuanLyNVActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton4">
+        <Component class="javax.swing.JButton" name="btnGiaoCa">
           <Properties>
             <Property name="text" type="java.lang.String" value="Qu&#x1ea3;n l&#xfd; giao ca"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnGiaoCaMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnGiaoCaMouseExited"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton5">
+        <Component class="javax.swing.JButton" name="btnKhuyenMai">
           <Properties>
             <Property name="text" type="java.lang.String" value="Qu&#x1ea3;n l&#xfd; khuy&#x1ec5;n m&#x1ea1;i"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnKhuyenMaiMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnKhuyenMaiMouseExited"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKhuyenMaiActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnThongKe">
           <Properties>
             <Property name="text" type="java.lang.String" value="Th&#x1ed1;ng k&#xea;"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnThongKeMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnThongKeMouseExited"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnChiTietSp">
           <Properties>
             <Property name="text" type="java.lang.String" value="Chi ti&#x1ebf;t s&#x1ea3;n ph&#x1ea9;m"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnChiTietSpMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnChiTietSpMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnChiTietSpActionPerformed"/>
           </Events>
         </Component>
@@ -306,12 +322,18 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Qu&#x1ea3;n l&#xfd; s&#x1ea3;n ph&#x1ea9;m"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnQuanLySPMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnQuanLySPMouseExited"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnQuanLyKhachHang">
           <Properties>
             <Property name="text" type="java.lang.String" value="Qu&#x1ea3;n l&#xfd; kh&#xe1;ch h&#xe0;ng"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnQuanLyKhachHangMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnQuanLyKhachHangMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnQuanLyKhachHangActionPerformed"/>
           </Events>
         </Component>
@@ -320,6 +342,8 @@
             <Property name="text" type="java.lang.String" value="L&#x1ecb;ch s&#x1eed; giao d&#x1ecb;ch"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnLichSuGiaoDichMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnLichSuGiaoDichMouseExited"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLichSuGiaoDichActionPerformed"/>
           </Events>
         </Component>

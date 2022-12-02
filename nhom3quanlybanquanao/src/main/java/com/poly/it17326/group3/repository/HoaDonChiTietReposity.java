@@ -21,7 +21,7 @@ public class HoaDonChiTietReposity implements Serializable {
 
     private Session session = HibernateConfig.getFACTORY().openSession();
 
-    private String fromTable = "FROM HoaDonChiTiet";
+    private String fromTable = " FROM HoaDonChiTiet";
 
     public List<HoaDonChiTiet> getAll() {
         Query query = session.createQuery(fromTable, HoaDonChiTiet.class);

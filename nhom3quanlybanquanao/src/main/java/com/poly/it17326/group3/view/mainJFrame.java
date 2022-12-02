@@ -6,8 +6,11 @@ package com.poly.it17326.group3.view;
 
 import com.poly.it17326.group3.domainmodels.KhachHang;
 import com.poly.it17326.group3.domainmodels.NhanVien;
+import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.event.MouseEvent;
 import java.util.Calendar;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 /**
@@ -30,6 +33,7 @@ public class mainJFrame extends javax.swing.JFrame {
         lblTenNV.setText(userLogin.getTenNhanVien());
         user = userLogin; 
         showPanel(new BanHangJPanel(user));
+        defaultHover();
     }
 
     private mainJFrame() {
@@ -42,6 +46,31 @@ public class mainJFrame extends javax.swing.JFrame {
         viewPanel.removeAll();
         viewPanel.add(jpanel);
         viewPanel.validate();
+    } 
+    private void hover(JButton btn){
+        btn.setBackground(Color.red);
+        btn.setForeground(Color.white);
+    }
+    
+    private void defaultHover(){
+        btnBanHang.setBackground(Color.white);
+        btnBanHang.setForeground(Color.red);
+        btnGiaoCa.setBackground(Color.white);
+        btnGiaoCa.setForeground(Color.red);
+        btnKhuyenMai.setBackground(Color.white);
+        btnKhuyenMai.setForeground(Color.red);
+        btnThongKe.setBackground(Color.white);
+        btnThongKe.setForeground(Color.red);
+        btnQuanLyNV.setBackground(Color.white);
+        btnQuanLyNV.setForeground(Color.red);
+        btnChiTietSp.setBackground(Color.white);
+        btnChiTietSp.setForeground(Color.red);
+        btnQuanLySP.setBackground(Color.white);
+        btnQuanLySP.setForeground(Color.red);
+        btnQuanLyKhachHang.setBackground(Color.white);
+        btnQuanLyKhachHang.setForeground(Color.red);
+        btnLichSuGiaoDich.setBackground(Color.white);
+        btnLichSuGiaoDich.setForeground(Color.red);
     }
 
     /**
@@ -93,8 +122,8 @@ public class mainJFrame extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         btnQuanLyNV = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnGiaoCa = new javax.swing.JButton();
+        btnKhuyenMai = new javax.swing.JButton();
         btnThongKe = new javax.swing.JButton();
         btnChiTietSp = new javax.swing.JButton();
         btnQuanLySP = new javax.swing.JButton();
@@ -215,24 +244,64 @@ public class mainJFrame extends javax.swing.JFrame {
         jLabel13.setText("Icon menu bar");
 
         btnQuanLyNV.setText("Quản lý nhân viên");
+        btnQuanLyNV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnQuanLyNVMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnQuanLyNVMouseExited(evt);
+            }
+        });
         btnQuanLyNV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnQuanLyNVActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Quản lý giao ca");
+        btnGiaoCa.setText("Quản lý giao ca");
+        btnGiaoCa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnGiaoCaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnGiaoCaMouseExited(evt);
+            }
+        });
 
-        jButton5.setText("Quản lý khuyễn mại");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnKhuyenMai.setText("Quản lý khuyễn mại");
+        btnKhuyenMai.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnKhuyenMaiMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnKhuyenMaiMouseExited(evt);
+            }
+        });
+        btnKhuyenMai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnKhuyenMaiActionPerformed(evt);
             }
         });
 
         btnThongKe.setText("Thống kê");
+        btnThongKe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnThongKeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnThongKeMouseExited(evt);
+            }
+        });
 
         btnChiTietSp.setText("Chi tiết sản phẩm");
+        btnChiTietSp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnChiTietSpMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnChiTietSpMouseExited(evt);
+            }
+        });
         btnChiTietSp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnChiTietSpActionPerformed(evt);
@@ -240,8 +309,24 @@ public class mainJFrame extends javax.swing.JFrame {
         });
 
         btnQuanLySP.setText("Quản lý sản phẩm");
+        btnQuanLySP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnQuanLySPMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnQuanLySPMouseExited(evt);
+            }
+        });
 
         btnQuanLyKhachHang.setText("Quản lý khách hàng");
+        btnQuanLyKhachHang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnQuanLyKhachHangMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnQuanLyKhachHangMouseExited(evt);
+            }
+        });
         btnQuanLyKhachHang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnQuanLyKhachHangActionPerformed(evt);
@@ -249,6 +334,14 @@ public class mainJFrame extends javax.swing.JFrame {
         });
 
         btnLichSuGiaoDich.setText("Lịch sử giao dịch");
+        btnLichSuGiaoDich.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnLichSuGiaoDichMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnLichSuGiaoDichMouseExited(evt);
+            }
+        });
         btnLichSuGiaoDich.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLichSuGiaoDichActionPerformed(evt);
@@ -263,9 +356,9 @@ public class mainJFrame extends javax.swing.JFrame {
                 .addGap(69, 69, 69)
                 .addComponent(btnQuanLyNV)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4)
+                .addComponent(btnGiaoCa)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton5)
+                .addComponent(btnKhuyenMai)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnThongKe)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -282,19 +375,20 @@ public class mainJFrame extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(btnQuanLyNV)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(btnThongKe)
-                    .addComponent(btnChiTietSp)
-                    .addComponent(btnQuanLySP)
-                    .addComponent(btnQuanLyKhachHang)
-                    .addComponent(btnLichSuGiaoDich))
-                .addGap(62, 62, 62))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnQuanLyKhachHang, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                        .addComponent(btnQuanLySP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnChiTietSp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnThongKe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnKhuyenMai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnGiaoCa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnQuanLyNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel13))
+                    .addComponent(btnLichSuGiaoDich, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -361,12 +455,13 @@ public class mainJFrame extends javax.swing.JFrame {
     private void btnQuanLyNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuanLyNVActionPerformed
         // TODO add your handling code here:
         showPanel(new NhanVienJPanel());
+        hover(btnQuanLyNV);
     }//GEN-LAST:event_btnQuanLyNVActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnKhuyenMaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKhuyenMaiActionPerformed
         // TODO add your handling code here:
         showPanel(new KhuyenMaiJPanel());
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnKhuyenMaiActionPerformed
 
     private void btnLichSuGiaoDichActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLichSuGiaoDichActionPerformed
         // TODO add your handling code here:
@@ -380,8 +475,88 @@ public class mainJFrame extends javax.swing.JFrame {
 
     private void btnChiTietSpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChiTietSpActionPerformed
         // TODO add your handling code here:
-        showPanel(jpanel);
+        showPanel(new ChiTietSanPhamFrm1());
     }//GEN-LAST:event_btnChiTietSpActionPerformed
+
+    private void btnQuanLyNVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQuanLyNVMouseEntered
+        // TODO add your handling code here:
+        hover(btnQuanLyNV);
+    }//GEN-LAST:event_btnQuanLyNVMouseEntered
+
+    private void btnGiaoCaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGiaoCaMouseEntered
+        // TODO add your handling code here:
+        hover(btnGiaoCa);
+    }//GEN-LAST:event_btnGiaoCaMouseEntered
+
+    private void btnQuanLyNVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQuanLyNVMouseExited
+        // TODO add your handling code here:
+        defaultHover();
+    }//GEN-LAST:event_btnQuanLyNVMouseExited
+
+    private void btnGiaoCaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGiaoCaMouseExited
+        // TODO add your handling code here:
+        defaultHover();
+    }//GEN-LAST:event_btnGiaoCaMouseExited
+
+    private void btnKhuyenMaiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKhuyenMaiMouseExited
+        // TODO add your handling code here:
+        defaultHover();
+    }//GEN-LAST:event_btnKhuyenMaiMouseExited
+
+    private void btnThongKeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThongKeMouseExited
+        // TODO add your handling code here:
+        defaultHover();
+    }//GEN-LAST:event_btnThongKeMouseExited
+
+    private void btnChiTietSpMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChiTietSpMouseExited
+        // TODO add your handling code here:
+        defaultHover();
+    }//GEN-LAST:event_btnChiTietSpMouseExited
+
+    private void btnQuanLySPMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQuanLySPMouseExited
+        // TODO add your handling code here:
+        defaultHover();
+    }//GEN-LAST:event_btnQuanLySPMouseExited
+
+    private void btnQuanLyKhachHangMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQuanLyKhachHangMouseExited
+        // TODO add your handling code here:
+        defaultHover();
+    }//GEN-LAST:event_btnQuanLyKhachHangMouseExited
+
+    private void btnLichSuGiaoDichMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLichSuGiaoDichMouseExited
+        // TODO add your handling code here:
+        defaultHover();
+    }//GEN-LAST:event_btnLichSuGiaoDichMouseExited
+
+    private void btnKhuyenMaiMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKhuyenMaiMouseEntered
+        // TODO add your handling code here:
+        hover(btnKhuyenMai);
+    }//GEN-LAST:event_btnKhuyenMaiMouseEntered
+
+    private void btnThongKeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThongKeMouseEntered
+        // TODO add your handling code here:
+        hover(btnThongKe);
+    }//GEN-LAST:event_btnThongKeMouseEntered
+
+    private void btnChiTietSpMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChiTietSpMouseEntered
+        // TODO add your handling code here:
+        hover(btnChiTietSp);
+    }//GEN-LAST:event_btnChiTietSpMouseEntered
+
+    private void btnQuanLySPMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQuanLySPMouseEntered
+        // TODO add your handling code here:
+        hover(btnQuanLySP);
+    }//GEN-LAST:event_btnQuanLySPMouseEntered
+
+    private void btnQuanLyKhachHangMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnQuanLyKhachHangMouseEntered
+        // TODO add your handling code here:
+        hover(btnQuanLyKhachHang);
+    }//GEN-LAST:event_btnQuanLyKhachHangMouseEntered
+
+    private void btnLichSuGiaoDichMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLichSuGiaoDichMouseEntered
+        // TODO add your handling code here:
+        hover(btnLichSuGiaoDich);
+    }//GEN-LAST:event_btnLichSuGiaoDichMouseEntered
 
 
     /**
@@ -391,6 +566,8 @@ public class mainJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBanHang;
     private javax.swing.JButton btnChiTietSp;
+    private javax.swing.JButton btnGiaoCa;
+    private javax.swing.JButton btnKhuyenMai;
     private javax.swing.JButton btnLichSuGiaoDich;
     private javax.swing.JButton btnQuanLyKhachHang;
     private javax.swing.JButton btnQuanLyNV;
@@ -398,8 +575,6 @@ public class mainJFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnThongKe;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel4;
