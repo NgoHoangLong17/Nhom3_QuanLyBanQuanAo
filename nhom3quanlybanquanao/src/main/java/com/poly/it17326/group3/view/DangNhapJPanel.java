@@ -7,7 +7,6 @@ package com.poly.it17326.group3.view;
 import com.poly.it17326.group3.domainmodels.NhanVien;
 import com.poly.it17326.group3.service.ViewNhanVienService;
 import com.poly.it17326.group3.service.impl.ViewNhanVienServiceImpl;
-import javax.swing.JOptionPane;
 
 /**
  *

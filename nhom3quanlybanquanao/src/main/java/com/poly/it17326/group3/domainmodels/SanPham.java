@@ -25,7 +25,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@Entity
+@Entity 
 @Table(name = "SANPHAM")
 public class SanPham {
     @Id

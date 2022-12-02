@@ -13,8 +13,7 @@ import com.poly.it17326.group3.domainmodels.Size;
 import com.poly.it17326.group3.repository.AnhRepository;
 import com.poly.it17326.group3.repository.SanPhamRepository;
 import com.poly.it17326.group3.response.MauSacReponse;
-import com.poly.it17326.group3.service.DongSpService;
-import com.poly.it17326.group3.service.MauSacService;
+import com.poly.it17326.group3.service.ViewAnhService;
 import com.poly.it17326.group3.service.ViewDongSpService;
 import com.poly.it17326.group3.service.ViewMauSacService;
 import com.poly.it17326.group3.service.ViewNSXService;
@@ -44,7 +43,7 @@ public class ThuocTinhSanPhamJPanel extends javax.swing.JPanel {
     private SanPhamRepository SanPhamRepository = new SanPhamRepository();
     private ViewDongSpService dongSpService = new DongSpServiceImpl();
     private ViewMauSacService mauSacService = new MauSacServiceImpl();
-    private AnhServiceImpl AnhServiceImpl = new AnhServiceImpl();
+    private ViewAnhService AnhServiceImpl = new AnhServiceImpl();
     private AnhRepository AnhRepository = new AnhRepository();
     private ViewNSXService nSXService = new NSXSeviceImpl();
     private DefaultTableModel defaultTableModel;
