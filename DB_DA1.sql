@@ -215,6 +215,21 @@ INSERT INTO NSX VALUES('NSX3')
 INSERT INTO DONGSP VALUES(N'Sơ mi')
 INSERT INTO DONGSP VALUES(N'Áo phông')
 INSERT INTO DONGSP VALUES(N'Quần')
+<<<<<<< HEAD
+=======
+
+insert into ChucVu(ten)
+values (N'Quản lý'),
+		(N'Nhân viên'),
+		(N'Bảo vệ'),
+		(N'Thu ngân')
+select * from ChucVu
+
+insert into NHANVIEN(TEN, IDCHUCVU, GIOITINH, NGAYSINH, SDT, DIACHI, MATKHAU, TRANGTHAI)
+values (N'Cường', 1, 0, '1999-7-27', '0987123123', N'Hà Nội', '123', 1)
+select * from NHANVIEN
+
+>>>>>>> Hung
 
 --CREATE TABLE CALAM(
 	

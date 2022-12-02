@@ -21,7 +21,7 @@ import lombok.ToString;
  * @author ADMIN
  */
 @Entity
-@Table(name = "NSX")
+@Table(name = "Nsx")
 @Setter
 @Getter
 @ToString

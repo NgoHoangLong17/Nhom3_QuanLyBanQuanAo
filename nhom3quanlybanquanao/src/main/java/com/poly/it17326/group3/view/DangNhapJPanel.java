@@ -119,7 +119,7 @@ public class DangNhapJPanel extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Tài khoản");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(44, 109, 60, 20);
+        jLabel3.setBounds(44, 109, 59, 20);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -151,12 +151,12 @@ public class DangNhapJPanel extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("_____________________________________________________");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(44, 221, 247, 50);
+        jLabel5.setBounds(44, 221, 265, 50);
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("_____________________________________________________");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(44, 141, 247, 50);
+        jLabel6.setBounds(44, 141, 265, 50);
 
         jCheckBox1.setBackground(new java.awt.Color(51, 153, 255));
         jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -170,7 +170,7 @@ public class DangNhapJPanel extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jCheckBox1);
-        jCheckBox1.setBounds(44, 268, 117, 29);
+        jCheckBox1.setBounds(44, 268, 113, 24);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));

@@ -209,7 +209,12 @@ public class mainJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Quản lý tài khoản");
+        jLabel3.setText("Quản lý nhân viên");
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
         jLabel6.setText("Quản lý giao ca");
 
@@ -258,7 +263,11 @@ public class mainJFrame extends javax.swing.JFrame {
                 .addComponent(jLabel11)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel12)
+
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+
                 .addComponent(jLabel13)
                 .addContainerGap())
         );
@@ -325,6 +334,7 @@ public class mainJFrame extends javax.swing.JFrame {
         showPanel(new KhuyenMaiJPanel());
     }//GEN-LAST:event_jLabel7MouseClicked
 
+
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
 //       System.exit(0);
@@ -332,13 +342,19 @@ public class mainJFrame extends javax.swing.JFrame {
 
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
         // TODO add your handling code here:
-        showPanel(new ChiTietSanPhamFrm());
+//        showPanel(new ChiTietSanPhamFrm());
     }//GEN-LAST:event_jPanel2MouseClicked
 
     private void btnBanHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBanHangActionPerformed
         // TODO add your handling code here:
         showPanel(new BanHangJPanel(user));
     }//GEN-LAST:event_btnBanHangActionPerformed
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+//        showPanel(new NhanVienJPanel());
+    }//GEN-LAST:event_jLabel3MouseClicked
+
 
     /**
      * @param args the command line arguments

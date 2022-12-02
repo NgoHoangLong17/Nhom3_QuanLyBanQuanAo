@@ -5,6 +5,7 @@
 package com.poly.it17326.group3.view;
 
 import com.poly.it17326.group3.domainmodels.DongSp;
+import com.poly.it17326.group3.domainmodels.NhanVien;
 
 /**
  *
@@ -28,7 +29,7 @@ public class Test extends javax.swing.JFrame {
 //        FrmDongSp dongSp = new FrmDongSp();
 
 //    FrmHoaDonChiTiet fnv = new FrmHoaDonChiTiet();
-        AnhJPanel jPanel  = new AnhJPanel();
+        BanHangJPanel jPanel  = new BanHangJPanel(new NhanVien());
 //      FrmKhuyenMai fkm = new FrmKhuyenMai();
         tesst.removeAll();
         tesst.add(jPanel);

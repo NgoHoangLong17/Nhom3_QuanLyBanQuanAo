@@ -17,12 +17,12 @@ public class NhanVienRepository {
         return query.getResultList();
     }
 
-//    public static void main(String[] args) {
-//        List<NhanVien> nhanViens = new NhanVienRepository().getAll();
-//        for(NhanVien nhanVien : nhanViens){
-//            System.out.println(nhanVien.toString());
-//        }        
-//    }
+    public static void main(String[] args) {
+        List<NhanVien> nhanViens = new NhanVienRepository().getAll();
+        for(NhanVien nhanVien : nhanViens){
+            System.out.println(nhanVien.toString());
+        }        
+    }
     public Boolean add(NhanVien nhanVien) {
         Transaction transaction = null;
         try ( Session session = HibernateConfig.getFACTORY().openSession()) {
@@ -61,4 +61,7 @@ public class NhanVienRepository {
         }
         return null;
     }
+    
+    
+    
 }
