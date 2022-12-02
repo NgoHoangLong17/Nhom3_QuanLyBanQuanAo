@@ -25,7 +25,7 @@ public class mainJFrame extends javax.swing.JFrame {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         dongHo();
-        showPanel(new BanHangJPanel());
+        showPanel(new KhachHangJpanel());
     }
 
     private void showPanel(JPanel panel) {
