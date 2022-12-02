@@ -23,13 +23,14 @@ import lombok.ToString;
  *
  * @author doand
  */
-@Getter
-@Setter
+
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Entity
 @Table(name = "HOADON")
+@Getter
+@Setter
 public class HoaDon {
 
     @Id

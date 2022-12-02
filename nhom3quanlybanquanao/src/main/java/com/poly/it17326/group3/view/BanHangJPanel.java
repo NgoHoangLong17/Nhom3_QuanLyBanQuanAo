@@ -98,7 +98,7 @@ public class BanHangJPanel extends javax.swing.JPanel {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Số lượng không hợp lệ!");
             return;
-        }
+        } 
         hdct.setDONGIA(ctsp.getGia());
         hdct.setAnh(ctsp.getAnh().getTen());
         hdct.setDongSp(ctsp.getDongSp().getTen());
@@ -109,7 +109,7 @@ public class BanHangJPanel extends javax.swing.JPanel {
         loadTableHDCT(hoaDonChiTietService.getHdctByIdHD(Integer.parseInt(lblMaHD.getText())));
         loadTableCTSP(chiTietSPService.getAll());
         setTongTien();
-    }
+    } 
 
     /**
      * This method is called from within the constructor to initialize the form.
