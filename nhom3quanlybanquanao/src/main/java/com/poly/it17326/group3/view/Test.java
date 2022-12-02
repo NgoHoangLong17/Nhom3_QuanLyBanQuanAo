@@ -15,10 +15,11 @@ public class Test extends javax.swing.JFrame {
      */
     public Test() {
         initComponents();
-//        AnhJPanel ajp = new AnhJPanel();
-ThuocTinhSanPhamJPanel jPanel = new ThuocTinhSanPhamJPanel();
+
+    ChiTietSanPhamFrm1 ajp = new ChiTietSanPhamFrm1();
     jPanel1.removeAll();
-    jPanel1.add(jPanel);
+    jPanel1.add(ajp);
+
     jPanel1.validate();
   }
 

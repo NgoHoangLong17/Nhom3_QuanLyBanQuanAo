@@ -14,6 +14,8 @@ import java.util.List;
 public interface AnhService {
 
     public List<Anh> getAll();
+    
+    
 
     public Boolean update(Anh Anh);
 

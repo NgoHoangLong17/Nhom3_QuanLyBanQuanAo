@@ -23,9 +23,10 @@ public class SizeJPanel extends javax.swing.JPanel {
     /**
      * Creates new form PanelSize
      */
-    private ViewSizeService sizeService = new SizeServiceImpl();
 
-    private DefaultTableModel defaultTableModel;
+    private  ViewSizeService sizeService = new SizeServiceImpl();
+    
+    private  DefaultTableModel defaultTableModel;
 
     public SizeJPanel() {
         initComponents();
