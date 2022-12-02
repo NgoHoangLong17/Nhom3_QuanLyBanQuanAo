@@ -86,7 +86,6 @@ public void loadDataSp(List<KhachHang> list) {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setText("Địa chỉ");
 
-        btnReset.setBackground(new java.awt.Color(255, 255, 255));
         btnReset.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnReset.setText("Mới");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
@@ -95,7 +94,6 @@ public void loadDataSp(List<KhachHang> list) {
             }
         });
 
-        btnThem.setBackground(new java.awt.Color(255, 255, 255));
         btnThem.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnThem.setText("Thêm");
         btnThem.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +109,6 @@ public void loadDataSp(List<KhachHang> list) {
         jLabel5.setForeground(new java.awt.Color(0, 51, 51));
         jLabel5.setText("ID");
 
-        btnSua.setBackground(new java.awt.Color(255, 255, 255));
         btnSua.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnSua.setText("Sửa");
         btnSua.addActionListener(new java.awt.event.ActionListener() {
@@ -120,7 +117,6 @@ public void loadDataSp(List<KhachHang> list) {
             }
         });
 
-        btnXoa.setBackground(new java.awt.Color(255, 255, 255));
         btnXoa.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnXoa.setText("Xóa");
         btnXoa.addActionListener(new java.awt.event.ActionListener() {
@@ -194,7 +190,7 @@ public void loadDataSp(List<KhachHang> list) {
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("THÊM NHANH KHÁCH HÀNG");
+        jLabel1.setText("Quản lý khách hàng");
 
         tblKhachHang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

@@ -4,7 +4,9 @@
  */
 package com.poly.it17326.group3.view;
 
+import com.poly.it17326.group3.domainmodels.KhachHang;
 import com.poly.it17326.group3.domainmodels.NhanVien;
+import java.awt.event.MouseEvent;
 import java.util.Calendar;
 import javax.swing.JPanel;
 
@@ -89,15 +91,15 @@ public class mainJFrame extends javax.swing.JFrame {
         btnBanHang = new javax.swing.JButton();
         viewPanel = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        txtSp = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        btnQuanLyNV = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        btnThongKe = new javax.swing.JButton();
+        btnChiTietSp = new javax.swing.JButton();
+        btnQuanLySP = new javax.swing.JButton();
+        btnQuanLyKhachHang = new javax.swing.JButton();
+        btnLichSuGiaoDich = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -173,7 +175,7 @@ public class mainJFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(lblTenNV, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                .addComponent(lblTenNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(12, 12, 12)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -210,94 +212,89 @@ public class mainJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Quản lý nhân viên");
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
-            }
-        });
-
-        jLabel6.setText("Quản lý giao ca");
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
-            }
-        });
-
-        jLabel7.setText("Quản lý khuyến mại");
-        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel7MouseClicked(evt);
-            }
-        });
-
-        jLabel8.setText("Thống kê");
-
-        txtSp.setText("Quản lý chi tiết sản phẩm");
-        txtSp.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtSpMouseClicked(evt);
-            }
-        });
-
-        jLabel10.setText("Quản lý sản phẩm");
-        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel10MouseClicked(evt);
-            }
-        });
-
-        jLabel11.setText("Quản lý khách hàng");
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel11MouseClicked(evt);
-            }
-        });
-
-        jLabel12.setText("Lịch sử giao dịch");
-
         jLabel13.setText("Icon menu bar");
+
+        btnQuanLyNV.setText("Quản lý nhân viên");
+        btnQuanLyNV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQuanLyNVActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("Quản lý giao ca");
+
+        jButton5.setText("Quản lý khuyễn mại");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        btnThongKe.setText("Thống kê");
+
+        btnChiTietSp.setText("Chi tiết sản phẩm");
+        btnChiTietSp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChiTietSpActionPerformed(evt);
+            }
+        });
+
+        btnQuanLySP.setText("Quản lý sản phẩm");
+
+        btnQuanLyKhachHang.setText("Quản lý khách hàng");
+        btnQuanLyKhachHang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQuanLyKhachHangActionPerformed(evt);
+            }
+        });
+
+        btnLichSuGiaoDich.setText("Lịch sử giao dịch");
+        btnLichSuGiaoDich.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLichSuGiaoDichActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(235, 235, 235)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel6)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel7)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel8)
-                .addGap(18, 18, 18)
-                .addComponent(txtSp)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel10)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel11)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addGap(69, 69, 69)
+                .addComponent(btnQuanLyNV)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnThongKe)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnChiTietSp)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnQuanLySP)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnQuanLyKhachHang)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnLichSuGiaoDich)
+                .addGap(79, 79, 79)
                 .addComponent(jLabel13)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(txtSp)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel13))
-                .addGap(47, 47, 47))
+                    .addComponent(jLabel13)
+                    .addComponent(btnQuanLyNV)
+                    .addComponent(jButton4)
+                    .addComponent(jButton5)
+                    .addComponent(btnThongKe)
+                    .addComponent(btnChiTietSp)
+                    .addComponent(btnQuanLySP)
+                    .addComponent(btnQuanLyKhachHang)
+                    .addComponent(btnLichSuGiaoDich))
+                .addGap(62, 62, 62))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -326,11 +323,6 @@ public class mainJFrame extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_lblThoatMouseClicked
 
-    private void txtSpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSpMouseClicked
-        // TODO add your handling code here:
-        showPanel(new ChiTietSanPhamFrm());
-    }//GEN-LAST:event_txtSpMouseClicked
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
 
@@ -340,11 +332,6 @@ public class mainJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         setState(this.ICONIFIED);
     }//GEN-LAST:event_jLabel4MouseClicked
-
-    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        // TODO add your handling code here:
-        showPanel(new KhuyenMaiJPanel());
-    }//GEN-LAST:event_jLabel7MouseClicked
 
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -362,16 +349,6 @@ public class mainJFrame extends javax.swing.JFrame {
         showPanel(new BanHangJPanel(user));
     }//GEN-LAST:event_btnBanHangActionPerformed
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        // TODO add your handling code here:
-        showPanel(new NhanVienJPanel());
-    }//GEN-LAST:event_jLabel3MouseClicked
-
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
-        // TODO add your handling code here:
-        showPanel(new KhachHangJpanel());
-    }//GEN-LAST:event_jLabel11MouseClicked
-
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
         showPanel(new ThuocTinhSanPhamJPanel());
@@ -381,6 +358,31 @@ public class mainJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel6MouseClicked
 
+    private void btnQuanLyNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuanLyNVActionPerformed
+        // TODO add your handling code here:
+        showPanel(new NhanVienJPanel());
+    }//GEN-LAST:event_btnQuanLyNVActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        showPanel(new KhuyenMaiJPanel());
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void btnLichSuGiaoDichActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLichSuGiaoDichActionPerformed
+        // TODO add your handling code here:
+        showPanel(new LichSuGiaoDichJPanel());
+    }//GEN-LAST:event_btnLichSuGiaoDichActionPerformed
+
+    private void btnQuanLyKhachHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuanLyKhachHangActionPerformed
+        // TODO add your handling code here:
+        showPanel(new KhachHangJpanel());
+    }//GEN-LAST:event_btnQuanLyKhachHangActionPerformed
+
+    private void btnChiTietSpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChiTietSpActionPerformed
+        // TODO add your handling code here:
+        showPanel(jpanel);
+    }//GEN-LAST:event_btnChiTietSpActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -388,24 +390,24 @@ public class mainJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBanHang;
+    private javax.swing.JButton btnChiTietSp;
+    private javax.swing.JButton btnLichSuGiaoDich;
+    private javax.swing.JButton btnQuanLyKhachHang;
+    private javax.swing.JButton btnQuanLyNV;
+    private javax.swing.JButton btnQuanLySP;
+    private javax.swing.JButton btnThongKe;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblDongHo;
     private javax.swing.JLabel lblTenNV;
     private javax.swing.JLabel lblThoat;
-    private javax.swing.JLabel txtSp;
     private javax.swing.JPanel viewPanel;
     // End of variables declaration//GEN-END:variables
 }
