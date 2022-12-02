@@ -4,21 +4,21 @@
  */
 package com.poly.it17326.group3.service;
 
-import com.poly.it17326.group3.domainmodels.DongSp;
+import com.poly.it17326.group3.domainmodels.SanPham;
 import java.util.List;
 
 /**
  *
- * @author ADMIN
+ * @author doand
  */
-public interface DongSpService {
+public interface ViewSanPhamService {
+
+    public List<SanPham> getAll();
+
+    public Boolean update(SanPham sanPham);
+
+    public Boolean add(SanPham sanPham);
     
-    List<DongSp> getAll();
-    
-    public Boolean add(DongSp dongSp);
-    
-    public Boolean delete(DongSp dongSp);
-    
-    public boolean update(DongSp dongSp);
-    
+    public Boolean Delete(SanPham sanPham);
+     
 }

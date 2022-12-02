@@ -22,7 +22,7 @@ import lombok.ToString;
  */
 
 @Entity
-@Table(name ="MAUSAC")
+@Table(name = "MAUSAC")
 @Getter
 @Setter
 @AllArgsConstructor

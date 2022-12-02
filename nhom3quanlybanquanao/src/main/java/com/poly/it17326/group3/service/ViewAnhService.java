@@ -4,21 +4,23 @@
  */
 package com.poly.it17326.group3.service;
 
-import com.poly.it17326.group3.domainmodels.SanPham;
+import com.poly.it17326.group3.domainmodels.Anh;
 import java.util.List;
 
 /**
  *
  * @author doand
  */
-public interface SanPhamSerice {
+public interface ViewAnhService {
 
-    public List<SanPham> getAll();
-
-    public Boolean update(SanPham sanPham);
-
-    public Boolean add(SanPham sanPham);
+    public List<Anh> getAll();
     
-    public Boolean Delete(SanPham sanPham);
+    
+
+    public Boolean update(Anh Anh);
+
+    public Boolean add(Anh Anh);
+    
+    public Boolean Delete(Anh Anh);
      
 }

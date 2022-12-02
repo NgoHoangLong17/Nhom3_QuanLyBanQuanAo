@@ -28,11 +28,13 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-@Table(name="Size")
+@Table(name="SIZE")
 public class Size {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Column(name = "id")
+
 
     private Integer id;
 
