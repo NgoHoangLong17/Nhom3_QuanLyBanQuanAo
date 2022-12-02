@@ -5,7 +5,6 @@
 package com.poly.it17326.group3.service.impl;
 
 import com.poly.it17326.group3.repository.KhachHangRepository;
-import com.poly.it17326.group3.response.KhachHangReponse;
 import com.poly.it17326.group3.service.KhachHangService;
 import com.poly.it17326.group3.domainmodels.KhachHang;
 import java.util.List;

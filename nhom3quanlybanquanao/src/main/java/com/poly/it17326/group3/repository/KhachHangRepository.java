@@ -5,7 +5,6 @@
 package com.poly.it17326.group3.repository;
 
 import com.poly.it17326.group3.config.HibernateConfig;
-import com.poly.it17326.group3.response.KhachHangReponse;
 import com.poly.it17326.group3.domainmodels.KhachHang;
 import java.util.List;
 import javax.persistence.Query;

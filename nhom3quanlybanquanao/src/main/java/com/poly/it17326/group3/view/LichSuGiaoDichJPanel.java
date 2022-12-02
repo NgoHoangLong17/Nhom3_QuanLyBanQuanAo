@@ -6,6 +6,7 @@ package com.poly.it17326.group3.view;
 
 import com.poly.it17326.group3.domainmodels.HoaDonChiTiet;
 import com.poly.it17326.group3.repository.HoaDonChiTietReposity;
+import com.poly.it17326.group3.service.ViewHoaDonChiTietService;
 import com.poly.it17326.group3.service.impl.HoaDonChiTietServiceImpl;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -19,10 +20,10 @@ public class LichSuGiaoDichJPanel extends javax.swing.JPanel {
     /**
      * Creates new form LichSuGiaoDichJPanel
      */
-    private HoaDonChiTietServiceImpl donChiTietServiceImpl = new HoaDonChiTietServiceImpl();
-    private HoaDonChiTietReposity donChiTietReposity = new HoaDonChiTietReposity();
+    private ViewHoaDonChiTietService hoaDonChiTietService = new HoaDonChiTietServiceImpl();
     public LichSuGiaoDichJPanel() {
         initComponents();
+        loadData(hoaDonChiTietService.getAll());
     }
     
 public void loadData(List<HoaDonChiTiet> list ){
