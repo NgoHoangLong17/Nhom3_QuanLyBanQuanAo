@@ -342,7 +342,7 @@ public class mainJFrame extends javax.swing.JFrame {
 
     private void jPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseClicked
         // TODO add your handling code here:
-//        showPanel(new ChiTietSanPhamFrm());
+        showPanel(new ChiTietSanPhamFrm());
     }//GEN-LAST:event_jPanel2MouseClicked
 
     private void btnBanHangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBanHangActionPerformed
@@ -352,7 +352,7 @@ public class mainJFrame extends javax.swing.JFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
-//        showPanel(new NhanVienJPanel());
+        showPanel(new NhanVienJPanel());
     }//GEN-LAST:event_jLabel3MouseClicked
 
 
