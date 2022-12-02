@@ -5,6 +5,7 @@
 package com.poly.it17326.group3.view;
 
 import com.poly.it17326.group3.domainmodels.HoaDon;
+import com.poly.it17326.group3.domainmodels.TinhTrang;
 import com.poly.it17326.group3.service.ViewHoaDonService;
 import com.poly.it17326.group3.service.impl.HoaDonServiceImpl;
 import javax.swing.JOptionPane;
@@ -264,6 +265,7 @@ public class HoaDonJFrame extends javax.swing.JFrame {
 
     private void btnThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThanhToanActionPerformed
         // TODO add your handling code here:
+        hoaDon.setTinhTrang(new TinhTrang(2, ""));
         if (hoaDonService.save(hoaDon)) {
             JOptionPane.showMessageDialog(this, "Thanh toán thành công");
             this.dispose();
@@ -277,8 +279,11 @@ public class HoaDonJFrame extends javax.swing.JFrame {
 
     private void txtTienKhachTraKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTienKhachTraKeyReleased
         // TODO add your handling code here:
-        int tien = hoaDon.getTongTien()-Integer.parseInt();
-        txtTraLai.setText(Interger);
+        int tien = Integer.parseInt(txtTienKhachTra.getText())-hoaDon.getTongTien();
+        if(tien>=0){
+            txtTraLai.setText(tien+"");
+        }
+        
     }//GEN-LAST:event_txtTienKhachTraKeyReleased
 
     /**

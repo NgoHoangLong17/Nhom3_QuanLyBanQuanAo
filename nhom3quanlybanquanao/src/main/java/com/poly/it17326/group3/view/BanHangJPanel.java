@@ -475,6 +475,7 @@ public class BanHangJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         HoaDon hd = hoaDonService.getOne(Integer.parseInt(lblMaHD.getText()));
         hd.setTongTien(tongTien);
+        
         HoaDonJFrame hdjf = new HoaDonJFrame(hd);
         System.out.println(hd.toString());
         hdjf.setVisible(true);
