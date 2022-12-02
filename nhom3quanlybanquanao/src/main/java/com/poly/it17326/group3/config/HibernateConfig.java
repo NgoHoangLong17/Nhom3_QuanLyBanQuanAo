@@ -11,6 +11,7 @@ import com.poly.it17326.group3.domainmodels.ChucVu;
 import com.poly.it17326.group3.domainmodels.DongSp;
 import com.poly.it17326.group3.domainmodels.HoaDon;
 import com.poly.it17326.group3.domainmodels.HoaDonChiTiet;
+import com.poly.it17326.group3.domainmodels.KhachHang;
 import com.poly.it17326.group3.domainmodels.KhuyenMai;
 import com.poly.it17326.group3.domainmodels.MauSac;
 import com.poly.it17326.group3.domainmodels.Nsx;
@@ -58,6 +59,7 @@ public class HibernateConfig {
         conf.addAnnotatedClass(TinhTrang.class);
         conf.addAnnotatedClass(HoaDon.class);
         conf.addAnnotatedClass(HoaDonChiTiet.class);
+        conf.addAnnotatedClass(KhachHang.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();

@@ -52,8 +52,8 @@ public class NhanVien {
     @Column(name = "matKhau")
     private String matKhau;
     
-    @Column(name = "deleted")
-    private Boolean deleted;
+    @Column(name = "trangThai")
+    private Boolean trangThai;
     
     @ManyToOne
     @JoinColumn(name = "IdChucVu",referencedColumnName = "id" )
@@ -68,7 +68,7 @@ public class NhanVien {
     }
     
     public  String htDeleted(){
-        if(deleted == true){
+        if(trangThai == true){
             return "Nghỉ làm";
         }else{
             return "Đang hoạt động";

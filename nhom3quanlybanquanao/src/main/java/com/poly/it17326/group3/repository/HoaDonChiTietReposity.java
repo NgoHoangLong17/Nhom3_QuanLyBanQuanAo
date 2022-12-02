@@ -5,8 +5,8 @@
 package com.poly.it17326.group3.repository;
 
 import com.poly.it17326.group3.config.HibernateConfig;
-import com.poly.it17326.group3.domainmodels.ChatLieu;
 import com.poly.it17326.group3.domainmodels.HoaDonChiTiet;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Query;
@@ -17,19 +17,20 @@ import org.hibernate.Transaction;
  *
  * @author doand
  */
-public class HoaDonChiTietReposity {
-     private Session session = HibernateConfig.getFACTORY().openSession();
-    
-    private String fromTable = "FROM HoaDonChiTiet"; 
-    
-    public ArrayList<HoaDonChiTiet> getAll(){
-        Query query = session.createQuery(fromTable,HoaDonChiTiet.class);
+public class HoaDonChiTietReposity implements Serializable {
+
+    private Session session = HibernateConfig.getFACTORY().openSession();
+
+    private String fromTable = "FROM HoaDonChiTiet";
+
+    public List<HoaDonChiTiet> getAll() {
+        Query query = session.createQuery(fromTable, HoaDonChiTiet.class);
         return (ArrayList<HoaDonChiTiet>) query.getResultList();
     }
-    
-     public Boolean add(HoaDonChiTiet hoaDonChiTiet){
+
+    public Boolean save(HoaDonChiTiet hoaDonChiTiet) {
         Transaction transaction = null;
-        try (Session session = HibernateConfig.getFACTORY().openSession()){
+        try ( Session session = HibernateConfig.getFACTORY().openSession()) {
             transaction = session.beginTransaction();
             session.save(hoaDonChiTiet);
             transaction.commit();
@@ -39,10 +40,10 @@ public class HoaDonChiTietReposity {
         }
         return null;
     }
-    
-    public Boolean update(HoaDonChiTiet hoaDonChiTiet){
+
+    public Boolean update(HoaDonChiTiet hoaDonChiTiet) {
         Transaction transaction = null;
-        try (Session session = HibernateConfig.getFACTORY().openSession()){
+        try ( Session session = HibernateConfig.getFACTORY().openSession()) {
             transaction = session.beginTransaction();
             session.saveOrUpdate(hoaDonChiTiet);
             transaction.commit();
@@ -52,10 +53,10 @@ public class HoaDonChiTietReposity {
         }
         return null;
     }
-    
-    public Boolean delete(HoaDonChiTiet hoaDonChiTiet){
+
+    public Boolean delete(HoaDonChiTiet hoaDonChiTiet) {
         Transaction transaction = null;
-        try (Session session = HibernateConfig.getFACTORY().openSession()){
+        try ( Session session = HibernateConfig.getFACTORY().openSession()) {
             transaction = session.beginTransaction();
             session.delete(hoaDonChiTiet);
             transaction.commit();
@@ -65,14 +66,30 @@ public class HoaDonChiTietReposity {
         }
         return null;
     }
-    
-    public static void main(String[] args) {
-        HoaDonChiTietReposity chiTietReposity = new HoaDonChiTietReposity();
-        ArrayList<HoaDonChiTiet> list = (ArrayList<HoaDonChiTiet>) chiTietReposity.getAll();
-        for (HoaDonChiTiet hoaDonChiTiet : list) {
-            System.out.println(hoaDonChiTiet.toString());
-        }
-        
-        
+
+    public HoaDonChiTiet getOne(int id) {
+        String sql = fromTable + "where id=:id";
+        Query query = session.createQuery(sql, HoaDonChiTiet.class);
+        query.setParameter("id", id);
+        return (HoaDonChiTiet) query.getSingleResult();
     }
+
+    public List<HoaDonChiTiet> getHdctByIdHd(int id) {
+        String sql = fromTable + " where idHoaDon =:idhd";
+        Query query = session.createQuery(sql, HoaDonChiTiet.class);
+        query.setParameter("idhd", id);
+        return query.getResultList();
+    }
+
+    public HoaDonChiTiet getHdctByIdCtsp(int idCtsp) {
+        String sql = fromTable + " where idCtSp =:idctsp";
+        Query query = session.createQuery(sql, HoaDonChiTiet.class);
+        query.setParameter("idctsp", idCtsp);
+        return (HoaDonChiTiet) query.getSingleResult();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new HoaDonChiTietReposity().getHdctByIdCtsp(1));
+    }
+
 }

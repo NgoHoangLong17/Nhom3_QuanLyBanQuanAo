@@ -70,62 +70,70 @@ public class ChiTietSpRepository {
         Query query = session.createQuery(fromNsx);
         return query.getResultList();
     }
-    
-     public List<MauSac> getMauSac() {
+
+    public List<MauSac> getMauSac() {
         Query query = session.createQuery(fromMauSac);
         return query.getResultList();
     }
 
-       public  Boolean add(ChiTietSp chiTietSp){
+    public Boolean add(ChiTietSp chiTietSp) {
         Transaction transaction = null;
-        try(Session session = HibernateConfig.getFACTORY().openSession();) {
-          
-            transaction=session.beginTransaction();
+        try ( Session session = HibernateConfig.getFACTORY().openSession();) {
+
+            transaction = session.beginTransaction();
             session.save(chiTietSp);
             transaction.commit();
             return true;
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
-       
-         public  Boolean update(ChiTietSp chiTietSp){
+
+    public Boolean update(ChiTietSp chiTietSp) {
         Transaction transaction = null;
-        try(Session session = HibernateConfig.getFACTORY().openSession();) {
-          
-            transaction=session.beginTransaction();
+        try ( Session session = HibernateConfig.getFACTORY().openSession();) {
+
+            transaction = session.beginTransaction();
             session.saveOrUpdate(chiTietSp);
             transaction.commit();
             return true;
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
-         public  Boolean delete(ChiTietSp chiTietSp){
+
+    public Boolean delete(ChiTietSp chiTietSp) {
         Transaction transaction = null;
-        try(Session session = HibernateConfig.getFACTORY().openSession();) {
-          
-            transaction=session.beginTransaction();
+        try ( Session session = HibernateConfig.getFACTORY().openSession();) {
+
+            transaction = session.beginTransaction();
             session.delete(chiTietSp);
             transaction.commit();
             return true;
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
-     
+
+    public ChiTietSp getOne(int id) {
+        String sql = fromTable + " where id=:id";
+        Query query = session.createQuery(sql, ChiTietSp.class);
+        query.setParameter("id", id);
+        return (ChiTietSp) query.getSingleResult();
+    }
+
     public static void main(String[] args) {
 //        List<ChiTietSp> list = new ChiTietSpRepository().getAll();
 //        for (ChiTietSp chiTietSpRepository : list) {
 //            System.out.println(chiTietSpRepository.toString());
 //        }
-                List<SanPham> list = new ChiTietSpRepository().getSanPham();
+        List<SanPham> list = new ChiTietSpRepository().getSanPham();
         for (SanPham sanPham : list) {
             System.out.println(sanPham.toString());
         }

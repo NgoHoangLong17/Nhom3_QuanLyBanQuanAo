@@ -355,7 +355,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
         nhanVien.setSDT(txtSDT.getText());
         nhanVien.setDiaChi(txtDiaChi.getText());
         nhanVien.setMatKhau(txtMatKhau.getText());
-        nhanVien.setDeleted(chekNghi.isSelected());
+        nhanVien.setTrangThai(chekNghi.isSelected());
         if (viewNhanVienService.them(nhanVien)) {
             JOptionPane.showMessageDialog(this, "Thêm thành công");
             LoadTable((ArrayList<NhanVien>) viewNhanVienService.getNhanVien());
@@ -401,7 +401,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
         nhanVien.setSDT(txtSDT.getText());
         nhanVien.setDiaChi(txtDiaChi.getText());
         nhanVien.setMatKhau(txtMatKhau.getText());
-        nhanVien.setDeleted(chekNghi.isSelected());
+        nhanVien.setTrangThai(chekNghi.isSelected());
         if(viewNhanVienService.sua(nhanVien)){
             JOptionPane.showMessageDialog(this, "Sửa thành công");
             LoadTable((ArrayList<NhanVien>) viewNhanVienService.getNhanVien());

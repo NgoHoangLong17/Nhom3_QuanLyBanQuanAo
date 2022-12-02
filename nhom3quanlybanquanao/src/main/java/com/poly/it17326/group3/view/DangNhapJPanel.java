@@ -4,6 +4,11 @@
  */
 package com.poly.it17326.group3.view;
 
+import com.poly.it17326.group3.domainmodels.NhanVien;
+import com.poly.it17326.group3.service.ViewNhanVienService;
+import com.poly.it17326.group3.service.impl.ViewNhanVienServiceImpl;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author longnh203
@@ -13,16 +18,26 @@ public class DangNhapJPanel extends javax.swing.JFrame {
     /**
      * Creates new form FrmLogin
      */
+    private ViewNhanVienService nhanVienService;
+
     public DangNhapJPanel() {
         initComponents();
-        
+        nhanVienService = new ViewNhanVienServiceImpl();
+
     }
 
+    NhanVien userLogin = null;
+
     public Boolean checkLogin(String taiKhoan, String matKhau) {
-        if (txtTaiKhoan.getText().equals("admin") && txtMatKhau.getText().equals("admin")) {
-            return true;
+        boolean check = false;
+        for (NhanVien nv : nhanVienService.getNhanVien()) {
+            if (nv.getSDT().equals(taiKhoan) && nv.getMatKhau().equals(matKhau)) {
+                check = true;
+                userLogin = nv;
+                break;
+            }
         }
-        return false;
+        return check;
     }
 
     public static void main(String[] args) {
@@ -68,7 +83,7 @@ public class DangNhapJPanel extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/poly/it17326/group3/icon/logo.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Data\\Nhom3_QuanLyBanQuanAo\\nhom3quanlybanquanao\\src\\main\\resources\\com\\poly\\it17326\\group3\\icon\\logo.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -115,6 +130,7 @@ public class DangNhapJPanel extends javax.swing.JFrame {
         txtMatKhau.setBackground(new java.awt.Color(51, 153, 255));
         txtMatKhau.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtMatKhau.setForeground(new java.awt.Color(255, 255, 255));
+        txtMatKhau.setText("123");
         txtMatKhau.setBorder(null);
         jPanel1.add(txtMatKhau);
         txtMatKhau.setBounds(50, 222, 260, 30);
@@ -122,7 +138,13 @@ public class DangNhapJPanel extends javax.swing.JFrame {
         txtTaiKhoan.setBackground(new java.awt.Color(51, 153, 255));
         txtTaiKhoan.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtTaiKhoan.setForeground(new java.awt.Color(255, 255, 255));
+        txtTaiKhoan.setText("0123456789");
         txtTaiKhoan.setBorder(null);
+        txtTaiKhoan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTaiKhoanActionPerformed(evt);
+            }
+        });
         jPanel1.add(txtTaiKhoan);
         txtTaiKhoan.setBounds(50, 142, 260, 30);
 
@@ -139,6 +161,7 @@ public class DangNhapJPanel extends javax.swing.JFrame {
         jCheckBox1.setBackground(new java.awt.Color(51, 153, 255));
         jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jCheckBox1.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckBox1.setSelected(true);
         jCheckBox1.setText("Nhớ Mật Khẩu");
         jCheckBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -160,6 +183,7 @@ public class DangNhapJPanel extends javax.swing.JFrame {
         jPanel1.add(jLabel9);
         jLabel9.setBounds(320, 150, 0, 0);
 
+        invisible.setIcon(new javax.swing.ImageIcon("C:\\Data\\Nhom3_QuanLyBanQuanAo\\nhom3quanlybanquanao\\src\\main\\resources\\com\\poly\\it17326\\group3\\icon\\icons8-invisible-24.png")); // NOI18N
         invisible.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         invisible.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -167,7 +191,7 @@ public class DangNhapJPanel extends javax.swing.JFrame {
             }
         });
         jPanel1.add(invisible);
-        invisible.setBounds(320, 230, 0, 0);
+        invisible.setBounds(320, 230, 30, 20);
 
         btnDangNhap.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnDangNhap.setForeground(new java.awt.Color(51, 153, 255));
@@ -193,6 +217,7 @@ public class DangNhapJPanel extends javax.swing.JFrame {
         jPanel1.add(jLabel8);
         jLabel8.setBounds(360, 0, 20, 32);
 
+        show.setIcon(new javax.swing.ImageIcon("C:\\Data\\Nhom3_QuanLyBanQuanAo\\nhom3quanlybanquanao\\src\\main\\resources\\com\\poly\\it17326\\group3\\icon\\icons8-eye-24 (1).png")); // NOI18N
         show.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         show.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -200,7 +225,7 @@ public class DangNhapJPanel extends javax.swing.JFrame {
             }
         });
         jPanel1.add(show);
-        show.setBounds(320, 230, 0, 0);
+        show.setBounds(320, 230, 30, 20);
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
@@ -246,37 +271,19 @@ public class DangNhapJPanel extends javax.swing.JFrame {
 
     private void btnDangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangNhapActionPerformed
         // TODO add your handling code here:
-        if (checkLogin(null, null)) {
-            mainJFrame mainFrame = new mainJFrame();
-            try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(mainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-            
+        
+        if (checkLogin(txtTaiKhoan.getText(), txtMatKhau.getText())) {
+            mainJFrame mainFrame = new mainJFrame(userLogin);
             mainFrame.setExtendedState(mainFrame.MAXIMIZED_BOTH);
             mainFrame.setVisible(true);
             this.dispose();
         }
     }//GEN-LAST:event_btnDangNhapActionPerformed
 
-//    private Boolean checkUser(){
-//        if()
-//    }
-    /**
-     * @param args the command line arguments
-     */
+    private void txtTaiKhoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTaiKhoanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTaiKhoanActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDangNhap;

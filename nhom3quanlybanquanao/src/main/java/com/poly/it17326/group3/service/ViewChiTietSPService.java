@@ -43,4 +43,5 @@ public interface ViewChiTietSPService {
 
     public Boolean delete(ChiTietSp chiTietSp);
 
+    public ChiTietSp getOne(int id);
 }

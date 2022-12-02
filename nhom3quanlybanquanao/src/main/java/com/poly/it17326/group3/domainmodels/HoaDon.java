@@ -41,8 +41,9 @@ public class HoaDon {
     private NhanVien nhanVien;
 //    private int idNhanVien;
 
-    @Column(name = "tenKhachHang")
-    private String tenKhachHang;
+    @ManyToOne
+    @JoinColumn(name = "idKhachHang", referencedColumnName = "id")
+    private KhachHang khachHang;
 
     @Column(name = "sdt")
     private String sdt;

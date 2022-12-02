@@ -21,63 +21,69 @@ import com.poly.it17326.group3.service.ViewChiTietSPService;
  *
  * @author doand
  */
-public class ChiTietSpServiceImpl implements ViewChiTietSPService{
-private  ChiTietSpRepository chiTietSpRepository = new ChiTietSpRepository();
-    
+public class ChiTietSpServiceImpl implements ViewChiTietSPService {
+
+    private ChiTietSpRepository chiTietSpRepository = new ChiTietSpRepository();
+
     @Override
     public ArrayList<ChiTietSp> getAll() {
-    return chiTietSpRepository.getAll();
+        return chiTietSpRepository.getAll();
     }
 
     @Override
     public List<Anh> getAnh() {
-   return chiTietSpRepository.getAnh();
+        return chiTietSpRepository.getAnh();
     }
 
     @Override
     public List<SanPham> getSanPham() {
-    return chiTietSpRepository.getSanPham();
+        return chiTietSpRepository.getSanPham();
     }
 
     @Override
     public List<ChatLieu> getChatLieu() {
-   return chiTietSpRepository.getChatLieu();
+        return chiTietSpRepository.getChatLieu();
     }
 
     @Override
     public List<DongSp> getDongSp() {
-    return chiTietSpRepository.getDongSp();
+        return chiTietSpRepository.getDongSp();
     }
 
     @Override
     public List<Size> getSize() {
-  return  chiTietSpRepository.getSize();
+        return chiTietSpRepository.getSize();
     }
 
     @Override
     public List<Nsx> getNsx() {
-   return chiTietSpRepository.getNsx();
-           
+        return chiTietSpRepository.getNsx();
+
     }
 
     @Override
     public List<MauSac> getMauSac() {
-   return chiTietSpRepository.getMauSac();
+        return chiTietSpRepository.getMauSac();
     }
 
     @Override
     public Boolean add(ChiTietSp chiTietSp) {
-    return chiTietSpRepository.add(chiTietSp);
+        return chiTietSpRepository.add(chiTietSp);
     }
 
     @Override
     public Boolean update(ChiTietSp chiTietSp) {
-    return chiTietSpRepository.update(chiTietSp);
+        return chiTietSpRepository.update(chiTietSp);
     }
 
     @Override
     public Boolean delete(ChiTietSp chiTietSp) {
-   return chiTietSpRepository.delete(chiTietSp);
+        return chiTietSpRepository.delete(chiTietSp);
     }
-    
+
+    @Override
+    public ChiTietSp getOne(int id) {
+        return chiTietSpRepository.getOne(id);
+    }
+
 }

@@ -33,7 +33,7 @@ public  ViewNhanVienResponse(NhanVien nhanVien){
     this.ngaySinh = nhanVien.getNgaySinh();
     this.SDT = nhanVien.getSDT();
     this.diaChi = nhanVien.getDiaChi();
-    this.deleted = nhanVien.getDeleted();
+    this.deleted = nhanVien.getTrangThai();
 }
     
 }

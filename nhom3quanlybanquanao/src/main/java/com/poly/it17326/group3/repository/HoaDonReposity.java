@@ -5,10 +5,8 @@
 package com.poly.it17326.group3.repository;
 
 import com.poly.it17326.group3.config.HibernateConfig;
-import com.poly.it17326.group3.domainmodels.DongSp;
 import com.poly.it17326.group3.domainmodels.HoaDon;
-import com.poly.it17326.group3.domainmodels.SanPham;
-import java.util.ArrayList;
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -23,14 +21,14 @@ public class HoaDonReposity {
 
     private String fromTable = "FROM HoaDon";
 
-    public ArrayList<HoaDon> getAll() {
-        Query query = session.createQuery(fromTable, HoaDon.class);
-        return (ArrayList<HoaDon>) query.getResultList();
+    public List<HoaDon> getAll() {
+        Query query = session.createQuery(fromTable+" order by id desc", HoaDon.class);
+        return query.getResultList();
     }
 
-     public Boolean add(HoaDon hoaDon){
+    public Boolean save(HoaDon hoaDon) {
         Transaction transaction = null;
-        try (Session session = HibernateConfig.getFACTORY().openSession()){
+        try ( Session session = HibernateConfig.getFACTORY().openSession()) {
             transaction = session.beginTransaction();
             session.save(hoaDon);
             transaction.commit();
@@ -40,7 +38,8 @@ public class HoaDonReposity {
         }
         return null;
     }
-       public Boolean update(HoaDon hoaDon){
+
+    public Boolean update(HoaDon hoaDon) {
         Transaction transaction = null;
         try ( Session session = HibernateConfig.getFACTORY().openSession()) {
             transaction = session.beginTransaction();
@@ -52,7 +51,8 @@ public class HoaDonReposity {
         }
         return null;
     }
-        public Boolean delete(HoaDon hoaDon){
+
+    public Boolean delete(HoaDon hoaDon) {
         Transaction transaction = null;
         try ( Session session = HibernateConfig.getFACTORY().openSession()) {
             transaction = session.beginTransaction();
@@ -64,7 +64,23 @@ public class HoaDonReposity {
         }
         return null;
     }
-       
 
-
+    public HoaDon getOne(int id) {
+        String sql = fromTable + " where id=:id";
+        Query query = session.createQuery(sql, HoaDon.class);
+        query.setParameter("id", id);
+        return (HoaDon) query.getSingleResult();
+    }
+    
+    public List<HoaDon> getHoaDonByIdNV(int idnv){
+        String sql = fromTable +" where idNhanVien=:idnv order by id desc";
+        Query query = session.createQuery(sql,HoaDon.class);
+        query.setParameter("idnv", idnv);
+        return query.getResultList();
+    }
+    public static void main(String[] args) {
+        for (HoaDon hoaDon : new HoaDonReposity().getHoaDonByIdNV(1)) {
+            System.out.println(hoaDon.toString());
+        }
+    }
 }
