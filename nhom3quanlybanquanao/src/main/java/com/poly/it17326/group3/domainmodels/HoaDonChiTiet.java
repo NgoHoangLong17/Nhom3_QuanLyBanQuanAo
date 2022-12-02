@@ -70,4 +70,6 @@ public class HoaDonChiTiet {
 
     @Column(name = "DONGIA")
     private int DONGIA;
+    
+    
 }
