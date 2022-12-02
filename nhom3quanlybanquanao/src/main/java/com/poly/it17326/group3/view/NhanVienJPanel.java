@@ -60,15 +60,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
     public void loadTextFile(int row) {
         txtId.setText(tbNhanVien.getValueAt(row, 0).toString());
         txtTenNhanVien.setText(tbNhanVien.getValueAt(row, 1).toString());
-        if (tbNhanVien.getValueAt(row, 2).toString().equals("Quản lý")) {
-            cboChucVu.setSelectedItem("Quản lý");
-        } else if (tbNhanVien.getValueAt(row, 2).toString().equals("Nhân viên")) {
-            cboChucVu.setSelectedItem("Nhân viên");
-        } else if (tbNhanVien.getValueAt(row, 2).toString().equals("Thu ngân")) {
-            cboChucVu.setSelectedItem("Thu ngân");
-        } else if (tbNhanVien.getValueAt(row, 2).toString().equals("Bảo vệ")) {
-            cboChucVu.setSelectedItem("Bảo vệ");
-        }
+        cboChucVu.setSelectedItem(tbNhanVien.getValueAt(row, 2).toString());
         if (tbNhanVien.getValueAt(row, 3).toString().equalsIgnoreCase("Nam")) {
             rbnNam.setSelected(true);
         } else {
@@ -475,17 +467,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
         int row = tbNhanVien.getSelectedRow();
         txtId.setText(tbNhanVien.getValueAt(row, 0).toString());
         txtTenNhanVien.setText(tbNhanVien.getValueAt(row, 1).toString());
-        if (tbNhanVien.getValueAt(row, 2).toString().equals("Quản lý")) {
-            cboChucVu.setSelectedItem("Quản lý");
-        } else if (tbNhanVien.getValueAt(row, 2).toString().equals("Lao công")) {
-            cboChucVu.setSelectedItem("Lao Công");
-        } else if (tbNhanVien.getValueAt(row, 2).toString().equals("Kế toán")) {
-            cboChucVu.setSelectedItem("Kế toán");
-        } else if (tbNhanVien.getValueAt(row, 2).toString().equals("Thu ngân")) {
-            cboChucVu.setSelectedItem("Thu ngân");
-        } else if (tbNhanVien.getValueAt(row, 2).toString().equals("Bảo vệ")) {
-            cboChucVu.setSelectedItem("Bảo vệ");
-        }
+        cboChucVu.setSelectedItem(tbNhanVien.getValueAt(row, 2).toString());
         if (tbNhanVien.getValueAt(row, 3).toString().equalsIgnoreCase("Nam")) {
             rbnNam.setSelected(true);
         } else {
