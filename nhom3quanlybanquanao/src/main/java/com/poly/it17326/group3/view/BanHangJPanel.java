@@ -25,14 +25,14 @@ import javax.swing.table.DefaultTableModel;
  * @author longnh203
  */
 public class BanHangJPanel extends javax.swing.JPanel {
-    
+
     private ViewChiTietSPService chiTietSPService;
     private ViewHoaDonService hoaDonService;
     private ViewHoaDonChiTietService hoaDonChiTietService;
     private DefaultTableModel tableModel;
     private NhanVien user = null;
     int tongTien = 0;
-    
+
     public BanHangJPanel(NhanVien userLogin) {
         initComponents();
         chiTietSPService = new ChiTietSpServiceImpl();
@@ -42,19 +42,19 @@ public class BanHangJPanel extends javax.swing.JPanel {
         loadTableHoaDon(hoaDonService.getHoaDonByIdNV(userLogin.getId()));
         user = userLogin;
     }
-    
+
     private void loadTableCTSP(List<ChiTietSp> chiTietSanPhams) {
         tableModel = (DefaultTableModel) tblDanhSachSP.getModel();
         tableModel.setRowCount(0);
-        tableModel.setColumnIdentifiers(new String[]{"Mã sản phẩm", "Tên sản phẩm", "Đơn giá", "Số lượng"});
+        tableModel.setColumnIdentifiers(new String[]{"Mã sản phẩm", "Tên sản phẩm", "Màu sắc", "Đơn giá", "Số lượng"});
         chiTietSanPhams.forEach(ctsp
                 -> tableModel.addRow(new Object[]{
-            ctsp.getId(), ctsp.getSanPham().getTen(), ctsp.getGia(), ctsp.getSoLuongTon()
+            ctsp.getId(), ctsp.getSanPham().getTen(), ctsp.getMauSac().getTen(), ctsp.getGia(), ctsp.getSoLuongTon()
         })
         );
-        
+
     }
-    
+
     private void loadTableHoaDon(List<HoaDon> hoaDons) {
         tableModel = (DefaultTableModel) tblDsHoaDon.getModel();
         tableModel.setRowCount(0);
@@ -64,28 +64,36 @@ public class BanHangJPanel extends javax.swing.JPanel {
             hd.getId(), hd.getNgayTao(), hd.getKhachHang().getTen(), hd.getTinhTrang().getTen()
         })
         );
-        
+
     }
-    
+
     private void loadTableHDCT(List<HoaDonChiTiet> hdcts) {
         tableModel = (DefaultTableModel) tblHoaDonCT.getModel();
         tableModel.setRowCount(0);
-        tableModel.setColumnIdentifiers(new String[]{"Mã sản phẩm", "Tên sản phẩm", "Số lượng", "Đơn giá", "Thành tiền"});
+        tableModel.setColumnIdentifiers(new String[]{"Mã HDCT", "Tên sản phẩm", "Số lượng", "Đơn giá", "Thành tiền"});
         hdcts.forEach(hdct
                 -> tableModel.addRow(new Object[]{
-            hdct.getChiTietSp().getId(), hdct.getChiTietSp().getSanPham().getTen(), hdct.getSoLuong(), hdct.getDONGIA(), hdct.getSoLuong() * hdct.getDONGIA()
+            hdct.getIdHoaDonCT(), hdct.getChiTietSp().getSanPham().getTen(), hdct.getSoLuong(), hdct.getDONGIA(), hdct.getSoLuong() * hdct.getDONGIA()
         })
         );
     }
-    
+
+    private int tongTien() {
+        tongTien = 0;
+        for (int i = 0; i < tblHoaDonCT.getRowCount(); i++) {
+            tongTien += Integer.parseInt(tblHoaDonCT.getValueAt(i, 4).toString());
+        }
+        return tongTien;
+    }
+
     private void setTongTien() {
         tongTien = 0;
         for (int i = 0; i < tblHoaDonCT.getRowCount(); i++) {
-            tongTien += Integer.parseInt(tblHoaDonCT.getValueAt(i, 3).toString());
+            tongTien += Integer.parseInt(tblHoaDonCT.getValueAt(i, 4).toString());
         }
         lblThanhTien.setText(tongTien + " đ");
     }
-    
+
     private void saveHdct(HoaDonChiTiet hdct) {
         HoaDon hd = hoaDonService.getOne(Integer.parseInt(lblMaHD.getText()));
         ChiTietSp ctsp = chiTietSPService.getOne(Integer.parseInt(tblDanhSachSP.getValueAt(tblDanhSachSP.getSelectedRow(), 0).toString()));
@@ -434,9 +442,9 @@ public class BanHangJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         HoaDonChiTiet hdct = new HoaDonChiTiet();
         int id1 = Integer.parseInt(tblDanhSachSP.getValueAt(tblDanhSachSP.getSelectedRow(), 0).toString());
-        
+
         saveHdct(hdct);
-        
+
 
     }//GEN-LAST:event_tblDanhSachSPMouseClicked
 
@@ -465,14 +473,34 @@ public class BanHangJPanel extends javax.swing.JPanel {
 
     private void btnThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThanhToanActionPerformed
         // TODO add your handling code here:
+        HoaDon hd = hoaDonService.getOne(Integer.parseInt(lblMaHD.getText()));
+        hd.setTongTien(tongTien);
+        HoaDonJFrame hdjf = new HoaDonJFrame(hd);
+        System.out.println(hd.toString());
+        hdjf.setVisible(true);
+        hdjf.setLocationRelativeTo(null);
+
     }//GEN-LAST:event_btnThanhToanActionPerformed
 
     private void tblHoaDonCTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHoaDonCTMouseClicked
         // TODO add your handling code here:
         int row = tblHoaDonCT.getSelectedRow();
-        HoaDonChiTiet hdct = hoaDonChiTietService.getOne(Integer.parseInt(tblHoaDonCT.getValueAt(row, 0).toString()));
+        int idhdct = Integer.parseInt(tblHoaDonCT.getValueAt(row, 0).toString());
+        HoaDonChiTiet hdct = hoaDonChiTietService.getOne(idhdct);
+        ChiTietSp ctsp = chiTietSPService.getOne(hdct.getChiTietSp().getId());
         int soLuong = Integer.parseInt(JOptionPane.showInputDialog("Nhập số lượng:"));
-        
+        if (soLuong > hdct.getSoLuong()) {
+            JOptionPane.showMessageDialog(this, "Số lượng không hợp lệ!");
+            return;
+        } else if (soLuong == hdct.getSoLuong()) {
+            hoaDonChiTietService.delete(hdct);
+        } else {
+            hdct.setSoLuong(hdct.getSoLuong() - soLuong);
+        }
+
+        ctsp.setSoLuongTon(ctsp.getSoLuongTon() + soLuong);
+        loadTableCTSP(chiTietSPService.getAll());
+        loadTableHDCT(hoaDonChiTietService.getHdctByIdHD(Integer.parseInt(lblMaHD.getText())));
     }//GEN-LAST:event_tblHoaDonCTMouseClicked
 
 
