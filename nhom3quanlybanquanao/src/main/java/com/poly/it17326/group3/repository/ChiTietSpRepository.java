@@ -133,9 +133,9 @@ public class ChiTietSpRepository {
 //        for (ChiTietSp chiTietSpRepository : list) {
 //            System.out.println(chiTietSpRepository.toString());
 //        }
-        List<SanPham> list = new ChiTietSpRepository().getSanPham();
-        for (SanPham sanPham : list) {
-            System.out.println(sanPham.toString());
+        List<ChiTietSp> list = new ChiTietSpRepository().getAll();
+        for (ChiTietSp chiTietSp : list) {
+             System.out.println(chiTietSp.toString());
         }
 //        List<Anh> list = new ChiTietSpRepository().getAnh();
 //        for (Anh chiTietSpRepository : list) {

@@ -73,5 +73,6 @@ public class ChiTietSp {
     @Column(name = "moTa")
     String moTa;
     
-  
+    @Column(name = "anh")
+    String anh1;
 }
