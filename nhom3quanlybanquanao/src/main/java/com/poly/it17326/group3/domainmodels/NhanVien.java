@@ -37,6 +37,9 @@ public class NhanVien {
     @Column(name = "id")
     private Integer id;
     
+    @Column(name = "manv")
+    private String maNV;
+    
     @Column(name = "ten")
     private String tenNhanVien;
     
@@ -51,6 +54,9 @@ public class NhanVien {
     
     @Column(name = "diaChi")
     private String diaChi;
+    
+    @Column (name = "email")
+    private String email;
     
     @Column(name = "matKhau")
     private String matKhau;
