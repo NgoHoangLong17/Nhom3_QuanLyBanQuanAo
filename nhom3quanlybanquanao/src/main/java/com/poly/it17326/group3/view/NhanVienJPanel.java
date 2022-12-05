@@ -55,7 +55,18 @@ public class NhanVienJPanel extends javax.swing.JPanel {
         }
     }
 
-    
+    private void LoadTableByName(ArrayList<NhanVien> listNhanVien, String name) {
+        defaultTableModel = (DefaultTableModel) tbNhanVien.getModel();
+        defaultTableModel.setColumnIdentifiers(new String[]{"ID", "Tên nhân viên", "Chức vụ", "Giới tính", "Ngày sinh", "SĐT", "Địa chỉ", "Mật khẩu", "Deleted"});
+        defaultTableModel.setRowCount(0);
+        for (NhanVien nhanVien : listNhanVien) {
+            if (nhanVien.getTenNhanVien().contains(name)) {
+                defaultTableModel.addRow(new Object[]{nhanVien.getId(), nhanVien.getTenNhanVien(), nhanVien.getChucVu().getTenChucVu(),
+                    nhanVien.htGioiTinh(), nhanVien.getNgaySinh(), nhanVien.getSDT(), nhanVien.getDiaChi(), nhanVien.getMatKhau(), nhanVien.htDeleted()});
+            }
+        }
+    }
+
     public void loadTextFile(int row) {
         txtId.setText(tbNhanVien.getValueAt(row, 0).toString());
         txtTenNhanVien.setText(tbNhanVien.getValueAt(row, 1).toString());
@@ -83,6 +94,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
             chekNghi.setSelected(false);
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -105,7 +117,6 @@ public class NhanVienJPanel extends javax.swing.JPanel {
         btntien = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         txtTim = new javax.swing.JTextField();
-        btnTim = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -213,7 +224,11 @@ public class NhanVienJPanel extends javax.swing.JPanel {
 
         jLabel11.setText("Tìm Kiếm :");
 
-        btnTim.setText("Tìm");
+        txtTim.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTimKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -228,15 +243,13 @@ public class NhanVienJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel11)
                 .addGap(18, 18, 18)
                 .addComponent(txtTim, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnTim, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(btnDau, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(105, 105, 105)
                 .addComponent(btnLui, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 694, Short.MAX_VALUE)
                 .addComponent(btntien, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addComponent(btnCuoi, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -248,8 +261,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(txtTim, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnTim))
+                    .addComponent(txtTim, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -453,7 +465,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -568,10 +580,10 @@ public class NhanVienJPanel extends javax.swing.JPanel {
         nhanVien.setDiaChi(txtDiaChi.getText());
         nhanVien.setMatKhau(txtMatKhau.getText());
         nhanVien.setTrangThai(chekNghi.isSelected());
-        if(viewNhanVienService.sua(nhanVien)){
+        if (viewNhanVienService.sua(nhanVien)) {
             JOptionPane.showMessageDialog(this, "Sửa thành công");
             LoadTable((ArrayList<NhanVien>) viewNhanVienService.getNhanVien());
-        }else{
+        } else {
             JOptionPane.showMessageDialog(this, "Sửa thất bại");
         }
     }//GEN-LAST:event_btnSuaActionPerformed
@@ -585,7 +597,7 @@ public class NhanVienJPanel extends javax.swing.JPanel {
 
     private void btnCuoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCuoiActionPerformed
         // TODO add your handling code here:
-        int row = viewNhanVienService.getNhanVien().size() -1;
+        int row = viewNhanVienService.getNhanVien().size() - 1;
         tbNhanVien.setRowSelectionInterval(row, row);
         loadTextFile(row);
     }//GEN-LAST:event_btnCuoiActionPerformed
@@ -614,6 +626,11 @@ public class NhanVienJPanel extends javax.swing.JPanel {
         loadTextFile(row);
     }//GEN-LAST:event_btnLuiActionPerformed
 
+    private void txtTimKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKeyReleased
+        // TODO add your handling code here:
+        LoadTableByName((ArrayList<NhanVien>) viewNhanVienService.getNhanVien(), txtTim.getText());
+    }//GEN-LAST:event_txtTimKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCuoi;
@@ -622,7 +639,6 @@ public class NhanVienJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnNew;
     private javax.swing.JButton btnSua;
     private javax.swing.JButton btnThem;
-    private javax.swing.JButton btnTim;
     private javax.swing.JButton btnXoa;
     private javax.swing.JButton btntien;
     private javax.swing.ButtonGroup buttonGroup1;

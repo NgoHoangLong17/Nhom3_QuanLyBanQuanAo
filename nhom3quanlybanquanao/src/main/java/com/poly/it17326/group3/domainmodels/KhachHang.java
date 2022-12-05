@@ -4,6 +4,7 @@
  */
 package com.poly.it17326.group3.domainmodels;
 
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,6 +23,7 @@ import lombok.ToString;
  * @author ADMIN
  */
 
+@Table(name = "KHACHHANG")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -42,7 +44,22 @@ public class KhachHang {
     @Column(name = "sdt")
     private String sdt;
     
+     
+    @Column(name = "email")
+    private String email;
+    
+     
+    @Column(name = "capbac")
+    private Integer capBac;
+    
     @Column(name = "diaChi")
-
     private String diaChi;
+
+    public String capbac(){
+        if(capBac==0){
+            return "Bạc";
+        }else if(capBac==1){
+            return "Vàng";
+        }else return "Kim cương";  
+    }
 }

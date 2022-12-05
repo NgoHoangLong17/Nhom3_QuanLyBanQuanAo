@@ -11,10 +11,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-/**
- *
- * @author doand
- */
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -26,5 +22,10 @@ public class KhachHangReponse {
     private int id;
     private String ten;
     private String sdt;
+    
+    private String email;
+    private int capbac;
     private String diaChi;
+    
+    
 }

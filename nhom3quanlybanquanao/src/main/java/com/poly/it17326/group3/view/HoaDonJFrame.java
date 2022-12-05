@@ -58,6 +58,11 @@ public class HoaDonJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(255, 153, 51));
 
@@ -265,9 +270,10 @@ public class HoaDonJFrame extends javax.swing.JFrame {
 
     private void btnThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThanhToanActionPerformed
         // TODO add your handling code here:
-        hoaDon.setTinhTrang(new TinhTrang(3, ""));
-        if (hoaDonService.save(hoaDon)) {
+        hoaDon.setTinhTrang(new TinhTrang(1, ""));
+        if (hoaDonService.update(hoaDon)) {
             JOptionPane.showMessageDialog(this, "Thanh toán thành công");
+            
             this.dispose();
             
         }
@@ -286,6 +292,19 @@ public class HoaDonJFrame extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_txtTienKhachTraKeyReleased
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        for (double i = 0.0; i < 1.0; i = i + 0.1) {
+            String val = i + "";
+            float f = Float.valueOf(val);
+            this.setOpacity(f);
+            try {
+                Thread.sleep(50);
+            } catch (Exception e) {
+            }
+        }
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
