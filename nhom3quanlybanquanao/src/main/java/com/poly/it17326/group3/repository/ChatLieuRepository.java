@@ -57,7 +57,13 @@ public class ChatLieuRepository {
         }
         return null;
     }
-    
+        public ChatLieu getOne(int id) {
+        String sql = fromTable + " where id=:id";
+        Query query = session.createQuery(sql, ChatLieu.class);
+        query.setParameter("id", id);
+        return (ChatLieu) query.getSingleResult();
+        
+    }
 //     public static void main(String[] args) {
 //        List<ChatLieu> chatLieus = new ChatLieuRepository().getAll();
 //        for(ChatLieu chatLieu : chatLieus){

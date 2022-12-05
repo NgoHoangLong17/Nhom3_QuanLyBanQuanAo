@@ -89,6 +89,7 @@ public class SanPhamRepository {
         }
         return null;
     }
+  
 
     public static void main(String[] args) {
         List<SanPham> list = new SanPhamRepository().getAll();

@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  * @author doand
  */
 public class qrcode {
-    private static  final String outputQr = "F:\\thien.png";
+    private static  final String outputQr = "F:\\thiendepzai.png";
     private  static  void generateQRcode(String text,int width ,int height,String filePath) throws WriterException{
         QRCodeWriter qc =  new QRCodeWriter();
         BitMatrix  bm = qc.encode(text, BarcodeFormat.QR_CODE, width, height);
@@ -32,6 +32,6 @@ public class qrcode {
         }
     }
     public static void main(String[] args) throws WriterException {
-        generateQRcode("1008", 600, 600, outputQr);
+        generateQRcode("1", 600, 600, outputQr);
     }
 }

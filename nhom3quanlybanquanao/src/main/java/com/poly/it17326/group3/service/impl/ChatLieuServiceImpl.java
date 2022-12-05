@@ -30,5 +30,10 @@ public class ChatLieuServiceImpl implements ViewChatLieuService{
     public Boolean delete(ChatLieu chatLieu) {
         return chatLieuRepository.delete(chatLieu);
     }
+
+    @Override
+    public ChatLieu getOne(Integer ID) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

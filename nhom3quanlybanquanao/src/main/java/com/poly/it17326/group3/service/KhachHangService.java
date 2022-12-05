@@ -22,5 +22,7 @@ public interface KhachHangService {
     public Boolean add(KhachHang KhachHang);
     
     public Boolean Delete(KhachHang KhachHang);
+    
+    public 
      
 }

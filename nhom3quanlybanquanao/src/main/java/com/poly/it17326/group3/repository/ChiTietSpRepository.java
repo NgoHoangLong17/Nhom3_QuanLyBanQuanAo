@@ -41,8 +41,6 @@ public class ChiTietSpRepository {
         return (ArrayList<ChiTietSp>) query.getResultList();
     }
 
-  
-
     public List<SanPham> getSanPham() {
         Query query = session.createQuery(fromSanPham);
         return query.getResultList();
@@ -124,25 +122,17 @@ public class ChiTietSpRepository {
         return (ChiTietSp) query.getSingleResult();
     }
 
-    
-     public ArrayList<ChiTietSp> getAll1(int id) {
+    public ArrayList<ChiTietSp> getAll1(int id) {
         String sql = fromTable + " where id=:id";
         Query query = session.createQuery(sql, ChiTietSp.class);
         query.setParameter("id", id);
         return (ArrayList<ChiTietSp>) query.getResultList();
     }
+
     public static void main(String[] args) {
-//        List<ChiTietSp> list = new ChiTietSpRepository().getAll();
-//        for (ChiTietSp chiTietSpRepository : list) {
-//            System.out.println(chiTietSpRepository.toString());
-//        }
         List<ChiTietSp> list = new ChiTietSpRepository().getAll();
         for (ChiTietSp chiTietSp : list) {
-             System.out.println(chiTietSp.toString());
+            System.out.println(chiTietSp.toString());
         }
-//        List<Anh> list = new ChiTietSpRepository().getAnh();
-//        for (Anh chiTietSpRepository : list) {
-//            System.out.println(chiTietSpRepository.toString());
-//        }
     }
 }

@@ -16,28 +16,29 @@ import org.hibernate.query.Query;
  * @author ADMIN
  */
 public class DongSpRepository {
-    
+
     private Session session = HibernateConfig.getFACTORY().openSession();
-    
+
     private String fromTable = "FROM DongSp";//hsl
-    
-    public List<DongSp> getAll(){
+
+    public List<DongSp> getAll() {
         Query query = session.createQuery(fromTable, DongSp.class);
-        return  query.getResultList();
-        
+        return query.getResultList();
+
     }
+
     public static void main(String[] args) {
         List<DongSp> dongSp = new DongSpRepository().getAll();
         for (DongSp dsp : dongSp) {
             System.out.println(dsp.toString());
-            
+
         }
-             
+
     }
-    
+
     public Boolean add(DongSp dongSp) {
         Transaction transaction = null;
-        try (Session session = HibernateConfig.getFACTORY().openSession()) {
+        try ( Session session = HibernateConfig.getFACTORY().openSession()) {
             transaction = session.beginTransaction();
             session.save(dongSp);
             transaction.commit();
@@ -48,10 +49,10 @@ public class DongSpRepository {
         return null;
 
     }
-    
+
     public Boolean delete(DongSp dongSp) {
         Transaction transaction = null;
-        try (Session session = HibernateConfig.getFACTORY().openSession()) {
+        try ( Session session = HibernateConfig.getFACTORY().openSession()) {
             transaction = session.beginTransaction();
             session.delete(dongSp);
             transaction.commit();
@@ -62,10 +63,10 @@ public class DongSpRepository {
         return null;
 
     }
-    
+
     public Boolean update(DongSp dongSp) {
         Transaction transaction = null;
-        try (Session session = HibernateConfig.getFACTORY().openSession()) {
+        try ( Session session = HibernateConfig.getFACTORY().openSession()) {
             transaction = session.beginTransaction();
             session.saveOrUpdate(dongSp);
             transaction.commit();
@@ -74,6 +75,14 @@ public class DongSpRepository {
             e.printStackTrace(System.out);
         }
         return null;
+
+    }
+
+    public DongSp getOne(int id) {
+        String sql = fromTable + " where id=:id";
+        Query query = session.createQuery(sql, DongSp.class);
+        query.setParameter("id", id);
+        return (DongSp) query.getSingleResult();
 
     }
 }

@@ -21,5 +21,7 @@ public interface ViewNSXService {
     Boolean update(Nsx nsx);
 
     Boolean delete(Nsx nsx);
+    
+      Nsx getOne(Integer  ID);
 
 }

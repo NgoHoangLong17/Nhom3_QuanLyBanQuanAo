@@ -389,6 +389,15 @@ public class ChiTietSpJpanel extends javax.swing.JPanel implements Runnable, Thr
             }
         });
 
+        txtTimKiem.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtTimKiemKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTimKiemKeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -746,6 +755,18 @@ public class ChiTietSpJpanel extends javax.swing.JPanel implements Runnable, Thr
         ArrayList<ChiTietSp> lisy = chiTietSpRepository.getAll1(id);
         loadTable(lisy);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void txtTimKiemKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKiemKeyPressed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_txtTimKiemKeyPressed
+
+    private void txtTimKiemKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKiemKeyReleased
+        // TODO add your handling code here:
+        int id = Integer.parseInt(txtTimKiem.getText());
+        ArrayList<ChiTietSp> lisy = chiTietSpRepository.getAll1(id);
+        loadTable(lisy);
+    }//GEN-LAST:event_txtTimKiemKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

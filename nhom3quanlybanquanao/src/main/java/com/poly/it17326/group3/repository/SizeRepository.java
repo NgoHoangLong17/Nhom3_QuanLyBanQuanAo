@@ -9,6 +9,7 @@ import com.poly.it17326.group3.domainmodels.Size;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 /**
  *
@@ -66,7 +67,12 @@ public class SizeRepository {
         }
         return null;
     }
-    
+    public Size getOne(int id) {
+        String sql = fromTable + "where id=:id";
+        Query query = session.createQuery(sql, Size.class);
+        query.setParameter("id", id);
+        return (Size) query.getSingleResult();
+    }
     public static void main(String[] args) {
         List<Size> sizes = new SizeRepository().getAll();
         for (Size size :sizes){

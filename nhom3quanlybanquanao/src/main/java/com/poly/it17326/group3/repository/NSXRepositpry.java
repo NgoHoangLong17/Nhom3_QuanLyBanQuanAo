@@ -69,6 +69,7 @@ public class NSXRepositpry {
         return null;
     }
     
+    
     public static void main(String[] args) {
         List<Nsx> nsxs = new NSXRepositpry().getAll();
         for (Nsx nsx :nsxs){
