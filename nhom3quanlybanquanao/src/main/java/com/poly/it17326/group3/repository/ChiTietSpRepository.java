@@ -128,6 +128,13 @@ public class ChiTietSpRepository {
         return (ChiTietSp) query.getSingleResult();
     }
 
+    
+     public ArrayList<ChiTietSp> getAll1(int id) {
+        String sql = fromTable + " where id=:id";
+        Query query = session.createQuery(sql, ChiTietSp.class);
+        query.setParameter("id", id);
+        return (ArrayList<ChiTietSp>) query.getResultList();
+    }
     public static void main(String[] args) {
 //        List<ChiTietSp> list = new ChiTietSpRepository().getAll();
 //        for (ChiTietSp chiTietSpRepository : list) {

@@ -328,7 +328,7 @@ public class mainJFrame extends javax.swing.JFrame {
 
     private void txtSpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSpMouseClicked
         // TODO add your handling code here:
-        showPanel(new ChiTietSanPhamFrm());
+        showPanel(new ChiTietSpJpanel());
     }//GEN-LAST:event_txtSpMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

@@ -88,18 +88,18 @@ public class ThuocTinhSanPhamJPanel extends javax.swing.JPanel {
         }
     }
 
-    public void loadDataSp1(List<Anh> list) {
-        DefaultTableModel model = (DefaultTableModel) tblAnh.getModel();
-        model.setRowCount(0);
-        model.setColumnIdentifiers(new Object[]{"id", "ten"});
-        for (Anh Anh : list) {
-            Object[] row = new Object[]{
-                Anh.getId(), Anh.getTen()
-            };
-            model.addRow(row);
-        }
-
-    }
+//    public void loadDataSp1(List<Anh> list) {
+//        DefaultTableModel model = (DefaultTableModel) tblAnh.getModel();
+//        model.setRowCount(0);
+//        model.setColumnIdentifiers(new Object[]{"id", "ten"});
+//        for (Anh Anh : list) {
+//            Object[] row = new Object[]{
+//                Anh.getId(), Anh.getTen()
+//            };
+//            model.addRow(row);
+//        }
+//
+//    }
 
     public void loaddataNSx(List<Nsx> list) {
         defaultTableModel = (DefaultTableModel) tblNsx.getModel();
@@ -118,7 +118,7 @@ public class ThuocTinhSanPhamJPanel extends javax.swing.JPanel {
         loadDataSp(SanPhamRepository.getAll());
         loadData(dongSpService.getAll());
         loadDataMau(mauSacService.getAll1());
-        loadDataSp1(AnhRepository.getAll());
+//        loadDataSp1(AnhRepository.getAll());
         loaddataNSx(nSXService.getNSX());
     }
 
@@ -176,17 +176,6 @@ public class ThuocTinhSanPhamJPanel extends javax.swing.JPanel {
         txtIdMauSAc = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel36 = new javax.swing.JLabel();
-        txtId = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        btnThem = new javax.swing.JButton();
-        btnSua = new javax.swing.JButton();
-        btnXoa = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblAnh = new javax.swing.JTable();
-        jplANh = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane14 = new javax.swing.JScrollPane();
         tblNsx = new javax.swing.JTable();
@@ -591,112 +580,6 @@ public class ThuocTinhSanPhamJPanel extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Mau Sac", jPanel5);
 
-        jLabel36.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel36.setText("Quản lý Anh");
-
-        jLabel2.setText("ID");
-
-        jLabel3.setText("Anh");
-
-        btnThem.setText("Thêm");
-        btnThem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnThemActionPerformed(evt);
-            }
-        });
-
-        btnSua.setText("Sửa");
-        btnSua.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSuaActionPerformed(evt);
-            }
-        });
-
-        btnXoa.setText("Xóa");
-        btnXoa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnXoaActionPerformed(evt);
-            }
-        });
-
-        tblAnh.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        tblAnh.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tblAnhMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tblAnh);
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 812, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(155, 155, 155)
-                                .addComponent(jplANh, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                                .addGap(59, 59, 59)
-                                .addComponent(btnThem)
-                                .addGap(45, 45, 45)
-                                .addComponent(btnSua)
-                                .addGap(31, 31, 31)
-                                .addComponent(btnXoa)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 323, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(319, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
-                        .addGap(49, 49, 49)
-                        .addComponent(jLabel3))
-                    .addComponent(jplANh, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnThem)
-                    .addComponent(btnSua)
-                    .addComponent(btnXoa))
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(218, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Anh ", jPanel6);
-
         tblNsx.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -811,6 +694,147 @@ public class ThuocTinhSanPhamJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnXoaNsxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaNsxActionPerformed
+        // TODO add your handling code here:
+        int index = tblNsx.getSelectedRow();
+        Nsx chatLieu = nSXService.getNSX().get(index);
+        if (index == -1) {
+            JOptionPane.showMessageDialog(this, "Xóa thất bại");
+        } else if (nSXService.delete(chatLieu)) {
+            JOptionPane.showMessageDialog(this, "Xóa thành công");
+            loaddataNSx(nSXService.getNSX());
+        } else {
+            JOptionPane.showMessageDialog(this, "Xóa thất bại");
+        }
+    }//GEN-LAST:event_btnXoaNsxActionPerformed
+
+    private void btnSuaNsxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaNsxActionPerformed
+        // TODO add your handling code here:
+        int index = tblNsx.getSelectedRow();
+        Nsx chatLieu = nSXService.getNSX().get(index);
+        chatLieu.setTen(txtTenNsx.getText());
+        chatLieu.setId(Integer.parseInt(txtIdNsx.getText()));
+        if (nSXService.update(chatLieu)) {
+            JOptionPane.showMessageDialog(this, "Sửa thành công");
+            loaddataNSx(nSXService.getNSX());
+        } else {
+            JOptionPane.showMessageDialog(this, "Sửa thất bại");
+        }
+    }//GEN-LAST:event_btnSuaNsxActionPerformed
+
+    private void btnThemNsxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemNsxActionPerformed
+        // TODO add your handling code here:
+        Nsx chatLieu = new Nsx();
+        chatLieu.setTen(txtTenNsx.getText());
+        if (nSXService.save(chatLieu)) {
+            JOptionPane.showMessageDialog(this, "Thêm thành công");
+            loaddataNSx(nSXService.getNSX());
+        } else {
+            JOptionPane.showMessageDialog(this, "Thêm thất bại");
+        }
+    }//GEN-LAST:event_btnThemNsxActionPerformed
+
+    private void tblNsxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNsxMouseClicked
+        // TODO add your handling code here:
+        int row = tblNsx.getSelectedRow();
+        txtIdNsx.setText(tblNsx.getValueAt(row, 0).toString());
+        txtTenNsx.setText(tblNsx.getValueAt(row, 1).toString());
+    }//GEN-LAST:event_tblNsxMouseClicked
+
+    private void btnXoaMauSacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaMauSacActionPerformed
+        // TODO add your handling code here:
+        int index = tblMauSac.getSelectedRow();
+        MauSac chatLieu = mauSacService.getAll().get(index);
+        if (index == -1) {
+            JOptionPane.showMessageDialog(this, "Xóa thất bại");
+        } else if (mauSacService.delete(chatLieu)) {
+            JOptionPane.showMessageDialog(this, "Xóa thành công");
+            loadDataMau(mauSacService.getAll1());
+        } else {
+            JOptionPane.showMessageDialog(this, "Xóa thất bại");
+        }
+    }//GEN-LAST:event_btnXoaMauSacActionPerformed
+
+    private void btnSuaMauSacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaMauSacActionPerformed
+        // TODO add your handling code here:
+        int index = tblMauSac.getSelectedRow();
+        MauSac mauSac = mauSacService.getAll().get(index);
+        mauSac.setTen(txtTenMauSac.getText());
+        mauSac.setId(Integer.parseInt(txtIdMauSAc.getText()));
+        if (mauSacService.update(mauSac)) {
+            JOptionPane.showMessageDialog(this, "Sửa thành công");
+            loadDataMau(mauSacService.getAll1());
+        } else {
+            JOptionPane.showMessageDialog(this, "Sửa thất bại");
+        }
+    }//GEN-LAST:event_btnSuaMauSacActionPerformed
+
+    private void btnThemMauSacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemMauSacActionPerformed
+        // TODO add your handling code here:
+        MauSac mauSac = new MauSac();
+        mauSac.setTen(txtTenMauSac.getText());
+        if (mauSacService.add(mauSac)) {
+            JOptionPane.showMessageDialog(this, "Thêm thành công");
+            loadDataMau(mauSacService.getAll1());
+        } else {
+            JOptionPane.showMessageDialog(this, "Thêm thất bại");
+        }
+    }//GEN-LAST:event_btnThemMauSacActionPerformed
+
+    private void tblMauSacMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMauSacMouseClicked
+        // TODO add your handling code here:
+        int row = tblMauSac.getSelectedRow();
+        txtIdMauSAc.setText(tblMauSac.getValueAt(row, 0).toString());
+        txtTenMauSac.setText(tblMauSac.getValueAt(row, 1).toString());
+    }//GEN-LAST:event_tblMauSacMouseClicked
+
+    private void btnXoaDongSpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaDongSpActionPerformed
+        // TODO add your handling code here:
+        int index = tblDongSp.getSelectedRow();
+        DongSp dongSp = dongSpService.getAll().get(index);
+        if (index == -1) {
+            JOptionPane.showMessageDialog(this, "Xóa thất bại");
+        } else if (dongSpService.delete(dongSp)) {
+            JOptionPane.showMessageDialog(this, "Xóa thành công");
+            loadData(dongSpService.getAll());
+        } else {
+            JOptionPane.showMessageDialog(this, "Xóa thất bại");
+        }
+    }//GEN-LAST:event_btnXoaDongSpActionPerformed
+
+    private void btnSuaDongSpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaDongSpActionPerformed
+        // TODO add your handling code here:
+        int index = tblDongSp.getSelectedRow();
+        DongSp mauSac = dongSpService.getAll().get(index);
+        mauSac.setTen(txtTenDongSp.getText());
+        mauSac.setId(Integer.parseInt(txtIdDongSp.getText()));
+        if (dongSpService.update(mauSac)) {
+            JOptionPane.showMessageDialog(this, "Sửa thành công");
+            loadData(dongSpService.getAll());
+        } else {
+            JOptionPane.showMessageDialog(this, "Sửa thất bại");
+        }
+    }//GEN-LAST:event_btnSuaDongSpActionPerformed
+
+    private void btnThemDongSpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemDongSpActionPerformed
+        // TODO add your handling code here:
+        DongSp dongSp = new DongSp();
+        dongSp.setTen(txtTenDongSp.getText());
+        if (dongSpService.add(dongSp)) {
+            JOptionPane.showMessageDialog(this, "Thêm thành công");
+            loadData(dongSpService.getAll());
+        } else {
+            JOptionPane.showMessageDialog(this, "Thêm thất bại");
+        }
+    }//GEN-LAST:event_btnThemDongSpActionPerformed
+
+    private void tblDongSpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDongSpMouseClicked
+        // TODO add your handling code here:
+        int row = tblDongSp.getSelectedRow();
+        txtIdDongSp.setText(tblDongSp.getValueAt(row, 0).toString());
+        txtTenDongSp.setText(tblDongSp.getValueAt(row, 1).toString());
+    }//GEN-LAST:event_tblDongSpMouseClicked
+
     private void btnThemSanPhamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemSanPhamActionPerformed
         // TODO add your handling code here:
         SanPham sp = new SanPham();
@@ -827,7 +851,7 @@ public class ThuocTinhSanPhamJPanel extends javax.swing.JPanel {
         int index = tblSanPham.getSelectedRow();
 
         SanPham sp = SanPhamServiceImpl.getAll().get(index);
-        sp.setId(Integer.parseInt(txtId.getText()));
+        sp.setId(Integer.parseInt(txtIdSp.getText()));
         sp.setTen(txtSanPham.getText());
         if (SanPhamRepository.update(sp) == true) {
             JOptionPane.showMessageDialog(this, "Sửa Thành công");
@@ -849,7 +873,7 @@ public class ThuocTinhSanPhamJPanel extends javax.swing.JPanel {
     private void tblSanPhamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSanPhamMouseClicked
         // TODO add your handling code here:
         int index = tblSanPham.getSelectedRow();
-        txtId.setText(tblSanPham.getValueAt(index, 0).toString());
+        txtIdSp.setText(tblSanPham.getValueAt(index, 0).toString());
         txtSanPham.setText((String) tblSanPham.getValueAt(index, 1));
     }//GEN-LAST:event_tblSanPhamMouseClicked
 
@@ -900,223 +924,18 @@ public class ThuocTinhSanPhamJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnXoa1ActionPerformed
 
-    private void tblDongSpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDongSpMouseClicked
-        // TODO add your handling code here:
-        int row = tblDongSp.getSelectedRow();
-        txtIdDongSp.setText(tblDongSp.getValueAt(row, 0).toString());
-        txtTenDongSp.setText(tblDongSp.getValueAt(row, 1).toString());
-    }//GEN-LAST:event_tblDongSpMouseClicked
-
-    private void btnThemDongSpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemDongSpActionPerformed
-        // TODO add your handling code here:
-        DongSp dongSp = new DongSp();
-        dongSp.setTen(txtTenDongSp.getText());
-        if (dongSpService.add(dongSp)) {
-            JOptionPane.showMessageDialog(this, "Thêm thành công");
-            loadData(dongSpService.getAll());
-        } else {
-            JOptionPane.showMessageDialog(this, "Thêm thất bại");
-        }
-    }//GEN-LAST:event_btnThemDongSpActionPerformed
-
-    private void btnSuaDongSpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaDongSpActionPerformed
-        // TODO add your handling code here:
-        int index = tblDongSp.getSelectedRow();
-        DongSp mauSac = dongSpService.getAll().get(index);
-        mauSac.setTen(txtTenDongSp.getText());
-        mauSac.setId(Integer.parseInt(txtIdDongSp.getText()));
-        if (dongSpService.update(mauSac)) {
-            JOptionPane.showMessageDialog(this, "Sửa thành công");
-            loadData(dongSpService.getAll());
-        } else {
-            JOptionPane.showMessageDialog(this, "Sửa thất bại");
-        }
-    }//GEN-LAST:event_btnSuaDongSpActionPerformed
-
-    private void btnXoaDongSpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaDongSpActionPerformed
-        // TODO add your handling code here:
-        int index = tblDongSp.getSelectedRow();
-        DongSp dongSp = dongSpService.getAll().get(index);
-        if (index == -1) {
-            JOptionPane.showMessageDialog(this, "Xóa thất bại");
-        } else if (dongSpService.delete(dongSp)) {
-            JOptionPane.showMessageDialog(this, "Xóa thành công");
-            loadData(dongSpService.getAll());
-        } else {
-            JOptionPane.showMessageDialog(this, "Xóa thất bại");
-        }
-    }//GEN-LAST:event_btnXoaDongSpActionPerformed
-
-    private void tblMauSacMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMauSacMouseClicked
-        // TODO add your handling code here:
-        int row = tblMauSac.getSelectedRow();
-        txtId.setText(tblMauSac.getValueAt(row, 0).toString());
-        txtTenMauSac.setText(tblMauSac.getValueAt(row, 1).toString());
-    }//GEN-LAST:event_tblMauSacMouseClicked
-
-    private void btnThemMauSacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemMauSacActionPerformed
-        // TODO add your handling code here:
-        MauSac mauSac = new MauSac();
-        mauSac.setTen(txtTenMauSac.getText());
-        if (mauSacService.add(mauSac)) {
-            JOptionPane.showMessageDialog(this, "Thêm thành công");
-            loadDataMau(mauSacService.getAll1());
-        } else {
-            JOptionPane.showMessageDialog(this, "Thêm thất bại");
-        }
-    }//GEN-LAST:event_btnThemMauSacActionPerformed
-
-    private void btnSuaMauSacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaMauSacActionPerformed
-        // TODO add your handling code here:
-        int index = tblMauSac.getSelectedRow();
-        MauSac mauSac = mauSacService.getAll().get(index);
-        mauSac.setTen(txtTenMauSac.getText());
-        mauSac.setId(Integer.parseInt(txtId.getText()));
-        if (mauSacService.update(mauSac)) {
-            JOptionPane.showMessageDialog(this, "Sửa thành công");
-            loadDataMau(mauSacService.getAll1());
-        } else {
-            JOptionPane.showMessageDialog(this, "Sửa thất bại");
-        }
-    }//GEN-LAST:event_btnSuaMauSacActionPerformed
-
-    private void btnXoaMauSacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaMauSacActionPerformed
-        // TODO add your handling code here:
-        int index = tblMauSac.getSelectedRow();
-        MauSac chatLieu = mauSacService.getAll().get(index);
-        if (index == -1) {
-            JOptionPane.showMessageDialog(this, "Xóa thất bại");
-        } else if (mauSacService.delete(chatLieu)) {
-            JOptionPane.showMessageDialog(this, "Xóa thành công");
-            loadDataMau(mauSacService.getAll1());
-        } else {
-            JOptionPane.showMessageDialog(this, "Xóa thất bại");
-        }
-    }//GEN-LAST:event_btnXoaMauSacActionPerformed
-
-    private void tblNsxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNsxMouseClicked
-        // TODO add your handling code here:
-         int row = tblNsx.getSelectedRow();
-        txtIdNsx.setText(tblNsx.getValueAt(row, 0).toString());
-        txtTenNsx.setText(tblNsx.getValueAt(row, 1).toString());
-    }//GEN-LAST:event_tblNsxMouseClicked
-
-    private void btnThemNsxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemNsxActionPerformed
-        // TODO add your handling code here:
-        Nsx chatLieu = new Nsx();
-        chatLieu.setTen(txtTenNsx.getText());
-        if (nSXService.save(chatLieu)) {
-            JOptionPane.showMessageDialog(this, "Thêm thành công");
-            loaddataNSx(nSXService.getNSX());
-        } else {
-            JOptionPane.showMessageDialog(this, "Thêm thất bại");
-        }
-    }//GEN-LAST:event_btnThemNsxActionPerformed
-
-    private void btnSuaNsxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaNsxActionPerformed
-        // TODO add your handling code here:
-        int index = tblNsx.getSelectedRow();
-        Nsx chatLieu = nSXService.getNSX().get(index);
-        chatLieu.setTen(txtTenNsx.getText());
-        chatLieu.setId(Integer.parseInt(txtIdNsx.getText()));
-        if (nSXService.update(chatLieu)) {
-            JOptionPane.showMessageDialog(this, "Sửa thành công");
-            loaddataNSx(nSXService.getNSX());
-        } else {
-            JOptionPane.showMessageDialog(this, "Sửa thất bại");
-        }
-    }//GEN-LAST:event_btnSuaNsxActionPerformed
-
-    private void btnXoaNsxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaNsxActionPerformed
-        // TODO add your handling code here:
-        int index = tblNsx.getSelectedRow();
-        Nsx chatLieu = nSXService.getNSX().get(index);
-        if (index == -1) {
-            JOptionPane.showMessageDialog(this, "Xóa thất bại");
-        } else if (nSXService.delete(chatLieu)) {
-            JOptionPane.showMessageDialog(this, "Xóa thành công");
-            loaddataNSx(nSXService.getNSX());
-        } else {
-            JOptionPane.showMessageDialog(this, "Xóa thất bại");
-        }
-    }//GEN-LAST:event_btnXoaNsxActionPerformed
-
-    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
-        // TODO add your handling code here:
-        int index = tblAnh.getSelectedRow();
-        Anh Anh = AnhServiceImpl.getAll().get(index);
-        if (AnhServiceImpl.Delete(Anh)) {
-            JOptionPane.showMessageDialog(this, "Xóa Thành công");
-            loadDataSp1(AnhServiceImpl.getAll());
-        }
-    }//GEN-LAST:event_btnXoaActionPerformed
-
-    private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
-        // TODO add your handling code here:
-        int index = tblAnh.getSelectedRow();
-
-        JFileChooser chooser = new JFileChooser();
-        File f = chooser.getSelectedFile();
-        String filename = f.getAbsolutePath();
-        jplANh.setText(filename);
-        chooser.showOpenDialog(null);
-        Image getAbsolutePath = null;
-        ImageIcon icon = new ImageIcon(filename);
-        Image image = icon.getImage().getScaledInstance(jplANh.getWidth(), jplANh.getHeight(), Image.SCALE_SMOOTH);
-        jplANh.setIcon(icon);
-        Anh anh = new Anh();
-        anh.setTen(jplANh.getText().replace("\\", "\\\\"));
-        if (AnhRepository.update(anh) == true) {
-            JOptionPane.showMessageDialog(this, "Sửa Thành công");
-            loadDataSp1(AnhServiceImpl.getAll());
-            return;
-        }
-    }//GEN-LAST:event_btnSuaActionPerformed
-
-    private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        // TODO add your handling code here:
-        JFileChooser chooser = new JFileChooser();
-        chooser.showOpenDialog(null);
-        File f = chooser.getSelectedFile();
-        String filename = f.getAbsolutePath();
-        jplANh.setText(filename);
-        Image getAbsolutePath = null;
-        ImageIcon icon = new ImageIcon(filename);
-        Image image = icon.getImage().getScaledInstance(jplANh.getWidth(), jplANh.getHeight(), Image.SCALE_SMOOTH);
-        jplANh.setIcon(icon);
-        Anh anh = new Anh();
-        anh.setTen(jplANh.getText().replace("\\", "\\\\"));
-        if (AnhRepository.add(anh)) {
-            JOptionPane.showMessageDialog(this, "Thêm Thành công");
-            loadDataSp1(AnhServiceImpl.getAll());
-        }
-    }//GEN-LAST:event_btnThemActionPerformed
-
-    private void tblAnhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAnhMouseClicked
-        // TODO add your handling code here:
-        int index = tblAnh.getSelectedRow();
-        txtId.setText(tblAnh.getValueAt(index, 0).toString());
-        String imgURL = tblAnh.getValueAt(index, 1).toString();
-        ImageIcon i = new ImageIcon(imgURL);
-        jplANh.setIcon(i);
-        //        upImage(AnhRepository.getAll().get(index).getTen());
-    }//GEN-LAST:event_tblAnhMouseClicked
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSua;
     private javax.swing.JButton btnSuaDongSp;
     private javax.swing.JButton btnSuaMauSac;
     private javax.swing.JButton btnSuaNsx;
     private javax.swing.JButton btnSuaSanPham;
     private javax.swing.JButton btnSuaSize;
-    private javax.swing.JButton btnThem;
     private javax.swing.JButton btnThemDongSp;
     private javax.swing.JButton btnThemMauSac;
     private javax.swing.JButton btnThemNsx;
     private javax.swing.JButton btnThemSanPham;
     private javax.swing.JButton btnThemSize;
-    private javax.swing.JButton btnXoa;
     private javax.swing.JButton btnXoa1;
     private javax.swing.JButton btnXoaDongSp;
     private javax.swing.JButton btnXoaMauSac;
@@ -1125,18 +944,15 @@ public class ThuocTinhSanPhamJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
@@ -1144,23 +960,18 @@ public class ThuocTinhSanPhamJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JLabel jplANh;
-    private javax.swing.JTable tblAnh;
     private javax.swing.JTable tblDongSp;
     private javax.swing.JTable tblMauSac;
     private javax.swing.JTable tblNsx;
     private javax.swing.JTable tblSanPham;
     private javax.swing.JTable tblSize;
-    private javax.swing.JTextField txtId;
     private javax.swing.JTextField txtIdDongSp;
     private javax.swing.JTextField txtIdMauSAc;
     private javax.swing.JTextField txtIdNsx;

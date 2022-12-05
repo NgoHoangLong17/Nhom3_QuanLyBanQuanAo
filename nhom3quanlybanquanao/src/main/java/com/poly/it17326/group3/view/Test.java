@@ -18,19 +18,10 @@ public class Test extends javax.swing.JFrame {
      */
     public Test() {
         initComponents();
-//        FrmChatLieu fcl = new FrmChatLieu();
-//        FrmAnh fa = new FrmAnh();
-//        FrmChatLieu fcl1 = new FrmChatLieu();
-//        FrmNhanVien fnv = new FrmNhanVien();
-//        FrmKhuyenMai fkm = new FrmKhuyenMai();
-//        FrmHome frmHome = new FrmHome();
-//        FrmMauSac mauSac = new FrmMauSac();
-//        FrmNhanVien fnv = new FrmNhanVien();
-//        FrmDongSp dongSp = new FrmDongSp();
 
 //    FrmHoaDonChiTiet1 fnv = new FrmHoaDonChiTiet();
 //        BanHangJPanel jPanel  = new BanHangJPanel(new NhanVien());
-      ChiTietSanPhamFrm1 fkm = new ChiTietSanPhamFrm1();
+        ChiTietSpJpanel fkm = new ChiTietSpJpanel();
         jPanel1.removeAll();
         jPanel1.add(fkm);
         jPanel1.validate();

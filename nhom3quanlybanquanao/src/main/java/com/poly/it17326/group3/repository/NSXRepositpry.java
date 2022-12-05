@@ -19,7 +19,7 @@ public class NSXRepositpry {
 
       private Session session = HibernateConfig.getFACTORY().openSession();
     
-    private String fromTable = "FROM NSX"; // HQL
+    private String fromTable = "FROM Nsx"; // HQL
     
     public List<Nsx>getAll(){
         javax.persistence.Query query = session.createQuery(fromTable, Nsx.class);

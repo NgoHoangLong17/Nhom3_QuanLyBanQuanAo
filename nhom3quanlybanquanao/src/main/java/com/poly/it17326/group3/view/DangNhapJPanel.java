@@ -83,8 +83,6 @@ public class DangNhapJPanel extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Data\\Nhom3_QuanLyBanQuanAo\\nhom3quanlybanquanao\\src\\main\\resources\\com\\poly\\it17326\\group3\\icon\\logo.png")); // NOI18N
-
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -119,7 +117,7 @@ public class DangNhapJPanel extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Tài khoản");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(44, 109, 59, 20);
+        jLabel3.setBounds(44, 109, 61, 20);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -151,12 +149,12 @@ public class DangNhapJPanel extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("_____________________________________________________");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(44, 221, 265, 50);
+        jLabel5.setBounds(44, 221, 254, 50);
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("_____________________________________________________");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(44, 141, 265, 50);
+        jLabel6.setBounds(44, 141, 254, 50);
 
         jCheckBox1.setBackground(new java.awt.Color(51, 153, 255));
         jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -170,20 +168,19 @@ public class DangNhapJPanel extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jCheckBox1);
-        jCheckBox1.setBounds(44, 268, 113, 24);
+        jCheckBox1.setBounds(44, 268, 114, 24);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Quên mật khẩu?");
         jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(241, 270, 102, 20);
+        jLabel7.setBounds(241, 270, 104, 20);
 
         jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jLabel9);
         jLabel9.setBounds(320, 150, 0, 0);
 
-        invisible.setIcon(new javax.swing.ImageIcon("C:\\Data\\Nhom3_QuanLyBanQuanAo\\nhom3quanlybanquanao\\src\\main\\resources\\com\\poly\\it17326\\group3\\icon\\icons8-invisible-24.png")); // NOI18N
         invisible.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         invisible.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -217,7 +214,6 @@ public class DangNhapJPanel extends javax.swing.JFrame {
         jPanel1.add(jLabel8);
         jLabel8.setBounds(360, 0, 20, 32);
 
-        show.setIcon(new javax.swing.ImageIcon("C:\\Data\\Nhom3_QuanLyBanQuanAo\\nhom3quanlybanquanao\\src\\main\\resources\\com\\poly\\it17326\\group3\\icon\\icons8-eye-24 (1).png")); // NOI18N
         show.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         show.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
