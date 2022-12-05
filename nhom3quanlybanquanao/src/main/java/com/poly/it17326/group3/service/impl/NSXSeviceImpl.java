@@ -39,6 +39,11 @@ public class NSXSeviceImpl implements ViewNSXService{
         return nSXRepositpry.delete(nsx);
     }
 
+    @Override
+    public Nsx getOne(Integer ID) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
    
 
     

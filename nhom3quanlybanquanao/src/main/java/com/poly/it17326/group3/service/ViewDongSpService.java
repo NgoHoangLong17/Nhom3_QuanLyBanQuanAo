@@ -12,13 +12,14 @@ import java.util.List;
  * @author ADMIN
  */
 public interface ViewDongSpService {
-    
+
     List<DongSp> getAll();
-    
+
     public Boolean add(DongSp dongSp);
-    
+
     public Boolean delete(DongSp dongSp);
-    
+
     public boolean update(DongSp dongSp);
-    
+
+    DongSp getOne(Integer ID);
 }

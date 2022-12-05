@@ -37,4 +37,9 @@ public class DongSpServiceImpl implements ViewDongSpService {
         return dongSpRepository.update(dongSp);
     }
 
+    @Override
+    public DongSp getOne(Integer ID) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
 }

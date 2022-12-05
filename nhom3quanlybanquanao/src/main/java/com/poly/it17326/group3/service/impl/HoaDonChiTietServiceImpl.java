@@ -54,4 +54,9 @@ public class HoaDonChiTietServiceImpl implements ViewHoaDonChiTietService {
     public HoaDonChiTiet getHdctByIdCtsp(int idctsp) {
         return hoaDonChiTietRepository.getHdctByIdCtsp(idctsp);
     }
+
+    @Override
+    public HoaDonChiTiet getOne(Integer ID) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

@@ -27,4 +27,6 @@ public interface ViewHoaDonChiTietService {
 
     HoaDonChiTiet getHdctByIdCtsp(int idctsp);
 
+    HoaDonChiTiet getOne(Integer ID);
+
 }

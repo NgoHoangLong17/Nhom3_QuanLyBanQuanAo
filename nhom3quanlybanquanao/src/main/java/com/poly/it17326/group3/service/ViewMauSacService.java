@@ -25,4 +25,5 @@ public interface ViewMauSacService {
 
     public Boolean update(MauSac mauSac);
 
+     MauSac getOne(Integer  ID);
 }

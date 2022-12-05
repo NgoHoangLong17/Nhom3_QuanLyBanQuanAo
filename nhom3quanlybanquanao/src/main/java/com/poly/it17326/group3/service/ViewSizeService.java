@@ -20,4 +20,6 @@ public interface ViewSizeService {
     Boolean update(Size size);
 
     Boolean delete(Size size);
+    
+    Size getOne(Integer  ID);
 }

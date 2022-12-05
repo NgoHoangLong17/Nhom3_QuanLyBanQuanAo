@@ -31,7 +31,12 @@ public class qrcode {
             Logger.getLogger(qrcode.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public static void main(String[] args) throws WriterException {
-        generateQRcode("1", 600, 600, outputQr);
+//    public static void main(String[] args) throws WriterException {
+//        generateQRcode("1", 600, 600, outputQr);
+//        
+//    }
+    public  void output(int id) throws WriterException{
+        generateQRcode(String.valueOf(id), 600, 600,"F:\\"+id+".png");
     }
+    
 }

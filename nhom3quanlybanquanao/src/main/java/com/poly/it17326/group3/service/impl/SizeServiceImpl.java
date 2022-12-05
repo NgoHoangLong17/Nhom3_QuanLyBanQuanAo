@@ -41,6 +41,11 @@ public class SizeServiceImpl implements ViewSizeService{
         return sizeRepository.add(size);
     }
 
+    @Override
+    public Size getOne(Integer ID) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
    
     
 }

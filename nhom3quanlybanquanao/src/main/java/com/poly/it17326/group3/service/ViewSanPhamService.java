@@ -20,5 +20,7 @@ public interface ViewSanPhamService {
     public Boolean add(SanPham sanPham);
     
     public Boolean Delete(SanPham sanPham);
+    
+    SanPham getOne(Integer  ID);
      
 }
