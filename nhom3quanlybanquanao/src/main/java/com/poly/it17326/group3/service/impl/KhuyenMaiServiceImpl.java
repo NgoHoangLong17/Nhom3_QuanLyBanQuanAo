@@ -6,6 +6,7 @@ package com.poly.it17326.group3.service.impl;
 
 import com.poly.it17326.group3.domainmodels.KhuyenMai;
 import com.poly.it17326.group3.repository.KhuyenMaiRepository;
+import com.poly.it17326.group3.response.KhuyenMaiReponse;
 import com.poly.it17326.group3.service.ViewKhuyenMaiService;
 import java.util.List;
 
@@ -35,6 +36,11 @@ public class KhuyenMaiServiceImpl implements ViewKhuyenMaiService{
     @Override
     public List<KhuyenMai> getAll() {
         return khuyenMaiRepository.getAll();
+    }
+
+    @Override
+    public List<KhuyenMai> tim(String Ten) {
+        return khuyenMaiRepository.tim(Ten);
     }
     
 }

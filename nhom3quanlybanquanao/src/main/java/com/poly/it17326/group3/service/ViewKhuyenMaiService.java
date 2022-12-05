@@ -5,6 +5,7 @@
 package com.poly.it17326.group3.service;
 
 import com.poly.it17326.group3.domainmodels.KhuyenMai;
+import com.poly.it17326.group3.response.KhuyenMaiReponse;
 import java.util.List;
 
 /**
@@ -20,4 +21,6 @@ public interface ViewKhuyenMaiService {
     Boolean update(KhuyenMai km);
 
     Boolean delete(KhuyenMai km);
+    
+    public List<KhuyenMai> tim(String Ten);
 }

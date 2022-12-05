@@ -30,6 +30,9 @@ public class KhuyenMai {
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    
+    @Column(name = "MAKHUYENMAI")
+    private String ma;
 
     @Column(name = "TEN")
     private String ten;

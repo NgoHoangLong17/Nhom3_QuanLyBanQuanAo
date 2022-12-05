@@ -6,6 +6,7 @@ package com.poly.it17326.group3.repository;
 
 import com.poly.it17326.group3.config.HibernateConfig;
 import com.poly.it17326.group3.domainmodels.KhuyenMai;
+import com.poly.it17326.group3.response.KhuyenMaiReponse;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -62,11 +63,22 @@ public class KhuyenMaiRepository {
         }
         return false;
     }
+    
+    public List<KhuyenMai> tim(String Ten) { // timf theo ngay
 
+        try ( Session session = HibernateConfig.getFACTORY().openSession();) {
+            String sql = "from KhuyenMai where Ten = :Ten";                 
+            javax.persistence.Query query = session.createQuery(sql);
+            query.setParameter("Ten", Ten);           
+            List<KhuyenMai> listkm = (List<KhuyenMai>) query.getResultList();
 
-    public static void main(String[] args) {
-        new KhuyenMaiRepository().save(new KhuyenMai(4, "Giam gia ngay 9-3", 30, null, null));
-        System.out.println(new KhuyenMaiRepository().getAll().toString());
+            session.close();
+            return listkm;
+        }
+
     }
+
+
+    
 
 }
