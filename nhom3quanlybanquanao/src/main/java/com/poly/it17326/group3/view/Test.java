@@ -21,7 +21,8 @@ public class Test extends javax.swing.JFrame {
 
 //    FrmHoaDonChiTiet1 fnv = new FrmHoaDonChiTiet();
 //        BanHangJPanel jPanel  = new BanHangJPanel(new NhanVien());
-        ThuocTinhSanPhamJPanel fkm = new ThuocTinhSanPhamJPanel();
+        ChiTietSpJpanel fkm = new ChiTietSpJpanel();
+//          ThuocTinhSanPhamJPanel fkm = new ThuocTinhSanPhamJPanel();
         jPanel1.removeAll();
         jPanel1.add(fkm);
         jPanel1.validate();

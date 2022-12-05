@@ -91,7 +91,6 @@ public class ChiTietSpRepository {
     public Boolean update(ChiTietSp chiTietSp) {
         Transaction transaction = null;
         try ( Session session = HibernateConfig.getFACTORY().openSession();) {
-
             transaction = session.beginTransaction();
             session.saveOrUpdate(chiTietSp);
             transaction.commit();
