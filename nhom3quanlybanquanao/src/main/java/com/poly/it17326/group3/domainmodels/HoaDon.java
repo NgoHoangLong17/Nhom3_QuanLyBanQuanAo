@@ -23,7 +23,6 @@ import lombok.ToString;
  *
  * @author doand
  */
-
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
@@ -55,11 +54,9 @@ public class HoaDon {
     @Column(name = "ngayThanhToan")
     private Date ngayThanhToan;
 
-    @ManyToOne
-    @JoinColumn(name = "idTinhTrang", referencedColumnName = "id")
-    TinhTrang tinhTrang;
-//    private int idTinhTrang;
-
+    @Column(name = "tinhTrang")
+    private int tinhTrang;
+    
     @Column(name = "tongTien")
     private int tongTien;
 

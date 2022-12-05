@@ -5,7 +5,7 @@
 package com.poly.it17326.group3.repository;
 
 import com.poly.it17326.group3.config.HibernateConfig;
-import com.poly.it17326.group3.domainmodels.Anh;
+
 import com.poly.it17326.group3.domainmodels.ChatLieu;
 import com.poly.it17326.group3.domainmodels.ChiTietSp;
 import com.poly.it17326.group3.domainmodels.DongSp;
@@ -41,10 +41,7 @@ public class ChiTietSpRepository {
         return (ArrayList<ChiTietSp>) query.getResultList();
     }
 
-    public List<Anh> getAnh() {
-        Query query = session.createQuery(fromAnh);
-        return query.getResultList();
-    }
+  
 
     public List<SanPham> getSanPham() {
         Query query = session.createQuery(fromSanPham);

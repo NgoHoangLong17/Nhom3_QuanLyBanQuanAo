@@ -4,13 +4,13 @@
  */
 package com.poly.it17326.group3.view;
 
-import com.poly.it17326.group3.domainmodels.Anh;
+
 import com.poly.it17326.group3.domainmodels.DongSp;
 import com.poly.it17326.group3.domainmodels.MauSac;
 import com.poly.it17326.group3.domainmodels.Nsx;
 import com.poly.it17326.group3.domainmodels.SanPham;
 import com.poly.it17326.group3.domainmodels.Size;
-import com.poly.it17326.group3.repository.AnhRepository;
+
 import com.poly.it17326.group3.repository.SanPhamRepository;
 import com.poly.it17326.group3.response.MauSacReponse;
 import com.poly.it17326.group3.service.ViewDongSpService;
@@ -19,7 +19,6 @@ import com.poly.it17326.group3.service.ViewDongSpService;
 import com.poly.it17326.group3.service.ViewMauSacService;
 import com.poly.it17326.group3.service.ViewNSXService;
 import com.poly.it17326.group3.service.ViewSizeService;
-import com.poly.it17326.group3.service.impl.AnhServiceImpl;
 import com.poly.it17326.group3.service.impl.DongSpServiceImpl;
 import com.poly.it17326.group3.service.impl.MauSacServiceImpl;
 import com.poly.it17326.group3.service.impl.NSXSeviceImpl;
@@ -44,8 +43,6 @@ public class ThuocTinhSanPhamJPanel extends javax.swing.JPanel {
     private SanPhamRepository SanPhamRepository = new SanPhamRepository();
     private ViewDongSpService dongSpService = new DongSpServiceImpl();
     private ViewMauSacService mauSacService = new MauSacServiceImpl();
-    private AnhServiceImpl AnhServiceImpl = new AnhServiceImpl();
-    private AnhRepository AnhRepository = new AnhRepository();
     private ViewNSXService nSXService = new NSXSeviceImpl();
     private DefaultTableModel defaultTableModel;
 

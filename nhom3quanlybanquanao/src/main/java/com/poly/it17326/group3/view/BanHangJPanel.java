@@ -9,7 +9,7 @@ import com.poly.it17326.group3.domainmodels.HoaDon;
 import com.poly.it17326.group3.domainmodels.HoaDonChiTiet;
 import com.poly.it17326.group3.domainmodels.KhachHang;
 import com.poly.it17326.group3.domainmodels.NhanVien;
-import com.poly.it17326.group3.domainmodels.TinhTrang;
+
 import com.poly.it17326.group3.service.ViewChiTietSPService;
 import com.poly.it17326.group3.service.ViewHoaDonChiTietService;
 import com.poly.it17326.group3.service.ViewHoaDonService;
@@ -61,7 +61,7 @@ public class BanHangJPanel extends javax.swing.JPanel {
         tableModel.setColumnIdentifiers(new String[]{"Mã hóa đơn", "Ngày tạo", "Tên khách hàng", "Tình trạng"});
         hoaDons.forEach(hd
                 -> tableModel.addRow(new Object[]{
-            hd.getId(), hd.getNgayTao(), hd.getKhachHang().getTen(), hd.getTinhTrang().getTen()
+            hd.getId(), hd.getNgayTao(), hd.getKhachHang().getTen(), hd.getTinhTrang()
         })
         );
         

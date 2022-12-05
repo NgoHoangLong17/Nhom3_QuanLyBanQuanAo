@@ -60,9 +60,7 @@ public class ChiTietSp {
     @JoinColumn(name = "idNsx", referencedColumnName = "id")
     private Nsx nsx;
 
-    @OneToOne
-    @JoinColumn(name = "idAnh", referencedColumnName = "id")
-    private Anh anh;
+ 
 
     @Column(name = "soLuongTon")
     int soLuongTon;
@@ -74,5 +72,5 @@ public class ChiTietSp {
     String moTa;
     
     @Column(name = "anh")
-    String anh1;
+    String anh;
 }

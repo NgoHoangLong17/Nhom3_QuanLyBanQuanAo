@@ -4,7 +4,7 @@
  */
 package com.poly.it17326.group3.service.impl;
 
-import com.poly.it17326.group3.domainmodels.Anh;
+
 import com.poly.it17326.group3.domainmodels.ChatLieu;
 import com.poly.it17326.group3.domainmodels.ChiTietSp;
 import com.poly.it17326.group3.domainmodels.DongSp;
@@ -30,10 +30,7 @@ public class ChiTietSpServiceImpl implements ViewChiTietSPService {
         return chiTietSpRepository.getAll();
     }
 
-    @Override
-    public List<Anh> getAnh() {
-        return chiTietSpRepository.getAnh();
-    }
+   
 
     @Override
     public List<SanPham> getSanPham() {

@@ -4,7 +4,7 @@
  */
 package com.poly.it17326.group3.config;
 
-import com.poly.it17326.group3.domainmodels.Anh;
+
 import com.poly.it17326.group3.domainmodels.ChatLieu;
 import com.poly.it17326.group3.domainmodels.ChiTietSp;
 import com.poly.it17326.group3.domainmodels.ChucVu;
@@ -18,7 +18,7 @@ import com.poly.it17326.group3.domainmodels.Nsx;
 import com.poly.it17326.group3.domainmodels.NhanVien;
 import com.poly.it17326.group3.domainmodels.SanPham;
 import com.poly.it17326.group3.domainmodels.Size;
-import com.poly.it17326.group3.domainmodels.TinhTrang;
+
 import java.util.Properties;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -40,14 +40,14 @@ public class HibernateConfig {
         Properties properties = new Properties();
         properties.put(Environment.DIALECT, "org.hibernate.dialect.SQLServerDialect");
         properties.put(Environment.DRIVER, "com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        properties.put(Environment.URL, "jdbc:sqlserver://localhost:1433;databaseName=QUANLYBANQUANAO");
+        properties.put(Environment.URL, "jdbc:sqlserver://localhost:1433;databaseName=QUANLYBANQUANAO12");
         properties.put(Environment.USER, "sa");
         properties.put(Environment.PASS, "123123");
         properties.put(Environment.SHOW_SQL, "true");
         conf.setProperties(properties);
         conf.addAnnotatedClass(SanPham.class);
         conf.addAnnotatedClass(ChiTietSp.class);
-        conf.addAnnotatedClass(Anh.class);
+     
         conf.addAnnotatedClass(DongSp.class);
         conf.addAnnotatedClass(KhuyenMai.class);
         conf.addAnnotatedClass(ChatLieu.class);
@@ -56,7 +56,6 @@ public class HibernateConfig {
         conf.addAnnotatedClass(Size.class);
         conf.addAnnotatedClass(Nsx.class);
         conf.addAnnotatedClass(MauSac.class);
-        conf.addAnnotatedClass(TinhTrang.class);
         conf.addAnnotatedClass(HoaDon.class);
         conf.addAnnotatedClass(HoaDonChiTiet.class);
         conf.addAnnotatedClass(KhachHang.class);

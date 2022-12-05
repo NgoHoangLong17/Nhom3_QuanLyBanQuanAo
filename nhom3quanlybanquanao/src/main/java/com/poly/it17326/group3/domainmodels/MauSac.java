@@ -28,8 +28,6 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-
-
 public class MauSac {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

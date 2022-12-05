@@ -4,7 +4,7 @@
  */
 package com.poly.it17326.group3.response;
 
-import com.poly.it17326.group3.domainmodels.Anh;
+
 import com.poly.it17326.group3.domainmodels.ChatLieu;
 import com.poly.it17326.group3.domainmodels.DongSp;
 import com.poly.it17326.group3.domainmodels.MauSac;
@@ -24,6 +24,8 @@ import lombok.ToString;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @ToString
 public class ChiTietSpReponse {
 
@@ -34,24 +36,12 @@ public class ChiTietSpReponse {
     private String tenChatLieu;
     private String tenSize;
     private String tenNsx;
-    private String tenAnh;
+    private String anh;
     private int soLuongTon;
     private int gia;
     private String moTa;
 
-    public ChiTietSpReponse(int id,  SanPham sanPham, DongSp dongSp, MauSac mauSac, ChatLieu chatLieu, Size size, Nsx nsx, Anh anh, int soLuongTon, int gia, String moTa) {
-        this.id = id;
-        this.tenSanPham = sanPham.getTen();
-        this.tenDongSp =  dongSp.getTen();
-        this.tenMauSac = mauSac.getTen();
-        this.tenChatLieu = chatLieu.getTen();
-        this.tenSize = size.getTen();
-        this.tenNsx = nsx.getTen();
-        this.tenAnh = anh.getTen();
-        this.soLuongTon = soLuongTon;
-        this.gia = gia;
-        this.moTa = moTa;
-    }
+    
 
     
     

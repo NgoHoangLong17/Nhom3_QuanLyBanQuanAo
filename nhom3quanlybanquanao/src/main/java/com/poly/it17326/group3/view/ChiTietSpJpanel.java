@@ -14,7 +14,7 @@ import com.google.zxing.NotFoundException;
 import com.google.zxing.Result;
 import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.common.HybridBinarizer;
-import com.poly.it17326.group3.domainmodels.Anh;
+
 import com.poly.it17326.group3.domainmodels.ChatLieu;
 import com.poly.it17326.group3.domainmodels.ChiTietSp;
 import com.poly.it17326.group3.domainmodels.DongSp;
@@ -189,7 +189,7 @@ public class ChiTietSpJpanel extends javax.swing.JPanel implements Runnable, Thr
         for (ChiTietSp chiTietSanPham : list) {
             Object[] row = new Object[]{chiTietSanPham.getId(), chiTietSanPham.getChatLieu().getTen(), chiTietSanPham.getDongSp().getTen(),
                 chiTietSanPham.getSize().getTen(), chiTietSanPham.getNsx().getTen(), chiTietSanPham.getMauSac().getTen(), chiTietSanPham.getSanPham().getTen(), chiTietSanPham.getSoLuongTon(),
-                chiTietSanPham.getGia(), chiTietSanPham.getMoTa(), chiTietSanPham.getAnh1()};
+                chiTietSanPham.getGia(), chiTietSanPham.getMoTa(), chiTietSanPham.getAnh()};
             model.addRow(row);
         }
     }
@@ -548,7 +548,7 @@ public class ChiTietSpJpanel extends javax.swing.JPanel implements Runnable, Thr
             chiTietSp.setGia(Integer.parseInt(txtGia.getText()));
             chiTietSp.setMoTa(txtMoTa.getText());
 
-            chiTietSp.setAnh1(txtFilePath.getText());
+            chiTietSp.setAnh(txtFilePath.getText());
 
             if (chiTietSpServiceImpl.add(chiTietSp) == true) {
                 JOptionPane.showMessageDialog(this, "thanh cong");
@@ -716,7 +716,7 @@ public class ChiTietSpJpanel extends javax.swing.JPanel implements Runnable, Thr
             chiTietSp.setGia(Integer.parseInt(txtGia.getText()));
             chiTietSp.setMoTa(txtMoTa.getText());
 
-            chiTietSp.setAnh1(txtFilePath.getText());
+            chiTietSp.setAnh(txtFilePath.getText());
 
             if (chiTietSpServiceImpl.update(chiTietSp) == true) {
                 JOptionPane.showMessageDialog(this, "thanh cong");

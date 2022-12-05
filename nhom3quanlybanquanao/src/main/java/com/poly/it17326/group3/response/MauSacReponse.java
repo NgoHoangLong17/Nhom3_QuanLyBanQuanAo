@@ -4,7 +4,7 @@
  */
 package com.poly.it17326.group3.response;
 
-import com.poly.it17326.group3.domainmodels.Anh;
+
 import com.poly.it17326.group3.domainmodels.MauSac;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,13 +24,13 @@ import lombok.ToString;
 public class MauSacReponse {
 
     private int id;
-
     private String ten;
 
     public MauSacReponse(MauSac mauSac) {
         this.id = mauSac.getId();
         this.ten = mauSac.getTen();
     }
+    
 
 
 }
