@@ -5,7 +5,9 @@
 package com.poly.it17326.group3.service.impl;
 
 import com.poly.it17326.group3.domainmodels.KhuyenMai;
+import com.poly.it17326.group3.repository.KhuyenMaiRepository;
 import com.poly.it17326.group3.service.ViewKhuyenMaiService;
+import java.util.List;
 
 /**
  *
@@ -13,24 +15,26 @@ import com.poly.it17326.group3.service.ViewKhuyenMaiService;
  */
 public class KhuyenMaiServiceImpl implements ViewKhuyenMaiService{
 
-    @Override
-    public Boolean getKhuyenMai() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    private KhuyenMaiRepository khuyenMaiRepository = new KhuyenMaiRepository();
 
     @Override
     public Boolean save(KhuyenMai km) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return khuyenMaiRepository.save(km);
     }
 
     @Override
     public Boolean update(KhuyenMai km) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return khuyenMaiRepository.update(km);
     }
 
     @Override
     public Boolean delete(KhuyenMai km) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return khuyenMaiRepository.delete(km);
+    }
+
+    @Override
+    public List<KhuyenMai> getAll() {
+        return khuyenMaiRepository.getAll();
     }
     
 }
